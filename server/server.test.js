@@ -1,7 +1,7 @@
 // const assert = require('chai')
 const expect = require('chai').expect
 const request = require('supertest')
-const app = require('../server/server.js')
+const app = require('./server.js')
 // const testUtils = require('./testUtils')
 
 const testSecret = process.env.STRIPE_TEST_SECRET_KEY
