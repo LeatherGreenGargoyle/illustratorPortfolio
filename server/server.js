@@ -24,7 +24,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/../app/build/index.html'))
 })
 
-// require('./routes')(app)
+require('./routes')(app)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
