@@ -21,9 +21,9 @@ describe('Orders API', () => {
     }, (err, token) => {
       // if(err) console.log('Token creation error: ', err)
       if (err) {
-        console.log(`Token creation error: ${err}`)
+        console.log('Token creation error')
       } else {
-        console.log(`Token object created, with keys: ${Object.keys(token)}`)
+        console.log('Token object created')
       }
       tokenTestReqBody.stripeToken = token
       done()
@@ -31,7 +31,7 @@ describe('Orders API', () => {
   })
 
   it('should accept a token, and return a charge object', () => {
-    console.log(`tokenTestReqBody.stripeToken.id is ${tokenTestReqBody.stripeToken.id}`)
+    // console.log(`tokenTestReqBody.stripeToken.id is ${tokenTestReqBody.stripeToken.id}`)
     return request(app)
       .post('/orders/pay')
       .send(tokenTestReqBody)
@@ -39,7 +39,7 @@ describe('Orders API', () => {
       .expect(res => {
         // console.log('Test order res is: ', res)
         const chargeObj = JSON.parse(res.text)
-        console.log('JSON parsed res.text: ', chargeObj)
+        // console.log('JSON parsed res.text: ', chargeObj)
         // charge = JSON.parse(res).text
         // console.log('charge: ', charge)
         expect(chargeObj.id).to.be.a('string')
