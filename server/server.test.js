@@ -30,7 +30,7 @@ describe('Orders API', () => {
     })
   })
 
-  it('should accept a token, and return a charge object', () => {
+  it('should accept a token, and return a charge object', function () {
     // console.log(`tokenTestReqBody.stripeToken.id is ${tokenTestReqBody.stripeToken.id}`)
     return request(app)
       .post('/orders/pay')
@@ -38,6 +38,7 @@ describe('Orders API', () => {
       .expect(200)
       .expect(res => {
         // console.log('Test order res is: ', res)
+        // console.log('res is ', res)
         const chargeObj = JSON.parse(res.text)
         // console.log('JSON parsed res.text: ', chargeObj)
         // charge = JSON.parse(res).text
@@ -49,12 +50,13 @@ describe('Orders API', () => {
 })
 
 describe('Portfolio API', () => {
-  it('should return urls upon request', () => {
+  it('should return urls upon request', function () {
     return request(app)
       .get('/portfolio/getImages')
       .expect(200)
       .expect(res => {
         const urlArr = JSON.parse(res.text)
+        console.log('urlArr is ', urlArr)
         expect(urlArr).to.be.a('array')
         expect(urlArr[0]).to.be.a('string')
       })
