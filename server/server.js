@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, '/../app/build')))
-// app.use(morgan('short'))
 
 app.get('/getTest', (req, res) => {
   console.log('get test route hit')

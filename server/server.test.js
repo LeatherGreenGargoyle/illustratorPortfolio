@@ -21,7 +21,7 @@ describe('Orders API', () => {
     }, (err, token) => {
       // if(err) console.log('Token creation error: ', err)
       if (err) {
-        console.log('Token creation error')
+        console.log('Token creation error: ', err)
       } else {
         console.log('Token object created')
       }
@@ -44,6 +44,19 @@ describe('Orders API', () => {
         // console.log('charge: ', charge)
         expect(chargeObj.id).to.be.a('string')
         expect(chargeObj.amount).to.be.equal(666)
+      })
+  })
+})
+
+describe('Portfolio API', () => {
+  it('should return urls upon request', () => {
+    return request(app)
+      .get('/portfolio/getImages')
+      .expect(200)
+      .expect(res => {
+        const urlArr = JSON.parse(res.text)
+        expect(urlArr).to.be.a('array')
+        expect(urlArr[0]).to.be.a('string')
       })
   })
 })
