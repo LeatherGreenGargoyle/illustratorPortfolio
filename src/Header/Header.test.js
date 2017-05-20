@@ -10,7 +10,7 @@ it('renders without crashing', () => {
 
 it('navigates to Home correctly')
 it('navigates to About correctly')
-it('navigates to Store correctly')
+it('navigates to ProductStore correctly')
 it('navigates to Portfolio correctly')
 
 
