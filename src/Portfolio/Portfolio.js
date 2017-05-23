@@ -10,3 +10,5 @@ class Portfolio extends Component {
 }
 
 export default Portfolio
+
+// onMount, should retrieve image urls, then map them out as images

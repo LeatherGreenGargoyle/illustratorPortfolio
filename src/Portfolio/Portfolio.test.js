@@ -8,5 +8,4 @@ beforeEach(() => {
   ReactDOM.render(<Portfolio />, div)
 })
 
-it('retrieves image URLs upon mounting')
 it('contains images after rendering')
