@@ -8,7 +8,7 @@ export const types = {
 //            REDUCERS
 // ========================================
 const defaultProps = {
-  STORE_PORTFOLIO_URLS: ['http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  portfolioUrls: ['http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png'],
 }
