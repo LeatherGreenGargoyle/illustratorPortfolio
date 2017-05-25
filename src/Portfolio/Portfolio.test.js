@@ -11,7 +11,6 @@ it('renders without crashing', () => {
 describe('duck.Portfolio', () => {
   it('has a default state')
   it('should add URLs to state', () => {
-
     expect(duck({}, actions.storePortfolioUrls(['www.test.com']))).toEqual(
       {
         portfolioUrls: ['www.test.com'],
