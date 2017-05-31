@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import configureStore from './store'
-import portfolioUrls from './Portfolio/duck.Portfolio'
+import portfolioReducer from './Portfolio/duck.Portfolio'
 
 export default () => {
   const rootReducer = combineReducers({
-    portfolioUrls,
+    portfolioReducer,
   })
 
   return configureStore(rootReducer)

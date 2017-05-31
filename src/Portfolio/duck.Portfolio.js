@@ -1,7 +1,7 @@
 // ========================================
 //            ACTIONS
 // ========================================
-export const types = {
+export const portfolioTypes = {
   STORE_PORTFOLIO_URLS: 'STORE_IMG_URLS',
 }
 // ========================================
@@ -13,7 +13,7 @@ const defaultProps = {
     'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png'],
 }
 
-export default (state = defaultProps, action) => {
+export const portfolioReducer = (state = defaultProps, action) => {
   switch (action.type) {
     case types.STORE_PORTFOLIO_URLS:
       return { ...state, portfolioUrls: action.payload }
@@ -24,6 +24,6 @@ export default (state = defaultProps, action) => {
 // ========================================
 //            ACTION CREATORS
 // ========================================
-export const actions = {
+export const portfolioActions = {
   storePortfolioUrls: urlArr => ({ type: types.STORE_PORTFOLIO_URLS, payload: urlArr }),
 }
