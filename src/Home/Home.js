@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Home.css'
 
-class Home extends Component {
-  render() {
-    return (
-      <p>I AM THE HOME PAGE</p>
-    )
-  }
+const Home = () => {
+  return (
+    <p>I AM THE HOME PAGE</p>
+  )
 }
 
 export default Home

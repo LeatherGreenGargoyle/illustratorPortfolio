@@ -13,9 +13,9 @@ const defaultProps = {
     'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png'],
 }
 
-export const portfolioReducer = (state = defaultProps, action) => {
+export default (state = defaultProps, action) => {
   switch (action.type) {
-    case types.STORE_PORTFOLIO_URLS:
+    case portfolioTypes.STORE_PORTFOLIO_URLS:
       return { ...state, portfolioUrls: action.payload }
     default:
       return state
@@ -25,5 +25,5 @@ export const portfolioReducer = (state = defaultProps, action) => {
 //            ACTION CREATORS
 // ========================================
 export const portfolioActions = {
-  storePortfolioUrls: urlArr => ({ type: types.STORE_PORTFOLIO_URLS, payload: urlArr }),
+  storePortfolioUrls: urlArr => ({ type: portfolioTypes.STORE_PORTFOLIO_URLS, payload: urlArr }),
 }

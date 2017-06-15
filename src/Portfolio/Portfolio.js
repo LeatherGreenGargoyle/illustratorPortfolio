@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import './Portfolio.css'
 
 import { actions } from './duck.Portfolio'
 
-@connect(store => ({
-  portfolioUrls: store.portfolioUrls
-}))
 class Portfolio extends Component {
   render() {
     return (
