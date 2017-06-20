@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Portfolio.css'
 
-import { actions } from './duck.Portfolio'
-
-class Portfolio extends Component {
-  render() {
-    return (
+const Portfolio = ({ urls }) => {
+  console.log('urls', urls)
+  let mapKey = 0
+  return (
+    <div>
       <p>I AM THE PORTFOLIO PAGE</p>
-    )
-  }
+      { urls.map(url => {
+        mapKey++;
+        return <img src={url} key={mapKey}/>
+      }) }
+    </div>
+  )
 }
 
 export default Portfolio

@@ -4,13 +4,14 @@ import Portfolio from './Portfolio'
 
 const mapStateToProps = state => {
   return {
-    portfolioUrls: state.portfolioUrls,
+    urls: state.portfolioReducer.portfolioUrls,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     getUrlsOnMount: urlArr => {
+      // later, this method will call server and retrieve the desired Urls
       dispatch(portfolioActions.storePortfolioUrls(urlArr))
     },
   }

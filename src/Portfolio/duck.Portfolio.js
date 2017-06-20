@@ -2,7 +2,7 @@
 //            ACTIONS
 // ========================================
 export const portfolioTypes = {
-  STORE_PORTFOLIO_URLS: 'STORE_IMG_URLS',
+  STORE_PORTFOLIO_URLS: 'STORE_PORTFOLIO_URLS',
 }
 // ========================================
 //            REDUCERS

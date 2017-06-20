@@ -1,4 +1,3 @@
-import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -9,5 +8,5 @@ import './index.css'
 import buildStore from './store'
 
 const store = buildStore()
-console.log(store)
+console.log('initial store is ', store.getState())
 ReactDOM.render(<Provider store={store}><Router /></Provider>, document.getElementById('root'))

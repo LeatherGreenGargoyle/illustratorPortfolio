@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../Home/Home'
 import About from '../About/About'
 import ProductStore from '../ProductStore/ProductStore'
-import Portfolio from '../Portfolio/Portfolio'
+import ConnectedPortfolio from '../Portfolio/container.Portfolio'
 import './Main.css'
 
 const Main = () => {
@@ -14,7 +14,7 @@ const Main = () => {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/productstore" component={ProductStore} />
-        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/portfolio" component={ConnectedPortfolio} />
       </Switch>
     </div>
   )
