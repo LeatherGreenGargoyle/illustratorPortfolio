@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import portfolioReducer from './Portfolio/duck.Portfolio'
+import portfolioUrls from './Portfolio/duck.Portfolio'
 
-export default combineReducers({ portfolioReducer })
+export default combineReducers({ portfolioUrls })

@@ -7,11 +7,9 @@ export const portfolioTypes = {
 // ========================================
 //            REDUCERS
 // ========================================
-const defaultProps = {
-  portfolioUrls: ['http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
-    'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
-    'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png'],
-}
+const defaultProps = ['http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png']
 
 export default (state = defaultProps, action) => {
   switch (action.type) {
