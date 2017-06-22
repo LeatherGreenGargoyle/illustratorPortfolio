@@ -9,6 +9,14 @@ export const portfolioTypes = {
 // ========================================
 const defaultProps = ['http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
   'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+  'https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg',
+  'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
   'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png']
 
 export default (state = defaultProps, action) => {
