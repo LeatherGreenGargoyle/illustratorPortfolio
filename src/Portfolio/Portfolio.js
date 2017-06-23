@@ -34,15 +34,15 @@ class Portfolio extends React.Component {
     let mapKey = 0
     return (
       <div>
-        <p>I AM THE PORTFOLIO PAGE</p>
+        <p>Portfolio</p>
         <button type="button" onClick={this.prevImages} disabled={this.state.currFirstUrlIdx === 0}>
           BACK
         </button>
-        { this.props.urls.slice(this.state.currFirstUrlIdx, this.state.currFirstUrlIdx + this.state.imgsPerPage).map(url => {
+        { this.props.imgObjs.slice(this.state.currFirstUrlIdx, this.state.currFirstUrlIdx + this.state.imgsPerPage).map(imgObj => {
           mapKey++
-          return <img src={url} key={mapKey} alt="loading" />
+          return <img src={imgObj.url} key={mapKey} alt="loading" />
         }) }
-        <button type="button" onClick={this.nextImages} disabled={this.state.currFirstUrlIdx + this.state.imgsPerPage >= this.props.urls.length}>
+        <button type="button" onClick={this.nextImages} disabled={this.state.currFirstUrlIdx + this.state.imgsPerPage >= this.props.imgObjs.length}>
           NEXT
         </button>
       </div>

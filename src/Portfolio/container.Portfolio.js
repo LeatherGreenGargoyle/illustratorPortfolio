@@ -4,7 +4,7 @@ import Portfolio from './Portfolio'
 
 const mapStateToProps = state => {
   return {
-    urls: state.portfolioUrls,
+    imgObjs: state.portfolioImgObjs,
   }
 }
 
