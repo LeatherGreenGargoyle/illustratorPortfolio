@@ -7,8 +7,27 @@ class Portfolio extends React.Component {
     super(props)
     this.state = {
       currFirstUrlIdx: 0,
-      currLastUrlIdx: 9,
+      imgsPerPage: 9,
     }
+    this.nextImages = this.nextImages.bind(this)
+    this.prevImages = this.prevImages.bind(this)
+  }
+
+  nextImages() {
+    const newFirstUrlIdx = this.state.currFirstUrlIdx + this.state.imgsPerPage
+
+    this.setState({
+      currFirstUrlIdx: newFirstUrlIdx,
+    })
+    console.log('NEXT')
+  }
+
+  prevImages() {
+    const newFirstUrlIdx = this.state.currFirstUrlIdx - this.state.imgsPerPage
+
+    this.setState({
+      currFirstUrlIdx: newFirstUrlIdx,
+    })
   }
 
   render() {
@@ -16,10 +35,16 @@ class Portfolio extends React.Component {
     return (
       <div>
         <p>I AM THE PORTFOLIO PAGE</p>
-        { this.props.urls.slice(this.state.currFirstUrlIdx, this.state.currLastUrlIdx).map(url => {
+        <button type="button" onClick={this.prevImages} disabled={this.state.currFirstUrlIdx === 0}>
+          BACK
+        </button>
+        { this.props.urls.slice(this.state.currFirstUrlIdx, this.state.currFirstUrlIdx + this.state.imgsPerPage).map(url => {
           mapKey++
           return <img src={url} key={mapKey} alt="loading" />
         }) }
+        <button type="button" onClick={this.nextImages} disabled={this.state.currFirstUrlIdx + this.state.imgsPerPage >= this.props.urls.length}>
+          NEXT
+        </button>
       </div>
     )
   }
@@ -34,4 +59,3 @@ Portfolio.propTypes = {
 }
 
 export default Portfolio
-
