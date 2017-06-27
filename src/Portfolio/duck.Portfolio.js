@@ -12,67 +12,67 @@ const defaultProps = [
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 1',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 2',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 3',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 4',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 5',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 6',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 7',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 8',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 9',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 10',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
   {
     url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
     title: 'Test 11',
     medium: 'pencil',
-    year: '2007'
+    year: '2007',
   },
 ]
 

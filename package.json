@@ -23,6 +23,7 @@
     "morgan": "^1.8.1",
     "path": "^0.12.7",
     "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "next",
