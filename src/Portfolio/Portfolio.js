@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { Grid, Row, Col } from 'react-bootstrap'
 import './Portfolio.css'
+import ImageModal from './ImageModal.js'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class Portfolio extends React.Component {
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })
-    console.log('NEXT')
   }
 
   prevImages() {
@@ -50,7 +50,7 @@ class Portfolio extends React.Component {
         <div>
           { this.props.imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
             mapKey++
-            return <img src={imgObj.url} key={mapKey} alt="loading" style={imgStyles} />
+            return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} />
           }) }
         </div>
       </div>
@@ -88,3 +88,4 @@ export default Portfolio
             })}
           </Row>
         </Grid>*/}
+{/*<img src={imgObj.url} key={mapKey} alt="loading" style={imgStyles} />*/}

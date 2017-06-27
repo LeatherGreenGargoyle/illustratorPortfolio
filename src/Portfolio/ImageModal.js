@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
 
 class ImageModal extends React.Component {
   constructor(props) {
@@ -23,14 +23,24 @@ class ImageModal extends React.Component {
     const imgStyles = {
       width: '30%',
       margin: '1.5%',
+      cursor: 'pointer',
+    }
+
+    const footerStyles = {
+      'text-align': 'center',
     }
     return (
       <span>
-        <img src={this.props.url} alt="illustration" onClick={this.open} style={imgStyles}/>
+        <img src={this.props.url} alt="illustration" onClick={this.open} style={imgStyles} />
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
             <img src={this.props.url} alt="illustration" />
           </Modal.Body>
+          <Modal.Footer>
+            <p style={footerStyles}>
+              {this.props.title} | {this.props.medium} | {this.props.year}
+            </p>
+          </Modal.Footer>
         </Modal>
       </span>
     )
