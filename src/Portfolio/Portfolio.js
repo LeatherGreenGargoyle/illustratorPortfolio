@@ -38,7 +38,6 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <p>Portfolio</p>
         <button type="button" onClick={this.prevImages} disabled={firstImgIdx === 0}>
           BACK
         </button>

@@ -7,9 +7,12 @@ import ConnectedPortfolio from '../Portfolio/container.Portfolio'
 import './Main.css'
 
 const Main = () => {
+  const mainContentStyles = {
+    margin: 'auto',
+  }
+
   return (
-    <div>
-      <p>Im the main!</p>
+    <div style={mainContentStyles}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
