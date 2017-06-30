@@ -34,23 +34,21 @@ class Portfolio extends React.Component {
   render() {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
-    const imgStyles = {
-      width: '30%',
-      margin: '1.5%',
-    }
+    const { imgObjs } = this.props
+
     return (
       <div>
         <p>Portfolio</p>
         <button type="button" onClick={this.prevImages} disabled={firstImgIdx === 0}>
           BACK
         </button>
-        <button type="button" onClick={this.nextImages} disabled={firstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length}>
+        <button type="button" onClick={this.nextImages} disabled={firstImgIdx + this.state.imgsPerPage >= imgObjs.length}>
           NEXT
         </button>
         <div>
-          { this.props.imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
+          { imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
             mapKey++
-            return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} />
+            return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} key={mapKey} />
           }) }
         </div>
       </div>

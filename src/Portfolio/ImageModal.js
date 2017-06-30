@@ -1,9 +1,9 @@
 import React from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
 class ImageModal extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       showModal: false,
     }
@@ -20,25 +20,42 @@ class ImageModal extends React.Component {
   }
 
   render() {
-    const imgStyles = {
-      width: '30%',
-      margin: '1.5%',
-      cursor: 'pointer',
+    const thumbnailStyles = {
+      'width': '30%',
+      'margin': '1.5%',
+      'cursor': 'pointer',
     }
 
     const footerStyles = {
-      'text-align': 'center',
+      'textAlign': 'center',
     }
+
+    const modalImgContainerStyles = {
+      'width': '100%',
+      'height': '100%',
+    }
+
+    const modalImgStyles = {
+      'width': '100%',
+      'height': 'auto',
+    }
+
+    const { url, title, medium, year } = this.props
+
     return (
       <span>
-        <img src={this.props.url} alt="illustration" onClick={this.open} style={imgStyles} />
+        <img src={url} alt="illustration" onClick={this.open} style={thumbnailStyles} />
+
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
-            <img src={this.props.url} alt="illustration" />
+            <div style={modalImgContainerStyles}>
+              <img src={url} alt="illustration" style={modalImgStyles} />
+            </div>
           </Modal.Body>
+
           <Modal.Footer>
             <p style={footerStyles}>
-              {this.props.title} | {this.props.medium} | {this.props.year}
+              {title} | {medium} | {year}
             </p>
           </Modal.Footer>
         </Modal>

@@ -9,7 +9,7 @@ export const portfolioTypes = {
 // ========================================
 const defaultProps = [
   {
-    url: 'http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png',
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001.jpg',
     title: 'Test 1',
     medium: 'pencil',
     year: '2007',
