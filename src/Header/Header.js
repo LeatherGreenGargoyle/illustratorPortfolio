@@ -19,27 +19,29 @@ class Header extends React.Component {
   }
 
   render() {
-    const headerStyles = {
-      'float': 'left',
-      'marginLeft': '10em',
+    const currentPageStyles = {
+      'marginRight': '4em',
       'fontSize': '4em',
     }
 
-    const navLinkStyles = {
-      'fontSize': '1.5em',
+    const linkStyles = {
+      'fontSize': '1em',
+      'margin': '1.3em',
+    }
+
+    const headerStyles = {
+      'marginBottom': '.3em',
     }
 
     return (
-      <div>
-      <header>
-        <span style={headerStyles}>{this.state.currentPage}</span>
-        <span style={navLinkStyles}>
-          <Link to="/" onClick={() => this.handleRouteClick('Home')}>Home</Link>
-          <Link to="/about" onClick={() => this.handleRouteClick('About')}>About</Link>
-          <Link to="/productstore" onClick={() => this.handleRouteClick('Store')}>Store</Link>
-          <Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>Portfolio</Link>
+      <div style={headerStyles}>
+        <span style={currentPageStyles}>{this.state.currentPage}</span>
+        <span>
+          <span style={linkStyles}><Link to="/" onClick={() => this.handleRouteClick('Home')}>Home</Link></span>
+          <span style={linkStyles}><Link to="/about" onClick={() => this.handleRouteClick('About')}>About</Link></span>
+          <span style={linkStyles}><Link to="/productstore" onClick={() => this.handleRouteClick('Store')}>Store</Link></span>
+          <span style={linkStyles}><Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>Portfolio</Link></span>
         </span>
-      </header>
       </div>
     )
   }
