@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Grid, Row, Col } from 'react-bootstrap'
 import './Portfolio.css'
-import ImageModal from './ImageModal.js'
+import ImageModal from './ImageModal'
 
 class Portfolio extends React.Component {
   constructor(props) {

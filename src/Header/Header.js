@@ -19,28 +19,24 @@ class Header extends React.Component {
   }
 
   render() {
-    const currentPageStyles = {
-      'marginRight': '4em',
-      'fontSize': '4em',
-    }
-
-    const linkStyles = {
-      'fontSize': '1em',
-      'margin': '1.3em',
-    }
-
-    const headerStyles = {
-      'marginBottom': '.3em',
-    }
-
     return (
-      <div style={headerStyles}>
-        <span style={currentPageStyles}>{this.state.currentPage}</span>
+      <div className="headerContainer">
+        <span className="headerTitle">Jennifer Nguyen</span>
         <span>
-          <span style={linkStyles}><Link to="/" onClick={() => this.handleRouteClick('Home')}>Home</Link></span>
-          <span style={linkStyles}><Link to="/about" onClick={() => this.handleRouteClick('About')}>About</Link></span>
-          <span style={linkStyles}><Link to="/productstore" onClick={() => this.handleRouteClick('Store')}>Store</Link></span>
-          <span style={linkStyles}><Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>Portfolio</Link></span>
+          <span className={this.state.currentPage == 'Home' ? 'headerSelectedLink' : 'headerLink'}>
+            <Link to="/" onClick={() => this.handleRouteClick('Home')}>
+              Home
+            </Link></span>
+          <span className={this.state.currentPage == 'About' ? 'headerSelectedLink' : 'headerLink'}>
+            <Link to="/about" onClick={() => this.handleRouteClick('About')}>
+              About
+            </Link></span>
+          {/* <span style={linkStyles}><Link to="/productstore" onClick={() => this.handleRouteClick('Store')}>Store</Link></span> */}
+          <span className={this.state.currentPage == 'Portfolio' ? 'headerSelectedLink' : 'headerLink'}>
+            <Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>
+              Portfolio
+            </Link>
+          </span>
         </span>
       </div>
     )

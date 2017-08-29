@@ -1,0 +1,31 @@
+.headerContainer {
+  margin-bottom: .3em;
+}
+
+.headerLink {
+  display: inline-block;
+  font-size: 1em;
+  margin: 2em;
+  width: 6em;
+  border: 1em solid white;
+}
+
+.headerSelectedLink {
+  display: inline-block;
+  font-size: 1em;
+  margin: 2em;
+  background: black;
+  border: 1em solid black;
+  border-radius: 0.25em;
+  width: 6em;
+}
+
+.headerSelectedLink a {
+  color: white;
+  text-decoration: none;
+}
+
+.headerTitle {
+  margin-right: 4em;
+  font-size: 4em;
+}
