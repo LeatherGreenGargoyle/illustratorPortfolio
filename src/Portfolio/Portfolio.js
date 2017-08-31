@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import FontAwesome from 'react-fontawesome'
 import './Portfolio.css'
 import ImageModal from './ImageModal'
 
@@ -15,6 +16,8 @@ class Portfolio extends React.Component {
   }
 
   nextImages() {
+    if (this.state.currFirstImgIdxfirstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length) return
+
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
 
     this.setState({
@@ -23,6 +26,8 @@ class Portfolio extends React.Component {
   }
 
   prevImages() {
+    if (this.state.currFirstImgIdx === 0) return
+
     const newFirstUrlIdx = this.state.currFirstImgIdx - this.state.imgsPerPage
 
     this.setState({
@@ -37,12 +42,21 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <button type="button" onClick={this.prevImages} disabled={firstImgIdx === 0}>
-          BACK
-        </button>
-        <button type="button" onClick={this.nextImages} disabled={firstImgIdx + this.state.imgsPerPage >= imgObjs.length}>
-          NEXT
-        </button>
+        <div>
+          <FontAwesome
+            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            name="angle-left"
+            size="3x"
+            onClick={this.prevImages}
+          />
+          <span className="divider" />
+          <FontAwesome
+            className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            name="angle-right"
+            size="3x"
+            onClick={this.nextImages}
+          />
+        </div>
         <div>
           { imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
             mapKey++

@@ -1,0 +1,13 @@
+.navButtonActive {
+  margin: 1em;
+}
+
+.navButtonActive:hover {
+  color: grey;
+  cursor: pointer;
+  margin: 1em; 
+}
+
+.navButtonDisabled {
+  margin: 1em;
+}
