@@ -4,20 +4,21 @@
 
 .headerLink {
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 2em;
-  width: 6em;
+  border: 0.5em solid white;
+  width: 7em;
   border: 1em solid white;
 }
 
 .headerSelectedLink {
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 2em;
+  border: 0.5em solid black;
   background: black;
-  border: 1em solid black;
   border-radius: 0.25em;
-  width: 6em;
+  width: 7em;
 }
 
 .headerSelectedLink a {
@@ -26,6 +27,6 @@
 }
 
 .headerTitle {
-  margin-right: 4em;
+  margin-right: 2em;
   font-size: 4em;
 }
