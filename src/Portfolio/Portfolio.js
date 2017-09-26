@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 import './Portfolio.css'
-import ImageModal from './ImageModal'
+import ImageModal from '../UI/ImageModal/ImageModal'
 
 class Portfolio extends React.Component {
   constructor(props) {

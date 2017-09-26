@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
+import './ImageModal.css'
 
 class ImageModal extends React.Component {
   constructor() {
@@ -20,42 +21,22 @@ class ImageModal extends React.Component {
   }
 
   render() {
-    const thumbnailStyles = {
-      'width': '30%',
-      'margin': '1.5%',
-      'cursor': 'pointer',
-    }
-
-    const footerStyles = {
-      'textAlign': 'center',
-    }
-
-    const modalImgContainerStyles = {
-      'width': '100%',
-      'height': '100%',
-    }
-
-    const modalImgStyles = {
-      'width': '100%',
-      'height': 'auto',
-    }
-
     const { url, title, medium, year } = this.props
 
     return (
       <span>
-        <img src={url} alt="illustration" onClick={this.open} style={thumbnailStyles} />
+        <img src={url} alt="illustration" onClick={this.open} className="thumbnailImg" />
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
-            <div style={modalImgContainerStyles}>
-              <img src={url} alt="illustration" style={modalImgStyles} />
+            <div className="modalImgContainer">
+              <img src={url} alt="illustration" className="modalImg" />
             </div>
           </Modal.Body>
 
           <Modal.Footer>
-            <p style={footerStyles}>
-              {title} | {medium} | {year}
+            <p className="footer">
+              {`${title}\u00A0\u00A0`} / {`\u00A0\u00A0${medium}\u00A0\u00A0`} / {`\u00A0\u00A0${year}`}
             </p>
           </Modal.Footer>
         </Modal>
