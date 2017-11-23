@@ -1,32 +1,33 @@
-.headerContainer {
-  margin-bottom: .3em;
+
+.buttonsContainer {
+  float: right;
 }
 
-.headerLink {
+.headerContainer {
+  margin-bottom: .1em;
+  padding: 1em;
+}
+
+.headerLink a {
   display: inline-block;
   font-size: 1.5em;
-  margin: 2em;
-  border: 0.5em solid white;
   width: 7em;
   border: 1em solid white;
-}
-
-.headerSelectedLink {
-  display: inline-block;
-  font-size: 1.5em;
-  margin: 2em;
-  border: 0.5em solid black;
-  background: black;
-  border-radius: 0.25em;
-  width: 7em;
+  color: inherit;
+  text-decoration: none;
 }
 
 .headerSelectedLink a {
-  color: white;
+  display: inline-block;
+  font-size: 1.5em;
+  width: 7em;
+  border: 1em solid white;
+  font-weight: bold;
+  color: inherit;
   text-decoration: none;
 }
 
 .headerTitle {
-  margin-right: 2em;
+  float: left;
   font-size: 4em;
 }

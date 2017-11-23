@@ -1,0 +1,6 @@
+.homeBackground {
+  background-image: url("https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Background001-minshrunk.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}

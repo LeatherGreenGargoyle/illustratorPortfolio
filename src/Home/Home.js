@@ -3,7 +3,9 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <p>I AM THE HOME PAGE</p>
+    <div className="homeBackground">
+      <img src="https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Moon-minshrunksmallborder.jpg"/>
+    </div>
   )
 }
 

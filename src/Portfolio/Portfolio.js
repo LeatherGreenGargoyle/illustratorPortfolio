@@ -42,7 +42,7 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="navBtnContainer">
           <FontAwesome
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             name="angle-left"
@@ -62,6 +62,21 @@ class Portfolio extends React.Component {
             mapKey++
             return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} key={mapKey} />
           }) }
+        </div>
+        <div className="navBtnContainer">
+          <FontAwesome
+            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            name="angle-left"
+            size="3x"
+            onClick={this.prevImages}
+          />
+          <span className="divider" />
+          <FontAwesome
+            className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            name="angle-right"
+            size="3x"
+            onClick={this.nextImages}
+          />
         </div>
       </div>
     )

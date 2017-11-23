@@ -7,16 +7,10 @@ import Header from './Header/Header'
 // add header after creating and testing Main
 
 const App = () => {
-  const hrStyles = {
-    'marginTop': '-0.5em',
-    'color': 'black',
-    'width': '70%',
-
-  }
   return (
     <div className="App">
       <Header />
-      <hr style={hrStyles} />
+      <hr className="divider" />
       <Main />
     </div>
   )

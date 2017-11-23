@@ -1,7 +1,5 @@
 .App {
-  text-align: center;
   font-family: Courier New, Courier, monospace;
-  padding: 1em;
 }
 
 .App-logo {
@@ -18,6 +16,12 @@
 
 .App-intro {
   font-size: large;
+}
+
+.divider {
+  margin-top: -.5em;
+  color: black;
+  width: 70%
 }
 
 @keyframes App-logo-spin {

@@ -11,3 +11,7 @@
 .navButtonDisabled {
   margin: 1em;
 }
+
+.navBtnContainer {
+  text-align: center;
+}
