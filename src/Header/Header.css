@@ -1,18 +1,27 @@
+.dropdownItem {
+  border: .1em solid black;
+  text-decoration: none;
+}
 
-.buttonsContainer {
-  float: right;
+.dropdownItem a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdownMenu {
+  position: absolute;
+  background: white;
 }
 
 .headerContainer {
   margin-bottom: .1em;
-  padding: 1em;
 }
 
 .headerLink a {
   display: inline-block;
   font-size: 1.5em;
-  width: 7em;
-  border: 1em solid white;
+  width: 1em;
+  padding-top: .3em;
   color: inherit;
   text-decoration: none;
 }
@@ -20,14 +29,14 @@
 .headerSelectedLink a {
   display: inline-block;
   font-size: 1.5em;
-  width: 7em;
-  border: 1em solid white;
+  width: 1em;
+  padding-top: .3em;  
   font-weight: bold;
   color: inherit;
   text-decoration: none;
 }
 
 .headerTitle {
-  float: left;
-  font-size: 4em;
+  font-size: 2.5em;
+  margin-left: -2em;
 }

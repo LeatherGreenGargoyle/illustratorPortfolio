@@ -92,25 +92,3 @@ Portfolio.propTypes = {
 }
 
 export default Portfolio
-
-        {/*<Grid>
-          <Row>
-            { this.props.imgObjs.slice(firstImgIdx, firstImgIdx + 3).map(imgObj => {
-              mapKey++
-              return <Col md={4}><img src={imgObj.url} key={mapKey} alt="loading" /></Col>
-            })}
-          </Row>
-          <Row>
-            { this.props.imgObjs.slice(firstImgIdx + 3, firstImgIdx + 6).map(imgObj => {
-              mapKey++
-              return <Col md={4}><img src={imgObj.url} key={mapKey} alt="loading" /></Col>
-            })}
-          </Row>
-          <Row>
-            { this.props.imgObjs.slice(firstImgIdx + 6, firstImgIdx + 9).map(imgObj => {
-              mapKey++
-              return <Col md={4}><img src={imgObj.url} key={mapKey} alt="loading" /></Col>
-            })}
-          </Row>
-        </Grid>*/}
-{/*<img src={imgObj.url} key={mapKey} alt="loading" style={imgStyles} />*/}
