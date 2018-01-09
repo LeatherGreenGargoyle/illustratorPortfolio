@@ -2,14 +2,14 @@ import React from 'react'
 // import logo from './logo.svg'
 import './App.css'
 import Main from './Main/Main'
-import Header from './Header/Header'
+import ConnectedHeader from './Header/container.Header'
 
 // add header after creating and testing Main
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
+      <ConnectedHeader />
       <hr className="divider" />
       <Main />
     </div>

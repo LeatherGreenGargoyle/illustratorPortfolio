@@ -2,11 +2,7 @@ import { connect } from 'react-redux'
 import portfolioActions from './duck.Portfolio'
 import Portfolio from './Portfolio'
 
-const mapStateToProps = state => {
-  return {
-    imgObjs: state.portfolioImgObjs,
-  }
-}
+const mapStateToProps = state => ({ imgObjs: state.portfolioImgObjs })
 
 const mapDispatchToProps = dispatch => {
   return {

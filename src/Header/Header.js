@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Grid, Row, Col } from 'react-bootstrap'
 import './Header.css'
-import { DropdownButton, MenuItem, Grid, Row, Col } from 'react-bootstrap'
 
 class Header extends React.Component {
   constructor() {
@@ -36,6 +36,7 @@ class Header extends React.Component {
   }
 
   render() {
+    const { onSelectIllustration, onSelectComics } = this.props
     return (
       <div className="headerContainer">
         <Grid>
@@ -79,13 +80,25 @@ class Header extends React.Component {
                 onMouseLeave={this.onMouseLeave}
               >
                 <div className="dropdownItem">
-                  <Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>
+                  <Link
+                    to="/portfolio"
+                    onClick={() => {
+                      this.handleRouteClick('Portfolio')
+                      onSelectIllustration()
+                    }}
+                  >
                     Illustrations
                   </Link>
                 </div>
 
                 <div className="dropdownItem">
-                  <Link to="/portfolio" onClick={() => this.handleRouteClick('Portfolio')}>
+                  <Link
+                    to="/portfolio"
+                    onClick={() => {
+                      this.handleRouteClick('Portfolio')
+                      onSelectComics()
+                    }}
+                  >
                     Comics
                   </Link>
                 </div>
