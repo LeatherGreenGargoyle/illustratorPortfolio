@@ -36,7 +36,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { onSelectIllustration, onSelectComics } = this.props
+    const { onSelectIllustrations, onSelectComics } = this.props
     return (
       <div className="headerContainer">
         <Grid>
@@ -83,8 +83,9 @@ class Header extends React.Component {
                   <Link
                     to="/portfolio"
                     onClick={() => {
+                      console.log('clicked illustrations')
                       this.handleRouteClick('Portfolio')
-                      onSelectIllustration()
+                      onSelectIllustrations()
                     }}
                   >
                     Illustrations
@@ -95,6 +96,7 @@ class Header extends React.Component {
                   <Link
                     to="/portfolio"
                     onClick={() => {
+                      console.log('clicked comics')
                       this.handleRouteClick('Portfolio')
                       onSelectComics()
                     }}

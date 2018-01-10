@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import headerActions from './duck.Header'
+import { headerActions } from './duck.Header'
 import Header from './Header'
 
 const mapStateToProps = () => ({})

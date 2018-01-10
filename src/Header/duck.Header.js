@@ -1,3 +1,5 @@
+import { comicLinks, illustrationLinks } from '../Constants'
+
 // ========================================
 //            ACTIONS
 // ========================================
@@ -8,19 +10,15 @@ export const headerTypes = {
 // ========================================
 //            REDUCERS
 // ========================================
-const defaultProps = {
-  portfolioType: 'comics',
-}
+const defaultProps = comicLinks
 
 export default (state = defaultProps, action) => {
-  const newState = {}
+  console.log(action.type)
   switch (action.type) {
     case headerTypes.SELECT_PORTFOLIO_COMICS:
-      newState.portfolioType = 'comics'
-      return newState
+      return comicLinks
     case headerTypes.SELECT_PORTFOLIO_ILLUSTRATIONS:
-      newState.portfolioType = 'illustrations'
-      return newState
+      return illustrationLinks
     default:
       return state
   }
@@ -29,6 +27,6 @@ export default (state = defaultProps, action) => {
 //            ACTION CREATORS
 // ========================================
 export const headerActions = {
-  selectComicsPortfolio: () => ({ type: headerTypes.SELECT_PORTFOLIO_COMICS, payload: '' }),
-  selectIllustrationsPortfolio: () => ({ type: headerTypes.SELECT_PORTFOLIO_ILLUSTRATIONS, payload: '' }),
+  selectComicsPortfolio: () => ({ type: headerTypes.SELECT_PORTFOLIO_COMICS }),
+  selectIllustrationsPortfolio: () => ({ type: headerTypes.SELECT_PORTFOLIO_ILLUSTRATIONS }),
 }

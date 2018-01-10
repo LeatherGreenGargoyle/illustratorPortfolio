@@ -16,7 +16,7 @@ class Portfolio extends React.Component {
   }
 
   nextImages() {
-    if (this.state.currFirstImgIdxfirstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length) return
+    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
 
@@ -39,6 +39,7 @@ class Portfolio extends React.Component {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
     const { imgObjs } = this.props
+    console.log(imgObjs)
 
     return (
       <div>
@@ -50,6 +51,7 @@ class Portfolio extends React.Component {
             onClick={this.prevImages}
           />
           <span className="divider" />
+          {console.log('disabled?: ' + (firstImgIdx + this.state.imgsPerPage >= imgObjs.length))}
           <FontAwesome
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             name="angle-right"

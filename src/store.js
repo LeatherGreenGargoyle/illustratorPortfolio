@@ -12,6 +12,7 @@ export default () => {
 
   const middleware = applyMiddleware(...plugins)
   const store = createStore(rootReducer, middleware)
+  store.subscribe(() => console.log(store.getState()))
 
   return store
 }
