@@ -1,17 +1,28 @@
 import React from 'react'
-// import logo from './logo.svg'
+import { Grid, Row, Col } from 'react-bootstrap'
 import './App.css'
 import Main from './Main/Main'
+import ConnectedSidebar from './Sidebar/container.Sidebar'
 import ConnectedHeader from './Header/container.Header'
-
-// add header after creating and testing Main
 
 const App = () => {
   return (
     <div className="App">
-      <ConnectedHeader />
-      <hr className="divider" />
-      <Main />
+      <Row className="header">
+        <ConnectedHeader />
+        <div className="divider"></div>
+      </Row>
+      <Grid>
+        <Row>
+          <Col xs={0} md={2}>
+            <ConnectedSidebar />
+          </Col>
+
+          <Col xs={10} md={10} className="sidebar">
+            <Main />
+          </Col>
+        </Row>
+      </Grid>
     </div>
   )
 }

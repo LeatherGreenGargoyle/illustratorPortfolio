@@ -1,42 +1,5 @@
-.dropdownItem {
-  border: .1em solid black;
-  text-decoration: none;
-}
-
-.dropdownItem a {
-  text-decoration: none;
-  color: black;
-}
-
-.dropdownMenu {
-  position: absolute;
-  background: white;
-}
-
 .headerContainer {
   margin-bottom: .1em;
-}
-
-.headerLink a {
-  display: inline-block;
-  font-size: 1.5em;
-  width: 1em;
-  padding-top: .3em;
-  color: inherit;
-  text-decoration: none;
-}
-
-.headerSelectedLink a {
-  display: inline-block;
-  font-size: 1.5em;
-  width: 1em;
-  padding-top: .3em;  
-  font-weight: bold;
-  color: inherit;
-  text-decoration: none;
-}
-
-.headerTitle {
   font-size: 2.5em;
-  margin-left: -2em;
+  text-align: center;
 }

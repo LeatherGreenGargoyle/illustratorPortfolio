@@ -51,7 +51,6 @@ class Portfolio extends React.Component {
             onClick={this.prevImages}
           />
           <span className="divider" />
-          {console.log('disabled?: ' + (firstImgIdx + this.state.imgsPerPage >= imgObjs.length))}
           <FontAwesome
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             name="angle-right"

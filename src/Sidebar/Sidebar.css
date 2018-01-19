@@ -1,0 +1,9 @@
+.containerSidebar {
+  background: white;
+  font-size: 1.3em;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
