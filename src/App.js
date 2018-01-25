@@ -8,21 +8,19 @@ import ConnectedHeader from './Header/container.Header'
 const App = () => {
   return (
     <div className="App">
-      <Row className="header">
+      <Row className="header no-gutter">
         <ConnectedHeader />
-        <div className="divider"></div>
+        <div className="divider" />
       </Row>
-      <Grid className="no-gutter">
-        <Row>
-          <Col md={2}>
-            <ConnectedSidebar />
-          </Col>
+      <Row>
+        <Col md={2}>
+          <ConnectedSidebar />
+        </Col>
 
-          <Col md={10} className="sidebarDivider containerMain">
-            <Main />
-          </Col>
-        </Row>
-      </Grid>
+        <Col md={10} className="sidebarDivider containerMain">
+          <Main />
+        </Col>
+      </Row>
     </div>
   )
 }

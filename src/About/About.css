@@ -2,5 +2,22 @@
   background-image: url("https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Background001-minshrunk.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 49em;
+  height: 50em;
+}
+
+.headerAbout {
+  border-bottom: .05em black solid;
+  font-size: 2em;
+  text-align: center;
+}
+
+.textContainer {
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: auto;
+  padding: 1em;
+  position: relative;
+  width: 70%;
+  top: 50%;
+  transform: translateY(-50%);
 }

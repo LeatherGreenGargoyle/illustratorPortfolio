@@ -35,7 +35,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    console.log("Render, state: " + Object.values(this.state).toString())
     const { onSelectIllustrations, onSelectComics } = this.props
     return (
       <div className={CLASS_CONTAINER}>

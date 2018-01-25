@@ -124,3 +124,5 @@ export const illustrationLinks = [
     year: '2017',
   },
 ]
+
+export const aboutText = 'Jennifer Nguyen is a self-taught illustrator currently working out of Los Angeles, California, where she lives with a bunny and a boyfriend. She studied at the University of California San Diego, and graduated with a degree in Art History. She describes her style as \'dry\', and is influenced by the likes of the Edward Gorey, Edward Lear, and Shel Silverstein. She prefers traditional media and especially favors black and white ink drawings.'
