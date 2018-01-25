@@ -35,57 +35,64 @@ class Sidebar extends React.Component {
   }
 
   render() {
+    console.log("Render, state: " + Object.values(this.state).toString())
     const { onSelectIllustrations, onSelectComics } = this.props
     return (
       <div className={CLASS_CONTAINER}>
 
         <div
-          className={this.state.currentPage === STRING_HOME || this.state.linkUnderHover === STRING_HOME ? CLASS_SELECTED : CLASS_LINK}
-          onMouseEnter={() => this.onMouseEnter(STRING_HOME)}
-          onMouseLeave={this.onMouseLeave}
+          className={this.state.currentPage === STRING_HOME ? CLASS_SELECTED : CLASS_LINK}
         >
-          <Link to={ROUTE_HOME} onClick={() => this.handleRouteClick(STRING_HOME)}>
+          <Link
+            to={ROUTE_HOME}
+            onClick={() => this.handleRouteClick(STRING_HOME)}
+            onMouseEnter={() => this.onMouseEnter(STRING_HOME)}
+            onMouseLeave={this.onMouseLeave}
+          >
             Home
           </Link>
         </div>
 
         <div
-          className={this.state.currentPage === STRING_ABOUT || this.state.linkUnderHover === STRING_ABOUT ? CLASS_SELECTED : CLASS_LINK}
-          onMouseEnter={() => this.onMouseEnter(STRING_ABOUT)}
-          onMouseLeave={this.onMouseLeave}
+          className={this.state.currentPage === STRING_ABOUT ? CLASS_SELECTED : CLASS_LINK}
         >
-          <Link to={ROUTE_ABOUT} onClick={() => this.handleRouteClick(STRING_ABOUT)}>
+          <Link
+            to={ROUTE_ABOUT}
+            onClick={() => this.handleRouteClick(STRING_ABOUT)}
+            onMouseEnter={() => this.onMouseEnter(STRING_ABOUT)}
+            onMouseLeave={this.onMouseLeave}
+          >
             About
           </Link>
         </div>
 
         <div
-          className={this.state.currentPage === STRING_ILLUSTRATIONS || this.state.linkUnderHover === STRING_ILLUSTRATIONS ? CLASS_SELECTED : CLASS_LINK}
-          onMouseEnter={() => this.onMouseEnter(STRING_ILLUSTRATIONS)}
-          onMouseLeave={this.onMouseLeave}
+          className={this.state.currentPage === STRING_ILLUSTRATIONS ? CLASS_SELECTED : CLASS_LINK}
         >
           <Link
             to={ROUTE_PORTFOLIO}
             onClick={() => {
-              this.handleRouteClick(ROUTE_PORTFOLIO)
+              this.handleRouteClick(STRING_ILLUSTRATIONS)
               onSelectIllustrations()
             }}
+            onMouseEnter={() => this.onMouseEnter(STRING_ILLUSTRATIONS)}
+            onMouseLeave={this.onMouseLeave}
           >
             Illustrations
           </Link>
         </div>
 
         <div
-          className={this.state.currentPage === STRING_COMICS || this.state.linkUnderHover === STRING_COMICS ? CLASS_SELECTED : CLASS_LINK}
-          onMouseEnter={() => this.onMouseEnter(STRING_COMICS)}
-          onMouseLeave={this.onMouseLeave}
+          className={this.state.currentPage === STRING_COMICS ? CLASS_SELECTED : CLASS_LINK}
         >
           <Link
             to={ROUTE_PORTFOLIO}
             onClick={() => {
-              this.handleRouteClick(STRING_PORTFOLIO)
+              this.handleRouteClick(STRING_COMICS)
               onSelectComics()
             }}
+            onMouseEnter={() => this.onMouseEnter(STRING_COMICS)}
+            onMouseLeave={this.onMouseLeave}
           >
             Comics
           </Link>

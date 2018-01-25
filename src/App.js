@@ -12,13 +12,13 @@ const App = () => {
         <ConnectedHeader />
         <div className="divider"></div>
       </Row>
-      <Grid>
+      <Grid className="no-gutter">
         <Row>
-          <Col xs={0} md={2}>
+          <Col md={2}>
             <ConnectedSidebar />
           </Col>
 
-          <Col xs={10} md={10} className="sidebar">
+          <Col md={10} className="sidebarDivider containerMain">
             <Main />
           </Col>
         </Row>

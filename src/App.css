@@ -2,18 +2,29 @@
   font-family: Courier New, Courier, monospace;
 }
 
+.containerMain {
+  min-height: 49em;
+}
+
 .divider {
   align-self: center;
   border-bottom: .1em black solid;
   height: .1em;
-  margin: 1em;
   width: 100%
 }
 
 .header {
-
+  margin-left: .4em;
+  margin-right: 3em;
 }
 
-.sidebar {
+.no-gutter {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  padding-right: 0em;
+  padding-left: 0em;
+}
+
+.sidebarDivider {
   border-left: .1em black solid;
 }
