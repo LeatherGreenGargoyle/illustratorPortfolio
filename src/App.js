@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import './App.css'
 import Main from './Main/Main'
 import ConnectedSidebar from './Sidebar/container.Sidebar'

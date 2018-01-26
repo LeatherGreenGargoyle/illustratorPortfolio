@@ -1,6 +1,6 @@
 .containerSidebar {
   font-size: 1.3em;
-  padding: .5em;
+  padding-left: 1.7em;
 }
 
 a:link {
@@ -19,6 +19,10 @@ a:hover {
 
 a:active {
   color: inherit;
+}
+
+.sidebarLink {
+  margin-bottom: .5em;
 }
 
 .sidebarSelectedLink {
