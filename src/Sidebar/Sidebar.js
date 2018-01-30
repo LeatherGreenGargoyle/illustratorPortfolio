@@ -56,21 +56,6 @@ class Sidebar extends React.Component {
 
         <Row className="sidebarLink">
           <span
-            className={this.state.currentPage === 'About' ? 'sidebarSelectedLink' : 'sidebarLink'}
-          >
-            <Link
-              to="/about"
-              onClick={() => this.handleRouteClick('About')}
-              onMouseEnter={() => this.onMouseEnter('About')}
-              onMouseLeave={this.onMouseLeave}
-            >
-              About
-            </Link>
-          </span>
-        </Row>
-
-        <Row className="sidebarLink">
-          <span
             className={this.state.currentPage === 'Illustrations' ? 'sidebarSelectedLink' : 'sidebarLink'}
           >
             <Link
@@ -105,6 +90,20 @@ class Sidebar extends React.Component {
           </span>
         </Row>
 
+        <Row className="sidebarLink">
+          <span
+            className={this.state.currentPage === 'About' ? 'sidebarSelectedLink' : 'sidebarLink'}
+          >
+            <Link
+              to="/about"
+              onClick={() => this.handleRouteClick('About')}
+              onMouseEnter={() => this.onMouseEnter('About')}
+              onMouseLeave={this.onMouseLeave}
+            >
+              About
+            </Link>
+          </span>
+        </Row>
       </div>
     )
   }
