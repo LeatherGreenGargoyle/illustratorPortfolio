@@ -1,11 +1,17 @@
 import React from 'react'
+import Instafeed from 'instafeed.js'
 import './Home.css'
 
 const Home = () => {
+  const feed = new Instafeed({
+    get: '',
+    userId: '',
+    clientId: '',
+  })
+  feed.run()
+
   return (
-    <div className="homeBackground">
-      <img src="https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Moon-minshrunksmallborder.jpg"/>
-    </div>
+    <div className="homeBackground" id="instafeed" />
   )
 }
 
