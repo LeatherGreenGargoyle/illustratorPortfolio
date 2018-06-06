@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Row } from 'react-bootstrap'
 import './Sidebar.css'
+import '../Constants'
+import { pageNames, routes } from '../Constants';
 
 class Sidebar extends React.Component {
   constructor() {
     super()
     this.state = {
-      currentPage: 'Home',
+      currentPage: pageNames.home,
       linkUnderHover: '',
     }
 
@@ -34,76 +36,43 @@ class Sidebar extends React.Component {
     })
   }
 
+  SidebarLink(pageName, additionalOnClick) {
+    const linkRoute = pageName === pageNames.home ? routes.home : routes[pageName.toLowerCase()]
+
+    return (
+      <Row className="sidebarLink">
+        <span
+          className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
+        >
+          <Link
+            to={linkRoute}
+            onClick={() => {
+              this.handleRouteClick(pageName)
+              if (additionalOnClick) additionalOnClick()
+            }}
+            onMouseEnter={() => this.onMouseEnter(pageName)}
+            onMouseLeave={this.onMouseLeave}
+          >
+            {pageName}
+          </Link>
+        </span>
+      </Row>
+    )
+  }
+
   render() {
     const { onSelectIllustrations, onSelectComics } = this.props
     return (
       <div className="containerSidebar">
 
-        <Row className="sidebarLink">
-          <span
-            className={this.state.currentPage === 'Home' ? 'sidebarSelectedLink' : 'sidebarLink'}
-          >
-            <Link
-              to="/"
-              onClick={() => this.handleRouteClick('Home')}
-              onMouseEnter={() => this.onMouseEnter('Home')}
-              onMouseLeave={this.onMouseLeave}
-            >
-              Home
-            </Link>
-          </span>
-        </Row>
+        {this.SidebarLink(pageNames.home, null)}
 
-        <Row className="sidebarLink">
-          <span
-            className={this.state.currentPage === 'Illustrations' ? 'sidebarSelectedLink' : 'sidebarLink'}
-          >
-            <Link
-              to="/portfolio"
-              onClick={() => {
-                this.handleRouteClick('Illustrations')
-                onSelectIllustrations()
-              }}
-              onMouseEnter={() => this.onMouseEnter('Illustrations')}
-              onMouseLeave={this.onMouseLeave}
-            >
-              Illustrations
-            </Link>
-          </span>
-        </Row>
+        {this.SidebarLink(pageNames.illustrations, () => onSelectIllustrations())}
 
-        <Row className="sidebarLink">
-          <span
-            className={this.state.currentPage === 'Comics' ? 'sidebarSelectedLink' : 'sidebarLink'}
-          >
-            <Link
-              to={'/portfolio'}
-              onClick={() => {
-                this.handleRouteClick('Comics')
-                onSelectComics()
-              }}
-              onMouseEnter={() => this.onMouseEnter('Comics')}
-              onMouseLeave={this.onMouseLeave}
-            >
-              Comics
-            </Link>
-          </span>
-        </Row>
+        {this.SidebarLink(pageNames.comics, onSelectComics)}
 
-        <Row className="sidebarLink">
-          <span
-            className={this.state.currentPage === 'About' ? 'sidebarSelectedLink' : 'sidebarLink'}
-          >
-            <Link
-              to="/about"
-              onClick={() => this.handleRouteClick('About')}
-              onMouseEnter={() => this.onMouseEnter('About')}
-              onMouseLeave={this.onMouseLeave}
-            >
-              About
-            </Link>
-          </span>
-        </Row>
+        {this.SidebarLink(pageNames.about, null)}
+
       </div>
     )
   }
