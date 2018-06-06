@@ -11,6 +11,7 @@
 .divider {
   align-self: center;
   border-bottom: .1em black solid;
+  margin: 0em 1em 0em 1em;
   height: .1em;
   width: 100%
 }

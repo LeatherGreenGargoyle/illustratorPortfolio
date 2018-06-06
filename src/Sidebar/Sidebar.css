@@ -1,5 +1,6 @@
 .containerSidebar {
   font-size: 1.3em;
+  margin-top: 0.5em;
   padding-left: 1.7em;
 }
 
@@ -28,4 +29,5 @@ a:active {
 .sidebarSelectedLink {
   color: black;
   border-bottom: .01em black solid;
+  margin-bottom: 0.4em;
 }

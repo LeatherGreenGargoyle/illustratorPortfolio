@@ -27,7 +27,7 @@ class ImageModal extends React.Component {
       <span>
         <img src={url} alt="illustration" onClick={this.open} className="thumbnailImg" />
 
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={this.close} animation={false}>
           <Modal.Body>
             <div className="modalImgContainer">
               <img src={url} alt="illustration" className="modalImg" />
