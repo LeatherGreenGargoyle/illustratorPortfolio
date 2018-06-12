@@ -54,6 +54,96 @@ export const comicLinks = [
     medium: 'ink',
     year: '2016',
   },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001-squashed+copy.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+002-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+003-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+004-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+005-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+006-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+007-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+008-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+009-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+010-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+011-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+012-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+013-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+014-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comic+015-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
 ]
 
 export const illustrationLinks = [
@@ -120,6 +210,132 @@ export const illustrationLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_The+Eyes-minshrunk.jpg',
     title: 'The Eyes',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Quiet+Time_8x10_ink_200-squashed.jpg',
+    title: 'Quiet Time',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Peepers_8x8_ink_80-squashed.jpg',
+    title: 'Quiet Time',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Kitty+II_8x8_ink_80-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Field_8x10_ink_120-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Buddy_8x10_ink_100-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Branches_8x10_ink_200-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Lost-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Stop+Staring-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Poise-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Forest-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Cave-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Boating-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_ink_Space+Bun-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_ink_Sitting-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Ponder-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_ink_Ponder+II-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_ink_Moon+II-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_ink_Lush-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Hide-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Gloomy+Mush-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Conversations-squashed.jpg',
+    title: 'Kitty II',
     medium: 'ink',
     year: '2017',
   },

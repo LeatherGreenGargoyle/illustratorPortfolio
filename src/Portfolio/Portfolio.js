@@ -15,6 +15,13 @@ class Portfolio extends React.Component {
     this.prevImages = this.prevImages.bind(this)
   }
 
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   console.log('WHOOOOOAAAHHH NELLY')
+  //   return {
+  //     currFirstImgIdx: 0
+  //   }
+  // }
+
   nextImages() {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length) return
 
@@ -39,10 +46,10 @@ class Portfolio extends React.Component {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
     const { imgObjs } = this.props
-    console.log(imgObjs)
 
     return (
       <div>
+
         <div className="navBtnContainer">
           <FontAwesome
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
@@ -58,12 +65,14 @@ class Portfolio extends React.Component {
             onClick={this.nextImages}
           />
         </div>
+
         <div>
           { imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
             mapKey++
             return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} key={mapKey} />
           }) }
         </div>
+
         <div className="navBtnContainer">
           <FontAwesome
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
@@ -79,6 +88,7 @@ class Portfolio extends React.Component {
             onClick={this.nextImages}
           />
         </div>
+
       </div>
     )
   }

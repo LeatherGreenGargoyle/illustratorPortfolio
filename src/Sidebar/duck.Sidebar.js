@@ -13,7 +13,6 @@ export const sidebarTypes = {
 const defaultProps = comicLinks
 
 export default (state = defaultProps, action) => {
-  console.log(action.type)
   switch (action.type) {
     case sidebarTypes.SELECT_PORTFOLIO_COMICS:
       return comicLinks
