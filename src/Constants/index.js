@@ -361,3 +361,7 @@ export const ImageSets = {
   illustrations: 'Illustrations',
   comics: 'Comics',
 }
+
+export const Values = {
+  IMAGES_PER_PAGE: 9
+}

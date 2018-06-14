@@ -3,17 +3,29 @@ import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
-import {comicLinks, illustrationLinks, ImageSets} from '../Constants'
+import {comicLinks, illustrationLinks, ImageSets, Values} from '../Constants'
 
 class Portfolio extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       currFirstImgIdx: 0,
-      imgsPerPage: 9,
+      imgsPerPage: Values.IMAGES_PER_PAGE,
+      currentImageSetName: props.currentImageSetName
     }
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.currentImageSetName !== prevState.currentImageSetName) {
+      return {
+        currFirstImgIdx: 0,
+        currentImageSetName: nextProps.currentImageSetName,
+      }
+    }
+
+    return null
   }
 
   getImageObjects() {
@@ -25,6 +37,9 @@ class Portfolio extends React.Component {
   }
 
   nextImages(numberOfImages) {
+    console.log(`this.state.currFirstImgIdx: ${this.state.currFirstImgIdx}`)
+    console.log(`this.state.imgsPerPage: ${this.state.imgsPerPage}`)
+    console.log(`numberOfImages: ${numberOfImages}`)
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
@@ -46,12 +61,10 @@ class Portfolio extends React.Component {
   render() {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
-    const { currentImageSetName } = this.props
     const imgObjs = this.getImageObjects()
 
     return (
       <div>
-        <p>{currentImageSetName}</p>
         <div className="navBtnContainer">
           <FontAwesome
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
