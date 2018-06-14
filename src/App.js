@@ -3,13 +3,13 @@ import { Row, Col } from 'react-bootstrap'
 import './App.css'
 import Main from './Main/Main'
 import ConnectedSidebar from './Sidebar/container.Sidebar'
-import ConnectedHeader from './Header/container.Header'
+import Header from './Header/Header'
 
 const App = () => {
   return (
     <div className="App">
       <Row className="header no-gutter">
-        <ConnectedHeader />
+        <Header />
         <div className="divider" />
       </Row>
       <Row>

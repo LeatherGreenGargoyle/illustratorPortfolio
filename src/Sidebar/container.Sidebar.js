@@ -1,15 +1,12 @@
 import { connect } from 'react-redux'
-import { sidebarActions } from './duck.Sidebar'
+import { SidebarActions } from './duck.Sidebar'
 import Sidebar from './Sidebar'
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = dispatch => ({
-  onSelectIllustrations: () => {
-    dispatch(sidebarActions.selectIllustrationsPortfolio())
-  },
-  onSelectComics: () => {
-    dispatch(sidebarActions.selectComicsPortfolio())
+  onSelectPortfolioImageset: (imageSetName) => {
+    dispatch(SidebarActions.selectPortfolioImageSet(imageSetName))
   },
 })
 

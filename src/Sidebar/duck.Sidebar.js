@@ -1,31 +1,30 @@
-import { comicLinks, illustrationLinks } from '../Constants'
+import { ImageSets } from '../Constants'
 
 // ========================================
 //            ACTIONS
 // ========================================
-export const sidebarTypes = {
-  SELECT_PORTFOLIO_COMICS: 'SELECT_PORTFOLIO_COMICS',
-  SELECT_PORTFOLIO_ILLUSTRATIONS: 'SELECT_PORTFOLIO_ILLUSTRATIONS',
+export const SidebarTypes = {
+  SELECT_PORTFOLIO_IMAGESET: 'SELECT_PORTFOLIO_IMAGESET',
 }
 // ========================================
 //            REDUCERS
 // ========================================
-const defaultProps = comicLinks
 
-export default (state = defaultProps, action) => {
+const defaultImageSet = ImageSets.comics
+
+export const CurrentImageSet = (state = defaultImageSet, action) => {
   switch (action.type) {
-    case sidebarTypes.SELECT_PORTFOLIO_COMICS:
-      return comicLinks
-    case sidebarTypes.SELECT_PORTFOLIO_ILLUSTRATIONS:
-      return illustrationLinks
+    case SidebarTypes.SELECT_PORTFOLIO_IMAGESET:
+      return action.payload
+  
     default:
       return state
   }
 }
+
 // ========================================
 //            ACTION CREATORS
 // ========================================
-export const sidebarActions = {
-  selectComicsPortfolio: () => ({ type: sidebarTypes.SELECT_PORTFOLIO_COMICS }),
-  selectIllustrationsPortfolio: () => ({ type: sidebarTypes.SELECT_PORTFOLIO_ILLUSTRATIONS }),
+export const SidebarActions = {
+  selectPortfolioImageSet: (imageSetName) => ({ type: SidebarTypes.SELECT_PORTFOLIO_IMAGESET, payload: imageSetName }),
 }

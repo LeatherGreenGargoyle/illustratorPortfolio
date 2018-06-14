@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Portfolio from './Portfolio'
 
-const mapStateToProps = state => ({ imgObjs: state.portfolioImgLinks })
+const mapStateToProps = state => ({ currentImageSetName: state.CurrentImageSet })
 
 const mapDispatchToProps = () => ({})
 

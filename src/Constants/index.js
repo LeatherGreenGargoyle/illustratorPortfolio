@@ -356,3 +356,8 @@ export const pageNames = {
   comics: 'Comics',
   about: 'About'
 }
+
+export const ImageSets = {
+  illustrations: 'Illustrations',
+  comics: 'Comics',
+}

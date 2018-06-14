@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
+import {comicLinks, illustrationLinks, ImageSets} from '../Constants'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -15,18 +16,18 @@ class Portfolio extends React.Component {
     this.prevImages = this.prevImages.bind(this)
   }
 
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   console.log('WHOOOOOAAAHHH NELLY')
-  //   return {
-  //     currFirstImgIdx: 0
-  //   }
-  // }
+  getImageObjects() {
+    if (this.props.currentImageSetName === ImageSets.comics) {
+      return comicLinks
+    } else if (this.props.currentImageSetName === ImageSets.illustrations) {
+      return illustrationLinks
+    }
+  }
 
-  nextImages() {
-    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= this.props.imgObjs.length) return
+  nextImages(numberOfImages) {
+    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
-
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })
@@ -45,11 +46,12 @@ class Portfolio extends React.Component {
   render() {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
-    const { imgObjs } = this.props
+    const { currentImageSetName } = this.props
+    const imgObjs = this.getImageObjects()
 
     return (
       <div>
-
+        <p>{currentImageSetName}</p>
         <div className="navBtnContainer">
           <FontAwesome
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
@@ -62,7 +64,7 @@ class Portfolio extends React.Component {
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             name="angle-right"
             size="3x"
-            onClick={this.nextImages}
+            onClick={this.nextImages.bind(this, imgObjs.length)}
           />
         </div>
 
@@ -85,7 +87,7 @@ class Portfolio extends React.Component {
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             name="angle-right"
             size="3x"
-            onClick={this.nextImages}
+            onClick={this.nextImages.bind(this, imgObjs.length)}
           />
         </div>
 
