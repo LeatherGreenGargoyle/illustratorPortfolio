@@ -37,9 +37,6 @@ class Portfolio extends React.Component {
   }
 
   nextImages(numberOfImages) {
-    console.log(`this.state.currFirstImgIdx: ${this.state.currFirstImgIdx}`)
-    console.log(`this.state.imgsPerPage: ${this.state.imgsPerPage}`)
-    console.log(`numberOfImages: ${numberOfImages}`)
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
@@ -103,7 +100,6 @@ class Portfolio extends React.Component {
             onClick={this.nextImages.bind(this, imgObjs.length)}
           />
         </div>
-
       </div>
     )
   }

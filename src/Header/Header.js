@@ -1,10 +1,12 @@
 import React from 'react'
 import './Header.css'
 
-const Header = () => (
-  <div className="headerContainer">
-    Jennifer Nguyen Illustration
-  </div>
+const Header = () => (    
+  <span>
+    <span className="titleContainer">
+      Jennifer Nguyen Illustration
+    </span>
+  </span>
 )
 
 export default Header

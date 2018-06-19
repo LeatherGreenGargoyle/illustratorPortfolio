@@ -19,6 +19,20 @@
 .header {
   margin-left: .4em;
   margin-right: 3em;
+  align-items: center;
+}
+
+.lastIcon {
+  margin-right: 1em
+}
+
+.socialIcon {
+  margin-left: 2em;
+  font-size: 1em;
+}
+
+.iconContainer {
+  text-align: right;
 }
 
 .no-gutter {
