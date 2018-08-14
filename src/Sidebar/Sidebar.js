@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import { Row } from 'react-bootstrap'
 import './Sidebar.css'
 import { ImageSets } from '../Constants'
-import { pageNames, routes } from '../Constants';
+import { PageNames, routes } from '../Constants';
 
 class Sidebar extends React.Component {
   constructor() {
     super()
     this.state = {
-      currentPage: pageNames.home,
+      currentPage: PageNames.home,
       linkUnderHover: '',
     }
 
@@ -37,7 +37,7 @@ class Sidebar extends React.Component {
   }
 
   SidebarLink(pageName, additionalOnClick) {
-    const linkRoute = pageName === pageNames.home ? routes.home : routes[pageName.toLowerCase()]
+    const linkRoute = pageName === PageNames.home ? routes.home : routes[pageName.toLowerCase()]
 
     return (
       <Row className="sidebarLink">
@@ -65,13 +65,15 @@ class Sidebar extends React.Component {
     return (
       <div className="containerSidebar">
 
-        {this.SidebarLink(pageNames.home, null)}
+        {this.SidebarLink(PageNames.home, null)}
 
-        {this.SidebarLink(pageNames.illustrations, () => onSelectPortfolioImageset(ImageSets.illustrations))}
+        {this.SidebarLink(PageNames.illustrations, () => onSelectPortfolioImageset(ImageSets.illustrations))}
 
-        {this.SidebarLink(pageNames.comics, () => onSelectPortfolioImageset(ImageSets.comics))}
+        {this.SidebarLink(PageNames.comics, () => onSelectPortfolioImageset(ImageSets.comics))}
 
-        {this.SidebarLink(pageNames.about, null)}
+        {this.SidebarLink(PageNames.store, null)}
+
+        {this.SidebarLink(PageNames.about, null)}
 
       </div>
     )

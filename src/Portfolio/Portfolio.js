@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FontAwesome from 'react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
 import {comicLinks, illustrationLinks, ImageSets, Values} from '../Constants'
@@ -63,16 +63,16 @@ class Portfolio extends React.Component {
     return (
       <div>
         <div className="navBtnContainer">
-          <FontAwesome
+          <FontAwesomeIcon
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
-            name="angle-left"
+            icon="angle-left"
             size="3x"
             onClick={this.prevImages}
           />
           <span className="divider" />
-          <FontAwesome
+          <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
-            name="angle-right"
+            icon="angle-right"
             size="3x"
             onClick={this.nextImages.bind(this, imgObjs.length)}
           />
@@ -86,16 +86,16 @@ class Portfolio extends React.Component {
         </div>
 
         <div className="navBtnContainer">
-          <FontAwesome
+          <FontAwesomeIcon
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
-            name="angle-left"
+            icon="angle-left"
             size="3x"
             onClick={this.prevImages}
           />
           <span className="divider" />
-          <FontAwesome
+          <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
-            name="angle-right"
+            icon="angle-right"
             size="3x"
             onClick={this.nextImages.bind(this, imgObjs.length)}
           />

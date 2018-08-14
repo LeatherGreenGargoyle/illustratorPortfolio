@@ -341,20 +341,80 @@ export const illustrationLinks = [
   },
 ]
 
+export const productLinks = [
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Cloudgazing-minshrunk.jpg',
+    title: 'Print - Cloudgazing',
+    price: '$12.99',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Hello-minshrunk.jpg',
+    title: 'Pin - Hello',
+    price: '$18.99',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Peeping-minshrunk.jpg',
+    title: 'Print - Peeping',
+    price: '$1.99',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Stargazing-minshrunk.jpg',
+    title: 'Postcard - Stargazing',
+    price: '$19.99',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Sun-minshrunk.jpg',
+    title: 'Blanket - Sun',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Cool+Guy-minshrunk.jpg',
+    title: 'Poster - Cool Guy',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Garden-minshrunk.jpg',
+    title: 'Topiary - Garden',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Hide_II-minshrunk.jpg',
+    title: 'Temporary Tattoo - Hide II',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Kitty-minshrunk.jpg',
+    title: 'Patch - Kitty',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Surveying-minshrunk.jpg',
+    title: 'Bandana - Surveying',
+    price: '$20.17',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_The+Eyes-minshrunk.jpg',
+    title: 'Scarf - The Eyes',
+    price: '$20.17',
+  },
+]
+
 export const aboutText = 'Jennifer Nguyen is a self-taught illustrator currently working out of Los Angeles, California, where she lives with a bunny and a boyfriend. She studied at the University of California San Diego, and graduated with a degree in Art History. She describes her style as \'dry\', and is influenced by the likes of the Edward Gorey, Edward Lear, and Shel Silverstein. She prefers traditional media and especially favors black and white ink drawings.'
 
 export const routes = {
   home: '/',
   illustrations: '/portfolio',
   comics: '/portfolio',
-  about: '/about'
+  about: '/about',
+  store: '/store',
 }
 
-export const pageNames = {
+export const PageNames = {
   home: 'Home',
   illustrations: 'Illustrations',
   comics: 'Comics',
-  about: 'About'
+  about: 'About',
+  store: 'Store',
 }
 
 export const ImageSets = {

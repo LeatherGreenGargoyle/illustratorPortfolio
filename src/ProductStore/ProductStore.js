@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductStore.css'
 import ProductModal from './ProductModal'
+import {productLinks} from '../Constants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ProductStore extends React.Component {
   constructor(props) {
@@ -33,16 +35,26 @@ class ProductStore extends React.Component {
   render() {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
-    const { productObjs } = this.props
+    const productObjs = productLinks
 
     return (
       <div>
-        <button type="button" onClick={this.prevImages} disabled={firstImgIdx === 0}>
-          BACK
-        </button>
-        <button type="button" onClick={this.nextImages} disabled={firstImgIdx + this.state.imgsPerPage >= productObjs.length}>
-          NEXT
-        </button>
+        <div className="navBtnContainer">
+          <FontAwesomeIcon
+            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            icon="angle-left"
+            size="3x"
+            onClick={this.prevImages}
+          />
+          <span className="divider" />
+          <FontAwesomeIcon
+            className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            icon="angle-right"
+            size="3x"
+            onClick={this.nextImages.bind(this, productObjs.length)}
+          />
+        </div>
+
         <div>
           { productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(productObj => {
             mapKey++
@@ -55,6 +67,22 @@ class ProductStore extends React.Component {
                 key={mapKey}
               />)
           }) }
+        </div>
+
+        <div className="navBtnContainer">
+          <FontAwesomeIcon
+            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            icon="angle-left"
+            size="3x"
+            onClick={this.prevImages}
+          />
+          <span className="divider" />
+          <FontAwesomeIcon
+            className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            icon="angle-right"
+            size="3x"
+            onClick={this.nextImages.bind(this, productObjs.length)}
+          />
         </div>
       </div>
     )

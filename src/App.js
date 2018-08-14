@@ -5,6 +5,12 @@ import Main from './Main/Main'
 import ConnectedSidebar from './Sidebar/container.Sidebar'
 import Header from './Header/Header'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+library.add(fab, faAngleLeft, faAngleRight)
+
 const App = () => {
   return (
     <div className="App">
@@ -17,21 +23,24 @@ const App = () => {
             <a href="https://www.instagram.com/mogpoe/"
               target="_blank"
               rel="noopener noreferrer">
-              <i className="fab fa-instagram"></i>
+              {/* <i className="fab fa-instagram"></i> */}
+              <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
           </span>
           <span className="socialIcon">
             <a href="http://jennifernguyenillustration.tumblr.com/"
               target="_blank"
               rel="noopener noreferrer">
-              <i class="fab fa-tumblr"></i>
+              {/* <i class="fab fa-tumblr"></i> */}
+              <FontAwesomeIcon icon={['fab', 'tumblr']} />
             </a>
           </span>
           <span className="socialIcon lastIcon">
             <a href="https://www.facebook.com/jennifernguyenillustration/"
               target="_blank"
               rel="noopener noreferrer">
-              <i class="fab fa-facebook-f"></i>
+              {/* <i class="fab fa-facebook-f"></i> */}
+              <FontAwesomeIcon icon={['fab', 'facebook']} />
             </a>
           </span>
         </Col>
