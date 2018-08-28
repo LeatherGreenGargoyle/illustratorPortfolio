@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import './ProductStore.css'
 
 class ImageModal extends React.Component {
   constructor() {
@@ -20,46 +20,17 @@ class ImageModal extends React.Component {
   }
 
   render() {
-    const thumbnailStyles = {
-      'width': '30%',
-      'margin': '1.5%',
-      'cursor': 'pointer',
-    }
 
-    const footerStyles = {
-      'textAlign': 'center',
-    }
-
-    const modalImgContainerStyles = {
-      'width': '100%',
-      'height': '100%',
-    }
-
-    const modalImgStyles = {
-      'width': '100%',
-      'height': 'auto',
-    }
-
-    const { url, title, price, description } = this.props
-
+    const { url, title, price, type, link } = this.props
     return (
-      <span>
-        <img src={url} alt="illustration" onClick={this.open} style={thumbnailStyles} />
-
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Body>
-            <div style={modalImgContainerStyles}>
-              <img src={url} alt="illustration" style={modalImgStyles} />
-            </div>
-          </Modal.Body>
-
-          <Modal.Footer>
-            <p style={footerStyles}>
-              {title} | {description} | {price}
-            </p>
-          </Modal.Footer>
-        </Modal>
-      </span>
+      <div className="productContainer">
+          <a href={ link } target="_blank" className="productLink">
+            <img src={url} alt="illustration" onClick={ this.open } className="productImage"/>
+          </a>
+          <span className="productImageFooter">
+            { type } | { title } | { price }  
+          </span>
+      </div>
     )
   }
 }

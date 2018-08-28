@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductStore.css'
 import ProductModal from './ProductModal'
-import {productLinks} from '../Constants'
+import { productLinks } from '../Constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ProductStore extends React.Component {
@@ -64,7 +64,9 @@ class ProductStore extends React.Component {
                 title={productObj.title}
                 description={productObj.description}
                 price={productObj.price}
+                type={productObj.type}
                 key={mapKey}
+                link={productObj.link}
               />)
           }) }
         </div>

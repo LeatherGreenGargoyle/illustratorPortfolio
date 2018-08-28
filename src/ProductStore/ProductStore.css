@@ -1,0 +1,22 @@
+.productContainer {
+  width: 31%;
+  margin: 1%;
+  display: inline-block;
+}
+
+.productImageFooter {
+  margin-top: 1%;
+  width: 100% ;
+  display: block;
+  text-align: center;
+}
+
+.productImage {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.productLink {
+  width: 100%;
+}
