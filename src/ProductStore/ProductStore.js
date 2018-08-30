@@ -43,14 +43,14 @@ class ProductStore extends React.Component {
           <FontAwesomeIcon
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
-            size="3x"
+            size="1x"
             onClick={this.prevImages}
           />
           <span className="divider" />
           <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
-            size="3x"
+            size="1x"
             onClick={this.nextImages.bind(this, productObjs.length)}
           />
         </div>
@@ -75,14 +75,14 @@ class ProductStore extends React.Component {
           <FontAwesomeIcon
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
-            size="3x"
+            size="1x"
             onClick={this.prevImages}
           />
           <span className="divider" />
           <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
-            size="3x"
+            size="1x"
             onClick={this.nextImages.bind(this, productObjs.length)}
           />
         </div>

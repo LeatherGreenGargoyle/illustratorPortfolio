@@ -1,18 +1,21 @@
 .navButtonActive {
+  vertical-align: middle;
   margin: 1em;
 }
 
 .navButtonActive:hover {
   color:#e5e5e5;
   cursor: pointer;
-  margin: 1em; 
+  margin: 1em;
 }
 
 .navButtonDisabled {
   color: #e5e5e5;
   margin: 1em;
+  vertical-align: middle;
 }
 
 .navBtnContainer {
+  font-size: 1.5em;
   text-align: center;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Transition } from 'react-bootstrap'
 import './ImageModal.css'
 
 class ImageModal extends React.Component {
@@ -26,7 +26,7 @@ class ImageModal extends React.Component {
     return (
       <span>
         <img src={url} alt="illustration" onClick={this.open} className="thumbnailImg" />
-
+        
         <Modal show={this.state.showModal} onHide={this.close} animation={false}>
           <Modal.Body>
             <div className="modalImgContainer">

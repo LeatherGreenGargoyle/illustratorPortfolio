@@ -1,3 +1,10 @@
+const ProductTypes = {
+  Original: 'Original',
+  Postcard: 'Postcard',
+  Pin: 'Pin',
+  Print: 'Print',
+}
+
 export const comicLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001-minshrunk.jpg',
@@ -148,36 +155,6 @@ export const comicLinks = [
 
 export const illustrationLinks = [
   {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Cloudgazing-minshrunk.jpg',
-    title: 'Cloudgazing',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Hello-minshrunk.jpg',
-    title: 'Hello',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Peeping-minshrunk.jpg',
-    title: 'Peeping',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Stargazing-minshrunk.jpg',
-    title: 'Stargazing',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Sun-minshrunk.jpg',
-    title: 'Sun',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x8_Cool+Guy-minshrunk.jpg',
     title: 'Cool Guy',
     medium: 'ink',
@@ -214,12 +191,6 @@ export const illustrationLinks = [
     year: '2017',
   },
   {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Quiet+Time_8x10_ink_200-squashed.jpg',
-    title: 'Quiet Time',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Peepers_8x8_ink_80-squashed.jpg',
     title: 'Quiet Time',
     medium: 'ink',
@@ -227,60 +198,6 @@ export const illustrationLinks = [
   },
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Kitty+II_8x8_ink_80-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Field_8x10_ink_120-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Buddy_8x10_ink_100-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Branches_8x10_ink_200-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Lost-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Stop+Staring-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Poise-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Forest-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Cave-squashed.jpg',
-    title: 'Kitty II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Boating-squashed.jpg',
     title: 'Kitty II',
     medium: 'ink',
     year: '2017',
@@ -339,14 +256,97 @@ export const illustrationLinks = [
     medium: 'ink',
     year: '2017',
   },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Cloudgazing-minshrunk.jpg',
+    title: 'Cloudgazing',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Hello-minshrunk.jpg',
+    title: 'Hello',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Peeping-minshrunk.jpg',
+    title: 'Peeping',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Stargazing-minshrunk.jpg',
+    title: 'Stargazing',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Sun-minshrunk.jpg',
+    title: 'Sun',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Quiet+Time_8x10_ink_200-squashed.jpg',
+    title: 'Quiet Time',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Field_8x10_ink_120-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Buddy_8x10_ink_100-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Branches_8x10_ink_200-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Lost-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Stop+Staring-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Poise-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Forest-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Cave-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_ink_Boating-squashed.jpg',
+    title: 'Kitty II',
+    medium: 'ink',
+    year: '2017',
+  },
 ]
-
-const ProductTypes = {
-  Original: 'Original',
-  Postcard: 'Postcard',
-  Pin: 'Pin',
-  Print: 'Print',
-}
 
 export const productLinks = [
   {
@@ -364,7 +364,7 @@ export const productLinks = [
     link: 'http://mogpoe.storenvy.com/collections/1278831-prints/products/24030339-art-print-sun-ii',
   },
   {
-    url: 'http://d3u67r7pp2lrq5.cloudfront.net/product_photos/63999930/file_81815ef19c_original.png',
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/63735954/file_b0df511fd9_original.jpg',
     title: 'Sitting',
     type: ProductTypes.Print,
     price: '$12.00',
