@@ -53,13 +53,26 @@ module.exports = {
         "no-plusplus": "off",
         "react/jsx-no-bind": [0, {"allowBind": true}],
         "class-methods-use-this": ["error", { "exceptMethods": ["setToken", "getProfile", "getToken", "logout"] }],
-        "prettier/prettier": "error"
+        "prefer-destructuring": [  "warn",
+            {
+                "VariableDeclarator": {
+                    "array": false,
+                    "object": true
+                },
+                "AssignmentExpression": {
+                    "array": true,
+                    "object": true
+                }
+            },
+            {
+                "enforceForRenamedProperties": false
+            }
+        ]
     },
-    "extends": ["airbnb","prettier", "prettier/react"],
+    "extends": ["airbnb"],
     "plugins": [
         "react",
         "jsx-a11y",
         "import",
-        "prettier"
     ]
 };
