@@ -28,7 +28,11 @@ class ImageModal extends React.Component {
             <img src={url} alt="illustration" onClick={ this.open } className="productImage"/>
           </a>
           <span className="productImageFooter">
-            { type } | { title } | { price }  
+            <span>{title}</span>
+            <br />
+            <span>{type}</span>
+            <br />
+            <span>{price}</span>
           </span>
       </div>
     )

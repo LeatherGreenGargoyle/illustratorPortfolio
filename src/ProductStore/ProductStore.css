@@ -1,7 +1,12 @@
+.newLine {
+  white-space: pre;
+}
+
 .productContainer {
   width: 31%;
   margin: 1%;
   display: inline-block;
+  height: 20em;
 }
 
 .productImageFooter {

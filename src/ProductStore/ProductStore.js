@@ -55,7 +55,7 @@ class ProductStore extends React.Component {
           />
         </div>
 
-        <div>
+        <div className="productsContainer">
           { productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(productObj => {
             mapKey++
             return (
