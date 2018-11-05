@@ -4,6 +4,7 @@ import { Row } from 'react-bootstrap'
 import './Sidebar.css'
 import { ImageSets } from '../Constants'
 import { PageNames, routes } from '../Constants';
+import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
 
 class Sidebar extends React.Component {
   constructor() {
@@ -11,20 +12,37 @@ class Sidebar extends React.Component {
     this.state = {
       currentPage: PageNames.home,
       linkUnderHover: '',
+      showStoreSubmenu: false, // TODO: flexibility
     }
 
     this.handleRouteClick = this.handleRouteClick.bind(this)
-    this.onMouseEnter = this.onMouseEnter.bind(this)
-    this.onMouseLeave = this.onMouseLeave.bind(this)
+    this.onMouseEnterRouteLink = this.onMouseEnterRouteLink.bind(this)
+    this.handleOnMouseLeaveRouteLink = this.handleOnMouseLeaveRouteLink.bind(this)
+
+    this.onMouseEnterStoreLink = this.onMouseEnterStoreLink.bind(this)
+    this.onMouseLeaveStoreLink = this.onMouseLeaveStoreLink.bind(this)
   }
 
-  onMouseEnter(linkName) {
+  onMouseEnterStoreLink() {
+    this.setState({
+      showStoreSubmenu: true
+    })
+  }
+  onMouseLeaveStoreLink() {
+    this.setState({
+      showStoreSubmenu: false
+    })
+  }
+
+  onMouseEnterRouteLink(linkName) {
     this.setState({
       linkUnderHover: linkName,
     })
   }
-
-  onMouseLeave() {
+  handleOnMouseLeaveRouteLink(pageName) {
+    if (pageName === PageNames.store) {
+      this.onMouseLeaveStoreLink()
+    }
     this.setState({
       linkUnderHover: '',
     })
@@ -35,12 +53,21 @@ class Sidebar extends React.Component {
       currentPage: newRoute,
     })
   }
+  // TODO: flexibility
+  handleOnMouseEnterRouteLink(pageName) {
+    this.onMouseEnterRouteLink(pageName)
+    if (pageName === PageNames.store) {
+      this.onMouseEnterStoreLink()
+    }
+  }
 
   SidebarLink(pageName, additionalOnClick) {
     const linkRoute = pageName === PageNames.home ? routes.home : routes[pageName.toLowerCase()]
 
     return (
-      <Row className="sidebarLink">
+      <Row className="sidebarLink"
+      onMouseEnter={() => this.handleOnMouseEnterRouteLink(pageName)}
+      onMouseLeave={() => this.handleOnMouseLeaveRouteLink(pageName)}>
         <span
           className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
         >
@@ -50,14 +77,25 @@ class Sidebar extends React.Component {
               this.handleRouteClick(pageName)
               if (additionalOnClick) additionalOnClick()
             }}
-            onMouseEnter={() => this.onMouseEnter(pageName)}
-            onMouseLeave={this.onMouseLeave}
           >
             {pageName}
           </Link>
         </span>
+        {this.submenuFor(pageName)}
       </Row>
     )
+  }
+
+  submenuFor(pageName) {
+    if (pageName != PageNames.store) return
+    let storeSubmenuItems = [
+      SubmenuItem('Prints', () => console.log('PRINTS')),
+      SubmenuItem('Pins', () => console.log('PINS')),
+      SubmenuItem('Originals', () => console.log('ORIGINALS'))
+    ]
+    return <span style={{ display: this.state.showStoreSubmenu ? 'inline' : 'none' }} >
+      { Submenu(storeSubmenuItems) }
+    </span>
   }
 
   render() {
