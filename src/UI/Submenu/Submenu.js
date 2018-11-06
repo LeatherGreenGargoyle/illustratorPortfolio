@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Submenu = (links) => {
-  console.log(links)
   const linkList = links.map((linkObject, index) => {
     if (linkObject.linkRoute) {
       return (

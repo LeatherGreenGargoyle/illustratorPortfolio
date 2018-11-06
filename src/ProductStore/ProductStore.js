@@ -18,16 +18,13 @@ class ProductStore extends React.Component {
     this.prevImages = this.prevImages.bind(this)
   }
 
-  // TODO: find alternative, overly complicated
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.productCategory !== prevState.productCategory) {
-      return {
-        currFirstImgIdx: 0,
-        currentProductCategory: nextProps.productCategory,
-      }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.productCategory !== this.state.productCategory) {
+        this.setState(() => ({
+          currFirstImgIdx: 0,
+          currentImageSetName: nextProps.productCategory,
+        }));
     }
-
-    return null
   }
 
   getProductObjects() {
@@ -45,6 +42,7 @@ class ProductStore extends React.Component {
   nextImages(numberOfImages) {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
+    console.log(`store: ${this.state.currFirstImgIdx} firstIdx, ${this.state.imgsPerPage} img/page = ${newFirstUrlIdx}`)
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })
@@ -84,6 +82,7 @@ class ProductStore extends React.Component {
         </div>
 
         <div className="productsContainer">
+        { console.log('D') }
           { productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(productObj => {
             mapKey++
             return (
