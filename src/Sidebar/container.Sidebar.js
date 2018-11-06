@@ -8,6 +8,10 @@ const mapDispatchToProps = dispatch => ({
   onSelectPortfolioImageset: (imageSetName) => {
     dispatch(SidebarActions.selectPortfolioImageSet(imageSetName))
   },
+  onSelectStoreCategory: (productCategoryName) => {
+    dispatch(SidebarActions.selectProductCategory(productCategoryName))
+  }
+  
 })
 
 const ConnectedSidebar = connect(

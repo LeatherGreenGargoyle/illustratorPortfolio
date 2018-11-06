@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
-import {comicLinks, illustrationLinks, ImageSets, Values} from '../Constants'
+import { comicLinks, illustrationLinks, ImageSets, Values } from '../Constants'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class Portfolio extends React.Component {
     this.prevImages = this.prevImages.bind(this)
   }
 
+  // TODO: find alternative, overly complicated
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.currentImageSetName !== prevState.currentImageSetName) {
       return {
@@ -29,6 +30,7 @@ class Portfolio extends React.Component {
   }
 
   getImageObjects() {
+    console.log(`CurrentImageSetName is ${this.props.currentImageSetName}`)
     if (this.props.currentImageSetName === ImageSets.comics) {
       return comicLinks
     } else if (this.props.currentImageSetName === ImageSets.illustrations) {

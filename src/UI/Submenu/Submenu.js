@@ -1,11 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Submenu = (links) => {
   console.log(links)
   const linkList = links.map((linkObject, index) => {
-    return <li key={index} onClick={ () => linkObject.callback() }>
-      {linkObject.title}
-    </li>
+    if (linkObject.linkRoute) {
+      return (
+        <li key={index}>
+          <Link
+              to={linkObject.linkRoute}
+              onClick={() => linkObject.callback() }
+          >
+              {linkObject.title}
+          </Link>
+      </li>
+      )
+    } else {
+      return <li key={index} onClick={ () => linkObject.callback() }>
+        {linkObject.title}
+      </li>
+    }
   })
 
   return (
@@ -15,10 +29,11 @@ const Submenu = (links) => {
   )
 }
 
-const SubmenuItem = (title, callback) => {
+const SubmenuItem = (title, linkRoute, callback) => {
   return {
     title,
-    callback: callback
+    callback: callback,
+    linkRoute: linkRoute
   }
 }
 

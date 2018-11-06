@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Row } from 'react-bootstrap'
 import './Sidebar.css'
-import { ImageSets } from '../Constants'
-import { PageNames, routes } from '../Constants';
+import { ImageSets, PageNames, routes, ProductCategories } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
 
 class Sidebar extends React.Component {
@@ -61,6 +60,20 @@ class Sidebar extends React.Component {
     }
   }
 
+  LinkElement(pageName, linkRoute, onClick) {
+    return (
+      <Link
+      to={linkRoute}
+      onClick={() => {
+        this.handleRouteClick(pageName)
+        if (onClick) { onClick() }
+      }}
+    >
+      {pageName}
+    </Link>
+    )
+  }
+
   SidebarLink(pageName, additionalOnClick) {
     const linkRoute = pageName === PageNames.home ? routes.home : routes[pageName.toLowerCase()]
 
@@ -71,15 +84,7 @@ class Sidebar extends React.Component {
         <span
           className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
         >
-          <Link
-            to={linkRoute}
-            onClick={() => {
-              this.handleRouteClick(pageName)
-              if (additionalOnClick) additionalOnClick()
-            }}
-          >
-            {pageName}
-          </Link>
+        { pageName === PageNames.store ? `${pageName}` : this.LinkElement(pageName, linkRoute, additionalOnClick)}
         </span>
         {this.submenuFor(pageName)}
       </Row>
@@ -88,10 +93,22 @@ class Sidebar extends React.Component {
 
   submenuFor(pageName) {
     if (pageName != PageNames.store) return
+    const { onSelectStoreCategory } = this.props
+    const routeName = routes[pageName.toLowerCase()]
+
     let storeSubmenuItems = [
-      SubmenuItem('Prints', () => console.log('PRINTS')),
-      SubmenuItem('Pins', () => console.log('PINS')),
-      SubmenuItem('Originals', () => console.log('ORIGINALS'))
+      SubmenuItem('Prints', routeName, () => {
+        this.handleRouteClick(pageName)
+        onSelectStoreCategory(ProductCategories.prints)
+      }),
+      SubmenuItem('Pins', routeName, () => {
+        this.handleRouteClick(pageName)
+        onSelectStoreCategory(ProductCategories.pins)
+      }),
+      SubmenuItem('Originals', routeName, () => {
+        this.handleRouteClick(pageName)
+        onSelectStoreCategory(ProductCategories.originals)
+      })
     ]
     return <span style={{ display: this.state.showStoreSubmenu ? 'inline' : 'none' }} >
       { Submenu(storeSubmenuItems) }

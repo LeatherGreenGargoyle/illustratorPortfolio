@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from '../Home/Home'
 import About from '../About/About'
-import ProductStore from '../ProductStore/ProductStore'
+import ProductStore from '../ProductStore/container.ProductStore'
 import ConnectedPortfolio from '../Portfolio/container.Portfolio'
 import './Main.css'
 

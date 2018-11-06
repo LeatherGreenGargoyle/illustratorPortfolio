@@ -2,29 +2,57 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductStore.css'
 import ProductModal from './ProductModal'
-import { productLinks } from '../Constants'
+import { OriginalsProducts, PinProducts, PrintProducts, ProductCategories, Values } from '../Constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ProductStore extends React.Component {
   constructor(props) {
+    console.log(`constructor props: ${props.keys}`)
     super(props)
     this.state = {
       currFirstImgIdx: 0,
-      imgsPerPage: 9,
+      imgsPerPage: Values.IMAGES_PER_PAGE,
+      currentProductCategory: props.productCategory
     }
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
   }
 
-  nextImages() {
-    const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
+  // TODO: find alternative, overly complicated
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.productCategory !== prevState.productCategory) {
+      return {
+        currFirstImgIdx: 0,
+        currentProductCategory: nextProps.productCategory,
+      }
+    }
 
+    return null
+  }
+
+  getProductObjects() {
+    switch (this.props.productCategory) {
+      case ProductCategories.pins:
+        return PinProducts
+      case ProductCategories.prints:
+        return PrintProducts
+      default:
+        return OriginalsProducts
+    }
+  }
+  
+
+  nextImages(numberOfImages) {
+    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
+    const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })
   }
 
   prevImages() {
+    if (this.state.currFirstImgIdx === 0) return
+
     const newFirstUrlIdx = this.state.currFirstImgIdx - this.state.imgsPerPage
 
     this.setState({
@@ -35,7 +63,7 @@ class ProductStore extends React.Component {
   render() {
     let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
-    const productObjs = productLinks
+    const productObjs = this.getProductObjects()
 
     return (
       <div>

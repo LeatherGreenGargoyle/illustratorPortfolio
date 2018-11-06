@@ -348,7 +348,7 @@ export const illustrationLinks = [
   },
 ]
 
-export const productLinks = [
+export const PrintProducts = [
   {
     url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
     title: 'Big Moon',
@@ -383,49 +383,10 @@ export const productLinks = [
     type: ProductTypes.Print,
     price: '$10.00',
     link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/15956124-art-print-butts',
-  },
-  /*{
-    url: 'http://dpegb9ebondhq.cloudfront.net/product_photos/58690734/illustration_20024_original.jpg',
-    title: 'Relaxing',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/22448562-postcard-relaxing'
-  },
-  {
-    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/58690722/illustration_20022_original.jpg',
-    title: 'Family Portrait',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/22448556-postcard-family-portrait'
-  },
-  {
-    url: 'http://dpegb9ebondhq.cloudfront.net/product_photos/58690446/illustration_20006_original.jpg',
-    title: 'Bouquet',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/22448430-postcard-bouquet'
-  },
-  {
-    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/45069107/illustration_20036_original.jpg',
-    title: 'Pumpkin Head',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/18137822-postcard-pumpkin-head'
-  },
-  {
-    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/45069056/illustration_20039_original.jpg',
-    title: 'Kitty',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/18137789-postcard-kitty'
-  },
-  {
-    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/45068891/illustration_20041_original.jpg',
-    title: 'Cypresses',
-    type: ProductTypes.Postcard,
-    price: '$5.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278834-postcards/products/18137747-postcard-cypresses'
-  },*/
+  }
+]
+
+export const PinProducts = [
   {
     url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/63735735/file_62b96b7144_original.png',
     title: 'Reading',
@@ -446,7 +407,10 @@ export const productLinks = [
     type: ProductTypes.Pin,
     price: '$10.00',
     link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/22448661-enamel-pin-moon'
-  },
+  }
+]
+
+export const OriginalsProducts = [
   {
     url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919828/file_1f9e1db000_original.jpg',
     title: 'Krampus Walking Through the Woods',
@@ -572,4 +536,10 @@ export const ImageSets = {
 
 export const Values = {
   IMAGES_PER_PAGE: 9
+}
+
+export const ProductCategories = {
+  originals: 'originals',
+  pins: 'pins',
+  prints: 'prints'
 }
