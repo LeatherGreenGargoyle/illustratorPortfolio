@@ -1,3 +1,5 @@
+import { Event } from '../Events/Events.js'
+
 const ProductTypes = {
   Original: 'Original',
   Postcard: 'Postcard',
@@ -60,12 +62,6 @@ export const comicLinks = [
     title: 'Growing',
     medium: 'ink',
     year: '2016',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001-squashed+copy.jpg',
-    title: 'Pazowza',
-    medium: 'plink',
-    year: '2016'
   },
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+002-squashed.jpg',
@@ -519,6 +515,7 @@ export const routes = {
   comics: '/portfolio',
   about: '/about',
   store: '/store',
+  events: '/events'
 }
 
 export const PageNames = {
@@ -527,6 +524,7 @@ export const PageNames = {
   comics: 'Comics',
   about: 'About',
   store: 'Store',
+  events: 'Events',
 }
 
 export const ImageSets = {
@@ -543,3 +541,39 @@ export const ProductCategories = {
   pins: 'pins',
   prints: 'prints'
 }
+
+export const EventObjs = [
+  Event(
+    "Goodnight Moon", 
+    ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+front.jpg',
+    'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+back-min.jpg'],
+    "FOLD Gallery",
+    "September 20th - October 30th, 2017"
+  ),
+  Event(
+    "Hand and Mind",
+    ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Hand+and+Mind+front.jpg',
+    'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Hand+and+Mind+back-min.jpg'],
+    "FOLD Gallery",
+    "April 12 - June 4th, 2018"
+  ),
+  Event(
+    "Line Attack 7",
+    ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Line+Attack+7.jpg'],
+    "Hive Gallery",
+    "May 5th - June 3rd, 2018"
+  ),
+  Event(
+    "Zombie Coven",
+    ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/jun18_ft_2_web.jpg'],
+    "Hive Gallery",
+    "June 9th - July 1st, 2018"
+  ),
+  Event(
+    "What We Do In The Shadows",
+    ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+front.jpg',
+    'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+back.jpg'],
+    "FOLD Gallery",
+    "September 26th - November 12th, 2018"
+  )
+]

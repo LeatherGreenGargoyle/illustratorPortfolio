@@ -4,6 +4,7 @@ import Home from '../Home/Home'
 import About from '../About/About'
 import ProductStore from '../ProductStore/container.ProductStore'
 import ConnectedPortfolio from '../Portfolio/container.Portfolio'
+import Events from '../Events/container.Events'
 import './Main.css'
 
 const Main = () => {
@@ -14,6 +15,7 @@ const Main = () => {
         <Route path="/about" component={About} />
         <Route path="/store" component={ProductStore} />
         <Route path="/portfolio" component={ConnectedPortfolio} />
+        <Route path="/events" component={Events} />
       </Switch>
     </div>
   )

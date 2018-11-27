@@ -1,0 +1,31 @@
+.eventCaption {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.eventContainer {
+  margin-bottom: 5em;
+  margin-left: 4em;
+  text-align: center;
+  width: 70%;
+}
+
+.eventImage {
+  margin-bottom: 0.2em;
+  margin-right: 0.01em;
+  width: 50%;
+}
+
+.eventImageSingle {
+  display: inline-block;
+  width: 50%;
+}
+
+.eventTitle {
+  font-size: 2em;
+  text-align: center;
+}
+
+.eventsPageContainer {
+  margin-top: 5em;
+}

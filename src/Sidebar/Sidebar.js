@@ -130,6 +130,8 @@ class Sidebar extends React.Component {
 
         {this.SidebarLink(PageNames.about, null)}
 
+        {this.SidebarLink(PageNames.events, null)}
+
       </div>
     )
   }
