@@ -38,7 +38,6 @@ class Portfolio extends React.Component {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
-    console.log(`products: ${this.state.currFirstImgIdx} firstIdx, ${this.state.imgsPerPage} img/page`)
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })
@@ -78,10 +77,14 @@ class Portfolio extends React.Component {
         </div>
 
         <div>
-          { console.log('B') }
           { imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
             mapKey++
-            return <ImageModal url={imgObj.url} title={imgObj.title} medium={imgObj.medium} year={imgObj.year} key={mapKey} />
+            return <ImageModal
+                    url={imgObj.url}
+                    title={imgObj.title}
+                    medium={imgObj.medium}
+                    key={mapKey}
+                    imageSet={this.props.currentImageSetName} />
           }) }
         </div>
 
