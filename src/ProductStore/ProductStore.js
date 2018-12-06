@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ProductStore extends React.Component {
   constructor(props) {
-    console.log(`constructor props: ${props.keys}`)
     super(props)
     this.state = {
       currFirstImgIdx: 0,
@@ -42,7 +41,6 @@ class ProductStore extends React.Component {
   nextImages(numberOfImages) {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
-    console.log(`store: ${this.state.currFirstImgIdx} firstIdx, ${this.state.imgsPerPage} img/page = ${newFirstUrlIdx}`)
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
     })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Transition } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import './ImageModal.css'
 import { ImageSets } from '../../Constants'
 
@@ -22,7 +22,7 @@ class ImageModal extends React.Component {
   }
 
   render() {
-    const { url, title, medium, year, imageSet } = this.props
+    const { url, title, medium, imageSet } = this.props
     const caption = 
         <p className="footer">
           {`${title}\u00A0\u00A0`} / {`\u00A0\u00A0${medium}\u00A0\u00A0`}`
@@ -40,9 +40,7 @@ class ImageModal extends React.Component {
           </Modal.Body>
 
           <Modal.Footer>
-            {/* <p className="footer"> */}
-              { imageSet ==  ImageSets.comics ? "" : caption}
-            {/* </p> */}
+            { imageSet ===  ImageSets.comics ? "" : caption}
           </Modal.Footer>
         </Modal>
       </span>

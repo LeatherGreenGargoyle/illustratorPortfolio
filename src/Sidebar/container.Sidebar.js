@@ -10,8 +10,10 @@ const mapDispatchToProps = dispatch => ({
   },
   onSelectStoreCategory: (productCategoryName) => {
     dispatch(SidebarActions.selectProductCategory(productCategoryName))
+  },
+  onSelectImageSetYear: (year) => {
+    dispatch(SidebarActions.selectPortfolioYear(year))
   }
-  
 })
 
 const ConnectedSidebar = connect(

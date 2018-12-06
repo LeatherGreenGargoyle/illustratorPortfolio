@@ -1,12 +1,10 @@
 import { Event } from '../Events/Events.js'
 
-const ProductTypes = {
-  Original: 'Original',
-  Postcard: 'Postcard',
-  Pin: 'Pin',
-  Print: 'Print',
+/* Portfolio */
+export const ImageSets = {
+  illustrations: 'Illustrations',
+  comics: 'Comics',
 }
-
 export const comicLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001-squashed+copy.jpg',
@@ -32,7 +30,6 @@ export const comicLinks = [
     medium: 'ink',
     year: '2017',
   },
-
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/illustration+001-minshrunk.jpg',
     title: 'Falling',
@@ -148,7 +145,6 @@ export const comicLinks = [
     year: '2016'
   },
 ]
-
 export const illustrationLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x10_ink_Stop+Staring.jpg',
@@ -338,68 +334,39 @@ export const illustrationLinks = [
   }
 ]
 
-export const PrintProducts = [
-  {
-    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
-    title: 'Big Moon',
-    type: ProductTypes.Print,
-    price: '$10.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24113211-art-print-big-moon'
-  },
-  {
-    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/63735996/file_8246e7a192_original.jpg',
-    title: 'Sun II',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030339-art-print-sun-ii',
-  },
-  {
-    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/63735954/file_b0df511fd9_original.jpg',
-    title: 'Sitting',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030333-art-print-sitting'
-  },
-  {
-    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/63735858/file_da6d205191_original.jpg',
-    title: 'Moon II',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030312-art-print-moon-ii'
-  },
-  {
-    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/38897961/illustration_20020_original.jpg',
-    title: 'Butts',
-    type: ProductTypes.Print,
-    price: '$10.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/15956124-art-print-butts',
-  }
-]
+/* About */
+export const aboutText = 'Jennifer Nguyen is a self-taught illustrator currently working out of Los Angeles, California, where she lives with a bunny and a boyfriend. She studied at the University of California San Diego, and graduated with a degree in Art History. She describes her style as \'dry\', and is influenced by the likes of the Edward Gorey, Edward Lear, and Shel Silverstein. She prefers traditional media and especially favors black and white ink drawings.'
 
-export const PinProducts = [
-  {
-    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/63735735/file_62b96b7144_original.png',
-    title: 'Reading',
-    type: ProductTypes.Pin,
-    price: '$4.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/24030261-button-pin-reading'
-  },
-  {
-    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/61220910/file_a40e3ffff8_original.png',
-    title: 'Garden',
-    type: ProductTypes.Pin,
-    price: '$4.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/23236533-button-pin-garden'
-  },
-  {
-    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/58691145/20171128_141404_original.jpg',
-    title: 'Moon',
-    type: ProductTypes.Pin,
-    price: '$10.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/22448661-enamel-pin-moon'
-  }
-]
+/* Navigation */
+export const routes = {
+  home: '/',
+  illustrations: '/portfolio',
+  comics: '/portfolio',
+  about: '/about',
+  store: '/store',
+  events: '/events'
+}
+export const PageNames = {
+  home: 'Home',
+  illustrations: 'Illustrations',
+  comics: 'Comics',
+  about: 'About',
+  store: 'Store',
+  events: 'Events',
+}
 
+/* Misc */
+export const Values = {
+  IMAGES_PER_PAGE: 9
+}
+
+/* Store */
+export const ProductTypes = {
+  Original: 'Original',
+  Postcard: 'Postcard',
+  Pin: 'Pin',
+  Print: 'Print',
+}
 export const OriginalsProducts = [
   {
     url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919828/file_1f9e1db000_original.jpg',
@@ -500,42 +467,74 @@ export const OriginalsProducts = [
     link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834500-original-inkmas-2017-snow-falling-on-lone-tree'
   }
 ]
-
-export const aboutText = 'Jennifer Nguyen is a self-taught illustrator currently working out of Los Angeles, California, where she lives with a bunny and a boyfriend. She studied at the University of California San Diego, and graduated with a degree in Art History. She describes her style as \'dry\', and is influenced by the likes of the Edward Gorey, Edward Lear, and Shel Silverstein. She prefers traditional media and especially favors black and white ink drawings.'
-
-export const routes = {
-  home: '/',
-  illustrations: '/portfolio',
-  comics: '/portfolio',
-  about: '/about',
-  store: '/store',
-  events: '/events'
-}
-
-export const PageNames = {
-  home: 'Home',
-  illustrations: 'Illustrations',
-  comics: 'Comics',
-  about: 'About',
-  store: 'Store',
-  events: 'Events',
-}
-
-export const ImageSets = {
-  illustrations: 'Illustrations',
-  comics: 'Comics',
-}
-
-export const Values = {
-  IMAGES_PER_PAGE: 9
-}
-
+export const PinProducts = [
+  {
+    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/63735735/file_62b96b7144_original.png',
+    title: 'Reading',
+    type: ProductTypes.Pin,
+    price: '$4.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/24030261-button-pin-reading'
+  },
+  {
+    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/61220910/file_a40e3ffff8_original.png',
+    title: 'Garden',
+    type: ProductTypes.Pin,
+    price: '$4.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/23236533-button-pin-garden'
+  },
+  {
+    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/58691145/20171128_141404_original.jpg',
+    title: 'Moon',
+    type: ProductTypes.Pin,
+    price: '$10.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/22448661-enamel-pin-moon'
+  }
+]
+export const PrintProducts = [
+  {
+    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
+    title: 'Big Moon',
+    type: ProductTypes.Print,
+    price: '$10.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24113211-art-print-big-moon'
+  },
+  {
+    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/63735996/file_8246e7a192_original.jpg',
+    title: 'Sun II',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030339-art-print-sun-ii',
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/63735954/file_b0df511fd9_original.jpg',
+    title: 'Sitting',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030333-art-print-sitting'
+  },
+  {
+    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/63735858/file_da6d205191_original.jpg',
+    title: 'Moon II',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030312-art-print-moon-ii'
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/38897961/illustration_20020_original.jpg',
+    title: 'Butts',
+    type: ProductTypes.Print,
+    price: '$10.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/15956124-art-print-butts',
+  }
+]
 export const ProductCategories = {
-  originals: 'originals',
-  pins: 'pins',
-  prints: 'prints'
+  originals: 'Originals',
+  pins: 'Pins',
+  prints: 'Prints'
 }
 
+
+/* Events */
 export const EventObjs = [
   Event(
     "Goodnight Moon", 
@@ -571,13 +570,11 @@ export const EventObjs = [
     "September 26th - November 12th, 2018"
   )
 ]
-
 export const portraitURLs = [
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+front.jpg',
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+front.jpg',
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+back.jpg'
 ]
-
 export const landscapeURLs = [
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+back-min.jpg',
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Hand+and+Mind+front.jpg',

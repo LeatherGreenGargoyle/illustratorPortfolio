@@ -11,26 +11,32 @@ class Portfolio extends React.Component {
     this.state = {
       currFirstImgIdx: 0,
       imgsPerPage: Values.IMAGES_PER_PAGE,
-      currentImageSetName: props.currentImageSetName
+      currentImageSetName: props.currentImageSetName,
+      currentImageSetYear: props.currentImageSetYear
     }
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentImageSetName !== this.state.currentImageSetName) {
+    console.log(`about to receive props: ${nextProps.currentImageSetYear}`)
+    const didReceiveNewImageSet = nextProps.currentImageSetName !== this.state.currentImageSetName
+    const didReceiveNewImageSetYear = nextProps.currentImageSetYear !== this.state.currentImageSetYear
+    
+    if (didReceiveNewImageSet || didReceiveNewImageSetYear) {
         this.setState(() => ({
           currFirstImgIdx: 0,
           currentImageSetName: nextProps.currentImageSetName,
+          currentImageSetYear: nextProps.currentImageSetYear
         }));
     }
 }
 
   getImageObjects() {
     if (this.props.currentImageSetName === ImageSets.comics) {
-      return comicLinks
+      return comicLinks.filter(comic => comic.year === this.state.currentImageSetYear)
     } else if (this.props.currentImageSetName === ImageSets.illustrations) {
-      return illustrationLinks
+      return illustrationLinks.filter(illustration => illustration.year === this.state.currentImageSetYear)
     }
   }
 

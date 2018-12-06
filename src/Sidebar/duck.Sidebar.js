@@ -5,7 +5,8 @@ import { ImageSets, ProductCategories } from '../Constants'
 // ========================================
 export const SidebarTypes = {
   SELECT_PORTFOLIO_IMAGESET: 'SELECT_PORTFOLIO_IMAGESET',
-  SELECT_PRODUCT_CATEGORY: 'SELECT_PRODUCT_CATEGORY'
+  SELECT_PRODUCT_CATEGORY: 'SELECT_PRODUCT_CATEGORY',
+  SELECT_PORTFOLIO_YEAR: 'SELECT_PORTFOLIO_YEAR'
 }
 // ========================================
 //            REDUCERS
@@ -13,6 +14,7 @@ export const SidebarTypes = {
 
 const defaultImageSet = ImageSets.comics
 const defaultProductCategory = ProductCategories.originals
+const defaultPortfolioYear = 2018
 
 export const CurrentImageSet = (state = defaultImageSet, action) => {
   switch (action.type) {
@@ -30,7 +32,17 @@ export const CurrentProductCategory = (state = defaultProductCategory, action) =
       return action.payload
 
     default:
-    return state
+      return state
+  }
+}
+
+export const CurrentPortfolioYear = (state = defaultPortfolioYear, action) => {
+  switch (action.type) {
+    case SidebarTypes.SELECT_PORTFOLIO_YEAR:
+      return action.payload
+
+    default:
+      return state
   }
 }
 
@@ -39,5 +51,6 @@ export const CurrentProductCategory = (state = defaultProductCategory, action) =
 // ========================================
 export const SidebarActions = {
   selectPortfolioImageSet: (imageSetName) => ({ type: SidebarTypes.SELECT_PORTFOLIO_IMAGESET, payload: imageSetName }),
+  selectPortfolioYear: (portfolioYear) => ({ type: SidebarTypes.SELECT_PORTFOLIO_YEAR, payload: portfolioYear }),
   selectProductCategory: (productCategoryName) => ({ type: SidebarTypes.SELECT_PRODUCT_CATEGORY, payload: productCategoryName })
 }
