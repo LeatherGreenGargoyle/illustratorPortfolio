@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './Sidebar.css'
 import { ImageSets, PageNames, routes, ProductCategories } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
+import { Transition } from 'react-spring'
 
 class Sidebar extends React.Component {
   constructor() {
@@ -103,13 +104,12 @@ class Sidebar extends React.Component {
     this.setState(newState)
   }
 
-  LinkElement(pageName, linkRoute, onClick) {
+  LinkElement(pageName, linkRoute) {
     return (
       <Link
         to={linkRoute}
         onClick={() => {
           this.onRouteClick(pageName)
-          if (onClick) { onClick() }
         }}
       >
         {pageName}
@@ -117,7 +117,7 @@ class Sidebar extends React.Component {
     )
   }
 
-  SidebarLink(pageName, additionalOnClick) {
+  SidebarItem(pageName, additionalOnClick) {
     const linkRoute = pageName === PageNames.home ? routes.home : routes[pageName.toLowerCase()]
 
     return (
@@ -139,9 +139,17 @@ class Sidebar extends React.Component {
 
     const submenuItems = this.getSubmenuItemsFor(pageName)
     const statePropertyName = `${pageName}_show_submenu`
-    return <div style={{ display: this.state[statePropertyName] ? 'inline' : 'none' }} >
-      { Submenu(submenuItems) }
-    </div>
+    return (
+      <Transition
+      items={this.state[statePropertyName]}
+      from={{ display: 'none' }}
+      enter={{ display: 'inline', background: '#28d79f' }}
+      leave={{ display: 'none', background: '#c23369' }}>
+        { shouldShowSubmenu =>
+          shouldShowSubmenu && (props => <div style={props} > { Submenu(submenuItems) } </div>)
+        }
+      </Transition>
+    )
   }
 
   render() {
@@ -149,17 +157,17 @@ class Sidebar extends React.Component {
     return (
       <div className="containerSidebar">
 
-        {this.SidebarLink(PageNames.home, null)}
+        {this.SidebarItem(PageNames.home, null)}
 
-        {this.SidebarLink(PageNames.illustrations, () => onSelectPortfolioImageset(ImageSets.illustrations))}
+        {this.SidebarItem(PageNames.illustrations, () => onSelectPortfolioImageset(ImageSets.illustrations))}
 
-        {this.SidebarLink(PageNames.comics, () => onSelectPortfolioImageset(ImageSets.comics))}
+        {this.SidebarItem(PageNames.comics, () => onSelectPortfolioImageset(ImageSets.comics))}
 
-        {this.SidebarLink(PageNames.store, null)}
+        {this.SidebarItem(PageNames.store, null)}
 
-        {this.SidebarLink(PageNames.about, null)}
+        {this.SidebarItem(PageNames.about, null)}
 
-        {this.SidebarLink(PageNames.events, null)}
+        {this.SidebarItem(PageNames.events, null)}
 
       </div>
     )

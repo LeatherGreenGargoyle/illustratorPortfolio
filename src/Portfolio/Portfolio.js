@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
 import { comicLinks, illustrationLinks, ImageSets, Values } from '../Constants'
+import { Spring } from 'react-spring'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -14,8 +15,9 @@ class Portfolio extends React.Component {
       currentImageSetName: props.currentImageSetName,
       currentImageSetYear: props.currentImageSetYear
     }
-    this.nextImages = this.nextImages.bind(this)
-    this.prevImages = this.prevImages.bind(this)
+    this.onPageNext = this.onPageNext.bind(this)
+    this.onPagePrev = this.onPagePrev.bind(this)
+    this.getImageModalElements = this.getImageModalElements.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,13 +36,45 @@ class Portfolio extends React.Component {
 
   getImageObjects() {
     if (this.props.currentImageSetName === ImageSets.comics) {
-      return comicLinks.filter(comic => comic.year === this.state.currentImageSetYear)
+      return comicLinks.filter(comic => comic.year == this.state.currentImageSetYear)
     } else if (this.props.currentImageSetName === ImageSets.illustrations) {
-      return illustrationLinks.filter(illustration => illustration.year === this.state.currentImageSetYear)
+      return illustrationLinks.filter(illustration => illustration.year == this.state.currentImageSetYear)
     }
   }
 
-  nextImages(numberOfImages) {
+  getImageModalElements(imageObjects, firstImgIdx) {
+    let mapKey = 0
+    return imageObjects.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imageObject => {
+      mapKey++
+      return (
+        <ImageModal
+              url={imageObject.url}
+              title={imageObject.title}
+              medium={imageObject.medium}
+              key={mapKey}
+              imageSet={this.props.currentImageSetName}/>
+        // <Spring
+        //   from={{ opacity: 0 }}
+        //   to={{ opacity: 1 }}
+        // >
+        //   { props => <ImageModal
+        //       url={imageObject.url}
+        //       title={imageObject.title}
+        //       medium={imageObject.medium}
+        //       key={mapKey}
+        //       imageSet={this.props.currentImageSetName}
+        //       style={props} />}
+        // </Spring>
+        // <Spring
+        //   from={{ opacity: 0 }}
+        //   to={{ opacity: 1 }}>
+        //   {props => <div style={props}>hello</div>}
+        // </Spring>
+      )
+    })
+  }
+
+  onPageNext(numberOfImages) {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
@@ -49,7 +83,7 @@ class Portfolio extends React.Component {
     })
   }
 
-  prevImages() {
+  onPagePrev() {
     if (this.state.currFirstImgIdx === 0) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx - this.state.imgsPerPage
@@ -60,7 +94,7 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    let mapKey = 0
+    // let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
     const imgObjs = this.getImageObjects()
 
@@ -71,27 +105,19 @@ class Portfolio extends React.Component {
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
             size="1x"
-            onClick={this.prevImages}
+            onClick={this.onPagePrev}
           />
           <span className="divider" />
           <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.nextImages.bind(this, imgObjs.length)}
+            onClick={this.onPageNext.bind(this, imgObjs.length)}
           />
         </div>
 
         <div>
-          { imgObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imgObj => {
-            mapKey++
-            return <ImageModal
-                    url={imgObj.url}
-                    title={imgObj.title}
-                    medium={imgObj.medium}
-                    key={mapKey}
-                    imageSet={this.props.currentImageSetName} />
-          }) }
+          { this.getImageModalElements(imgObjs, firstImgIdx) }
         </div>
 
         <div className="navBtnContainer">
@@ -99,14 +125,14 @@ class Portfolio extends React.Component {
             className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
             size="1x"
-            onClick={this.prevImages}
+            onClick={this.onPagePrev}
           />
           <span className="divider" />
           <FontAwesomeIcon
             className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.nextImages.bind(this, imgObjs.length)}
+            onClick={this.onPageNext.bind(this, imgObjs.length)}
           />
         </div>
       </div>
