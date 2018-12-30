@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './Sidebar.css'
 import { ImageSets, PageNames, routes, ProductCategories } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
-import { Transition } from 'react-spring'
+import { animated, Spring, Transition } from 'react-spring'
 
 class Sidebar extends React.Component {
   constructor() {
@@ -148,12 +148,15 @@ class Sidebar extends React.Component {
     const statePropertyName = `${pageName}_show_submenu`
     return (
       <Transition
-      items={this.state[statePropertyName]}
-      from={{ display: 'none' }}
-      enter={{ display: 'inline', background: '#28d79f' }}
-      leave={{ display: 'none', background: '#c23369' }}>
-        { shouldShowSubmenu =>
-          shouldShowSubmenu && (props => <div style={props} > { Submenu(submenuItems) } </div>)
+        native
+        items={this.state[statePropertyName]}
+        from={{ display: 'none', }}
+        enter={[{ display: 'inline', }]}
+        leave={{ display: 'none', }}
+        >
+        {shouldShowSubmenu => {
+          return shouldShowSubmenu && (props => <animated.div style={props} > { Submenu(submenuItems) } </animated.div>)
+          }
         }
       </Transition>
     )
