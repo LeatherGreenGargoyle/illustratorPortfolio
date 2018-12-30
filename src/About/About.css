@@ -15,6 +15,12 @@
   padding: 1.2em;
   position: relative;
   width: 70%;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
+}
+
+@media all and (max-width: 320px) {
+  .textContainer {
+    top: 50%;
+  }
 }

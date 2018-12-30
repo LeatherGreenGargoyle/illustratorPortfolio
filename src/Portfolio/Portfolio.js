@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
 import { comicLinks, illustrationLinks, ImageSets, Values } from '../Constants'
-import { Spring } from 'react-spring'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -53,23 +52,6 @@ class Portfolio extends React.Component {
               medium={imageObject.medium}
               key={mapKey}
               imageSet={this.props.currentImageSetName}/>
-        // <Spring
-        //   from={{ opacity: 0 }}
-        //   to={{ opacity: 1 }}
-        // >
-        //   { props => <ImageModal
-        //       url={imageObject.url}
-        //       title={imageObject.title}
-        //       medium={imageObject.medium}
-        //       key={mapKey}
-        //       imageSet={this.props.currentImageSetName}
-        //       style={props} />}
-        // </Spring>
-        // <Spring
-        //   from={{ opacity: 0 }}
-        //   to={{ opacity: 1 }}>
-        //   {props => <div style={props}>hello</div>}
-        // </Spring>
       )
     })
   }
@@ -116,7 +98,7 @@ class Portfolio extends React.Component {
           />
         </div>
 
-        <div>
+        <div className="portfolioContentContainer">
           { this.getImageModalElements(imgObjs, firstImgIdx) }
         </div>
 

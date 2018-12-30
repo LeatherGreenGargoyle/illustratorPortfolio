@@ -15,15 +15,14 @@ const App = () => {
   return (
     <div className="App">
       <Row className="header no-gutter">
-        <Col md={10}>
+        <Col lg={9} md={8} sm={8} xs={6}>
           <Header />
         </Col>
-        <Col md={2} className="iconContainer">
+        <Col lg={3} md={4} sm={4} xs={6} className="iconContainer">
           <span className="socialIcon">
-            <a href="https://www.instagram.com/mogpoe/"
+            <a href="https://www.instagram.com/jennifernguyenillustration/"
               target="_blank"
               rel="noopener noreferrer">
-              {/* <i className="fab fa-instagram"></i> */}
               <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
           </span>
@@ -31,7 +30,6 @@ const App = () => {
             <a href="http://jennifernguyenillustration.tumblr.com/"
               target="_blank"
               rel="noopener noreferrer">
-              {/* <i class="fab fa-tumblr"></i> */}
               <FontAwesomeIcon icon={['fab', 'tumblr']} />
             </a>
           </span>
@@ -39,7 +37,6 @@ const App = () => {
             <a href="https://www.facebook.com/jennifernguyenillustration/"
               target="_blank"
               rel="noopener noreferrer">
-              {/* <i class="fab fa-facebook-f"></i> */}
               <FontAwesomeIcon icon={['fab', 'facebook']} />
             </a>
           </span>
@@ -47,11 +44,11 @@ const App = () => {
         <div className="divider" />
       </Row>
       <Row>
-        <Col md={2}>
+        <Col lg={3} md={4} sm={12} xs={12}>
           <ConnectedSidebar />
         </Col>
 
-        <Col md={10} className="sidebarDivider containerMain">
+        <Col lg={9} md={8} sm={12} xs={12} className="sidebarDivider containerMain">
           <Main />
         </Col>
       </Row>

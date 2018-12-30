@@ -1,5 +1,6 @@
 import React from 'react'
 import { portraitURLs } from '../Constants'
+import { Row, Col } from 'react-bootstrap'
 import './Events.css'
 
 export const Events = (eventObjs) => {
@@ -13,15 +14,39 @@ export const Events = (eventObjs) => {
 const EventSection = (eventObj) => {
   return (
     <div className={'eventContainer'}>
-      <div className={'imageRow'}>
+      <Row className={'imageRow'}>
         {eventObj.imageURLs.map(imageUrl => {
-            return EventImage(imageUrl, eventObj.imageURLs.length - 1)
+            return (EventImage(imageUrl, eventObj.imageURLs.length - 1) )
           })}
-      </div>
-      <div>
+      </Row>
+      <Row>
         <p className={'imageCaption'}>{eventObj.title} | {eventObj.galleryName} | {eventObj.dateStr}</p>
-      </div>
+      </Row>
     </div>
+  )
+}
+
+const EventImage = (imageURL, numberOfSiblings) => {
+  let imgClass = ''
+  let colClass = ''
+  if (numberOfSiblings === 0) {
+    imgClass = 'eventImageSingle'
+  } else if (portraitURLs.includes(imageURL)) {
+    imgClass = 'eventImagePortrait'
+    colClass = 'noTopMargin'
+  } else {
+    imgClass = 'eventImageLandscape'
+  }
+
+  return (
+    <Col
+      className={colClass}>
+      <img
+        src={imageURL}
+        className={imgClass}
+        alt={"Postcard from gallery event."}
+      ></img>
+    </Col>
   )
 }
 
@@ -32,23 +57,4 @@ export const Event = (title, imageURLs, galleryName, dateStr) => {
     galleryName,
     dateStr
   }
-}
-
-const EventImage = (imageURL, numberOfSiblings) => {
-  let imgClass = ''
-  if (numberOfSiblings === 0) {
-    imgClass = 'eventImageSingle'
-  } else if (portraitURLs.indexOf(imageURL) !== -1) {
-    imgClass = 'eventImagePortrait'
-  } else {
-    imgClass = 'eventImageLandscape'
-  }
-
-  return (
-    <img
-      src={imageURL}
-      className={imgClass}
-      alt={"Postcard from gallery event."}
-    ></img>
-  )
 }

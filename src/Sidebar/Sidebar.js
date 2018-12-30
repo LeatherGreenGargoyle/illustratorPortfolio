@@ -23,10 +23,11 @@ class Sidebar extends React.Component {
 
     this.getSubmenuItemsFor = this.getSubmenuItemsFor.bind(this)
     this.onRouteClick = this.onRouteClick.bind(this)
-    this.onMouseEnterRouteLink = this.onMouseEnterRouteLink.bind(this)
-    this.onMouseLeaveRouteLink = this.onMouseLeaveRouteLink.bind(this)
-    this.onMouseLeaveLinkWithSubmenu = this.onMouseLeaveLinkWithSubmenu.bind(this)
-    this.onMouseEnterLinkWithSubmenu = this.onMouseEnterLinkWithSubmenu.bind(this)
+    this.onMouseEnterItem = this.onMouseEnterItem.bind(this)
+    this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this)
+    this.onMouseLeaveItemWithSubmenu = this.onMouseLeaveItemWithSubmenu.bind(this)
+    this.onMouseEnterItemWithSubmenu = this.onMouseEnterItemWithSubmenu.bind(this)
+    this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
   }
 
   getSubmenuItemsFor(pageName) {
@@ -75,33 +76,38 @@ class Sidebar extends React.Component {
     })
   }
 
-  onMouseEnterRouteLink(pageName) {
+  onMouseEnterItem(pageName) {
     this.setState({
       linkUnderHover: pageName,
     })
     if (this.linksWithSubmenus.includes(pageName)){
-      this.onMouseEnterLinkWithSubmenu(pageName)
+      this.onMouseEnterItemWithSubmenu(pageName)
     }
   }
-  onMouseEnterLinkWithSubmenu(pageName) {
+  onMouseEnterItemWithSubmenu(pageName) {
     const showSubmenuPropertyName = `${pageName}_show_submenu`
     let newState = {}
     newState[showSubmenuPropertyName] = true
     this.setState(newState)
   }
-  onMouseLeaveRouteLink(pageName) {
+  onMouseLeaveItem(pageName) {
     if (this.linksWithSubmenus.includes(pageName)) {
-      this.onMouseLeaveLinkWithSubmenu(pageName)
+      this.onMouseLeaveItemWithSubmenu(pageName)
     }
     this.setState({
       linkUnderHover: '',
     })
   }
-  onMouseLeaveLinkWithSubmenu(pageName){
+  onMouseLeaveItemWithSubmenu(pageName){
     const showSubmenuPropertyName = `${pageName}_show_submenu`
     let newState = {}
     newState[showSubmenuPropertyName] = false
     this.setState(newState)
+  }
+
+  onSidebarItemClick(pageName) {
+    const isMobileBrowser = /Mobi|Tablet|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    if (isMobileBrowser) { this.onMouseEnterItem(pageName) }
   }
 
   LinkElement(pageName, linkRoute) {
@@ -122,8 +128,9 @@ class Sidebar extends React.Component {
 
     return (
       <div className="sidebarLink"
-      onMouseEnter={() => this.onMouseEnterRouteLink(pageName)}
-      onMouseLeave={() => this.onMouseLeaveRouteLink(pageName)}>
+      onMouseEnter={() => this.onMouseEnterItem(pageName)}
+      onMouseLeave={() => this.onMouseLeaveItem(pageName)}
+      onClick={() => this.onSidebarItemClick(pageName)}>
         <div
           className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
         >
