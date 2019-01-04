@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import './Sidebar.css'
 import { ImageSets, PageNames, routes, ProductCategories } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
-import { animated, Spring, Transition } from 'react-spring'
+import { animated, Transition } from 'react-spring'
 
 class Sidebar extends React.Component {
   constructor() {
     super()
     this.state = {
       currentPage: PageNames.home,
-      linkUnderHover: '',
+      // linkUnderHover: '',
       store_show_submenu: false,
       illustrations_show_submenu: false,
       comics_show_submenu: false
@@ -23,10 +23,6 @@ class Sidebar extends React.Component {
 
     this.getSubmenuItemsFor = this.getSubmenuItemsFor.bind(this)
     this.onRouteClick = this.onRouteClick.bind(this)
-    this.onMouseEnterItem = this.onMouseEnterItem.bind(this)
-    this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this)
-    this.onMouseLeaveItemWithSubmenu = this.onMouseLeaveItemWithSubmenu.bind(this)
-    this.onMouseEnterItemWithSubmenu = this.onMouseEnterItemWithSubmenu.bind(this)
     this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
   }
 
@@ -76,38 +72,18 @@ class Sidebar extends React.Component {
     })
   }
 
-  onMouseEnterItem(pageName) {
-    this.setState({
-      linkUnderHover: pageName,
-    })
-    if (this.linksWithSubmenus.includes(pageName)){
-      this.onMouseEnterItemWithSubmenu(pageName)
-    }
-  }
-  onMouseEnterItemWithSubmenu(pageName) {
-    const showSubmenuPropertyName = `${pageName}_show_submenu`
-    let newState = {}
-    newState[showSubmenuPropertyName] = true
-    this.setState(newState)
-  }
-  onMouseLeaveItem(pageName) {
-    if (this.linksWithSubmenus.includes(pageName)) {
-      this.onMouseLeaveItemWithSubmenu(pageName)
-    }
-    this.setState({
-      linkUnderHover: '',
-    })
-  }
-  onMouseLeaveItemWithSubmenu(pageName){
-    const showSubmenuPropertyName = `${pageName}_show_submenu`
-    let newState = {}
-    newState[showSubmenuPropertyName] = false
-    this.setState(newState)
-  }
-
   onSidebarItemClick(pageName) {
-    const isMobileBrowser = /Mobi|Tablet|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    if (isMobileBrowser) { this.onMouseEnterItem(pageName) }
+    if (!this.linksWithSubmenus.includes(pageName)) { return }
+    let newState = {}
+    this.linksWithSubmenus.forEach(linkTitle => {
+      const showSubmenuPropertyName = `${linkTitle}_show_submenu`
+      if (linkTitle === pageName) {
+        newState[showSubmenuPropertyName] = !this.state[showSubmenuPropertyName]
+      } else {
+        newState[showSubmenuPropertyName] = false
+      }
+    })
+    this.setState(newState)
   }
 
   LinkElement(pageName, linkRoute) {
@@ -128,12 +104,8 @@ class Sidebar extends React.Component {
 
     return (
       <div className="sidebarLink"
-      onMouseEnter={() => this.onMouseEnterItem(pageName)}
-      onMouseLeave={() => this.onMouseLeaveItem(pageName)}
       onClick={() => this.onSidebarItemClick(pageName)}>
-        <div
-          className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
-        >
+        <div className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}>
         { this.linksWithSubmenus.includes(pageName) ? `${pageName}` : this.LinkElement(pageName, linkRoute, additionalOnClick)}
         </div>
         {this.Submenu(pageName)}
@@ -146,13 +118,14 @@ class Sidebar extends React.Component {
 
     const submenuItems = this.getSubmenuItemsFor(pageName)
     const statePropertyName = `${pageName}_show_submenu`
+
     return (
       <Transition
         native
         items={this.state[statePropertyName]}
-        from={{ display: 'none', }}
-        enter={[{ display: 'inline', }]}
-        leave={{ display: 'none', }}
+        from={{ height: 0, }}
+        enter={[{ height: 'auto', }]}
+        leave={{ height: 0, display: 'none' }}
         >
         {shouldShowSubmenu => {
           return shouldShowSubmenu && (props => <animated.div style={props} > { Submenu(submenuItems) } </animated.div>)

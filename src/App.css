@@ -30,6 +30,10 @@
   font-size: 1em;
 }
 
+.fontSizePlus {
+  font-size: 1.13em;
+}
+
 .iconContainer {
   text-align: right;
 }

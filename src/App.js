@@ -26,18 +26,18 @@ const App = () => {
               <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
           </span>
-          <span className="socialIcon">
+          <span className="socialIcon fontSizePlus">
             <a href="http://jennifernguyenillustration.tumblr.com/"
               target="_blank"
               rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'tumblr']} />
             </a>
           </span>
-          <span className="socialIcon lastIcon">
+          <span className="socialIcon lastIcon fontSizePlus">
             <a href="https://www.facebook.com/jennifernguyenillustration/"
               target="_blank"
               rel="noopener noreferrer">
-              <FontAwesomeIcon icon={['fab', 'facebook']} />
+              <FontAwesomeIcon icon={['fab', 'facebook-f']} />
             </a>
           </span>
         </Col>

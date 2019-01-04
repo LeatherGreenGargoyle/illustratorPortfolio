@@ -30,12 +30,12 @@ export const comicLinks = [
     medium: 'ink',
     year: '2017',
   },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/illustration+001-minshrunk.jpg',
-    title: 'Falling',
-    medium: 'ink',
-    year: '2016',
-  },
+  // {
+  //   url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/illustration+001-minshrunk.jpg',
+  //   title: 'Falling',
+  //   medium: 'ink',
+  //   year: '2016',
+  // },
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/illustration+002-minshrunk.jpg',
     title: 'Close-Up',
