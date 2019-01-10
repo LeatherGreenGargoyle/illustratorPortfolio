@@ -11,8 +11,10 @@ class ProductStore extends React.Component {
     this.state = {
       currFirstImgIdx: 0,
       imgsPerPage: Values.IMAGES_PER_PAGE,
-      currentProductCategory: props.productCategory
+      currentProductCategory: props.productCategory,
+      loadedProductObjects: []
     }
+    this.onLoad = this.onLoad.bind(this)
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
   }
@@ -22,6 +24,7 @@ class ProductStore extends React.Component {
         this.setState(() => ({
           currFirstImgIdx: 0,
           currentImageSetName: nextProps.productCategory,
+          loadedProductObjects: []
         }));
     }
   }
@@ -37,12 +40,18 @@ class ProductStore extends React.Component {
     }
   }
   
+  onLoad(productObject) {
+    this.setState(({ loadedProductObjects }) => {
+      return { loadedProductObjects: loadedProductObjects.concat(productObject) }
+    })
+  }
 
   nextImages(numberOfImages) {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
+      loadedProductObjects: []
     })
   }
 
@@ -53,6 +62,7 @@ class ProductStore extends React.Component {
 
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
+      loadedProductObjects: []
     })
   }
 
@@ -80,7 +90,7 @@ class ProductStore extends React.Component {
         </div>
 
         <div className="productsContainer">
-          { productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(productObj => {
+          { this.state.loadedProductObjects.map(productObj => {
             mapKey++
             return (
               <ProductModal
@@ -93,6 +103,12 @@ class ProductStore extends React.Component {
                 link={productObj.link}
               />)
           }) }
+        </div>
+
+        <div className="hidden">
+          {productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map((item, i) =>
+            <img src={item.url} onLoad={this.onLoad.bind(this, item)} key={i} />
+          )}
         </div>
 
         <div className="navBtnContainer">

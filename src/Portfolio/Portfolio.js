@@ -14,7 +14,6 @@ class Portfolio extends React.Component {
       currentImageSetName: props.currentImageSetName,
       currentImageSetYear: props.currentImageSetYear,
       loadedImageObjects: [],
-      numberOfImagesForCurrentPage: 0
     }
     this.getImagesForCurrentPage = this.getImagesForCurrentPage.bind(this)
     this.getImageModals = this.getImageModals.bind(this)
@@ -47,7 +46,6 @@ class Portfolio extends React.Component {
 
   getImagesForCurrentPage(imageObjects, firstImgIdx) {
     let imagesForCurrentPage = imageObjects.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
-    // this.setState({ numberOfImagesForCurrentPage: imagesForCurrentPage.length })
     return imagesForCurrentPage
   }
 
