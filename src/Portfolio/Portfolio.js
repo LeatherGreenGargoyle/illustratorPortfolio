@@ -12,11 +12,14 @@ class Portfolio extends React.Component {
       currFirstImgIdx: 0,
       imgsPerPage: Values.IMAGES_PER_PAGE,
       currentImageSetName: props.currentImageSetName,
-      currentImageSetYear: props.currentImageSetYear
+      currentImageSetYear: props.currentImageSetYear,
+      loadedImageObjects: [],
+      numberOfImagesForCurrentPage: 0
     }
+    this.getImagesForCurrentPage = this.getImagesForCurrentPage.bind(this)
+    this.getImageModals = this.getImageModals.bind(this)
     this.onPageNext = this.onPageNext.bind(this)
     this.onPagePrev = this.onPagePrev.bind(this)
-    this.getImageModalElements = this.getImageModalElements.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,7 +31,8 @@ class Portfolio extends React.Component {
         this.setState(() => ({
           currFirstImgIdx: 0,
           currentImageSetName: nextProps.currentImageSetName,
-          currentImageSetYear: nextProps.currentImageSetYear
+          currentImageSetYear: nextProps.currentImageSetYear,
+          loadedImageObjects: []
         }));
     }
 }
@@ -41,9 +45,15 @@ class Portfolio extends React.Component {
     }
   }
 
-  getImageModalElements(imageObjects, firstImgIdx) {
+  getImagesForCurrentPage(imageObjects, firstImgIdx) {
+    let imagesForCurrentPage = imageObjects.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
+    // this.setState({ numberOfImagesForCurrentPage: imagesForCurrentPage.length })
+    return imagesForCurrentPage
+  }
+
+  getImageModals(imageObjects) {
     let mapKey = 0
-    return imageObjects.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map(imageObject => {
+    return imageObjects.map(imageObject => {
       mapKey++
       return (
         <ImageModal
@@ -56,12 +66,19 @@ class Portfolio extends React.Component {
     })
   }
 
+  onLoad(imageObject) {
+    this.setState(({ loadedImageObjects }) => {
+      return { loadedImageObjects: loadedImageObjects.concat(imageObject) }
+    })
+  }
+
   onPageNext(numberOfImages) {
     if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
 
     const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
+      loadedImageObjects: []
     })
   }
 
@@ -72,11 +89,11 @@ class Portfolio extends React.Component {
 
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
+      loadedImageObjects: []
     })
   }
 
   render() {
-    // let mapKey = 0
     const firstImgIdx = this.state.currFirstImgIdx
     const imgObjs = this.getImageObjects()
 
@@ -99,7 +116,13 @@ class Portfolio extends React.Component {
         </div>
 
         <div className="portfolioContentContainer">
-          { this.getImageModalElements(imgObjs, firstImgIdx) }
+          { this.getImageModals(this.state.loadedImageObjects) }
+        </div>
+
+        <div className="hidden">
+          {this.getImagesForCurrentPage(imgObjs, firstImgIdx).map((item, i) =>
+            <img src={item.url} onLoad={this.onLoad.bind(this, item)} key={i} />
+          )}
         </div>
 
         <div className="navBtnContainer">

@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 .navButtonActive {
   vertical-align: middle;
   margin: 1em;

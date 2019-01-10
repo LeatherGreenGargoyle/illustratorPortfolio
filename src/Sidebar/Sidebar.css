@@ -23,6 +23,7 @@ a:active {
 }
 
 .sidebarLink {
+  cursor: pointer;
   margin-bottom: .15em;
 }
 
