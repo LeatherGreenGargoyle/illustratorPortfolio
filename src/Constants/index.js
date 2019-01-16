@@ -354,6 +354,11 @@ export const PageNames = {
   store: 'Store',
   events: 'Events',
 }
+export const Submenus = {
+  Illustrations: PageNames.illustrations,
+  Comics: PageNames.comics,
+  Store: PageNames.store,
+}
 
 /* Misc */
 export const Values = {

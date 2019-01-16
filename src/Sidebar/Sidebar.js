@@ -1,29 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Sidebar.css'
-import { ImageSets, PageNames, routes, ProductCategories } from '../Constants';
+import { ImageSets, PageNames, routes, ProductCategories, Submenus } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
-import { animated, Transition } from 'react-spring'
+import { Spring } from 'react-spring'
 
 class Sidebar extends React.Component {
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
       currentPage: PageNames.home,
-      // linkUnderHover: '',
-      store_show_submenu: false,
-      illustrations_show_submenu: false,
-      comics_show_submenu: false
+      currentOpenSubmenu: props.currentOpenSubmenu
     }
-    this.linksWithSubmenus = [PageNames.store, PageNames.illustrations, PageNames.comics]
-    // this.linksWithSubmenus.forEach(linkName => {
-    //   const linkPropertyName = `${linkName}_show_submenu`
-    //   this.state[linkPropertyName] = false
-    // })
 
     this.getSubmenuItemsFor = this.getSubmenuItemsFor.bind(this)
     this.onRouteClick = this.onRouteClick.bind(this)
     this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ currentOpenSubmenu : nextProps.currentOpenSubmenu })
   }
 
   getSubmenuItemsFor(pageName) {
@@ -73,26 +69,15 @@ class Sidebar extends React.Component {
   }
 
   onSidebarItemClick(pageName) {
-    if (!this.linksWithSubmenus.includes(pageName)) { return }
-    let newState = {}
-    this.linksWithSubmenus.forEach(linkTitle => {
-      const showSubmenuPropertyName = `${linkTitle}_show_submenu`
-      if (linkTitle === pageName) {
-        newState[showSubmenuPropertyName] = !this.state[showSubmenuPropertyName]
-      } else {
-        newState[showSubmenuPropertyName] = false
-      }
-    })
-    this.setState(newState)
+    if (!Submenus[pageName]) { return }
+    this.props.onSelectOpenSubmenu(pageName)
   }
 
   LinkElement(pageName, linkRoute) {
     return (
       <Link
         to={linkRoute}
-        onClick={() => {
-          this.onRouteClick(pageName)
-        }}
+        onClick={() => this.onRouteClick(pageName)}
       >
         {pageName}
       </Link>
@@ -104,34 +89,31 @@ class Sidebar extends React.Component {
 
     return (
       <div className="sidebarLink"
-      onClick={() => this.onSidebarItemClick(pageName)}>
+        onClick={() => this.onSidebarItemClick(pageName)}>
         <div className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}>
-        { this.linksWithSubmenus.includes(pageName) ? `${pageName}` : this.LinkElement(pageName, linkRoute, additionalOnClick)}
+        { Submenus[pageName] ? `${pageName}` : this.LinkElement(pageName, linkRoute, additionalOnClick)}
         </div>
-        {this.Submenu(pageName)}
+        {this.makeSubmenu(pageName)}
       </div>
     )
   }
 
-  Submenu(pageName) {
-    if (!this.linksWithSubmenus.includes(pageName)) return
-
+  makeSubmenu(pageName) {
+    if (!Submenus[pageName]) return
     const submenuItems = this.getSubmenuItemsFor(pageName)
-    const statePropertyName = `${pageName}_show_submenu`
 
     return (
-      <Transition
-        native
-        items={this.state[statePropertyName]}
-        from={{ height: 0, }}
-        enter={[{ height: 'auto', }]}
-        leave={{ height: 0, display: 'none' }}
-        >
-        {shouldShowSubmenu => {
-          return shouldShowSubmenu && (props => <animated.div style={props} > { Submenu(submenuItems) } </animated.div>)
-          }
-        }
-      </Transition>
+      <div>
+      { pageName === this.state.currentOpenSubmenu && (
+          <Spring
+            from={{ opacity: 0, marginTop: -20 }}
+            to={{ opacity: 1, marginTop: 0 }}
+            delay= '200'>
+            { props => <div style={props}> {Submenu(submenuItems)} </div> }
+          </Spring>
+        )
+      }
+      </div>
     )
   }
 
