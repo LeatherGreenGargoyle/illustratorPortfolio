@@ -70,7 +70,11 @@ class Sidebar extends React.Component {
 
   onSidebarItemClick(pageName) {
     if (!Submenus[pageName]) { return }
-    this.props.onSelectOpenSubmenu(pageName)
+    if (this.state.currentOpenSubmenu === pageName) {
+      this.props.onSelectOpenSubmenu("")
+    } else {
+      this.props.onSelectOpenSubmenu(pageName)
+    }
   }
 
   LinkElement(pageName, linkRoute) {
@@ -88,10 +92,13 @@ class Sidebar extends React.Component {
     const linkRoute = pageName === PageNames.home ? routes.home : routes[pageName.toLowerCase()]
 
     return (
-      <div className="sidebarLink"
-        onClick={() => this.onSidebarItemClick(pageName)}>
+      <div className="sidebarLink">
         <div className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}>
-        { Submenus[pageName] ? `${pageName}` : this.LinkElement(pageName, linkRoute, additionalOnClick)}
+        {
+          Submenus[pageName] ?
+            (<span onClick={() => this.onSidebarItemClick(pageName)}> {pageName} </span>) :
+            this.LinkElement(pageName, linkRoute, additionalOnClick)
+        }
         </div>
         {this.makeSubmenu(pageName)}
       </div>
