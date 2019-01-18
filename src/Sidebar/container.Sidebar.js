@@ -2,7 +2,10 @@ import { connect } from 'react-redux'
 import { SidebarActions } from './duck.Sidebar'
 import Sidebar from './Sidebar'
 
-const mapStateToProps = state => ({ currentOpenSubmenu: state.CurrentOpenSubmenu })
+const mapStateToProps = state => ({
+  currentOpenSubmenu: state.CurrentOpenSubmenu,
+  currentSelectedSubmenuItem: state.CurrentSelectedSubmenuItem
+})
 
 const mapDispatchToProps = dispatch => ({
   onSelectImageSetYear: (year) => {
@@ -16,6 +19,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onSelectOpenSubmenu: (pageName) => {
     dispatch(SidebarActions.selectOpenSubmenu(pageName))
+  },
+  onSelectSubmenuItem: (submenuItemName) => {
+    dispatch(SidebarActions.selectSubmenuItem(submenuItemName))
   }
 })
 

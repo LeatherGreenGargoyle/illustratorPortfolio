@@ -4,6 +4,7 @@ import './Sidebar.css'
 import { ImageSets, PageNames, routes, ProductCategories, Submenus } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
 import { Spring } from 'react-spring'
+import { getSubmenuItemTag } from '../Utils'
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -24,7 +25,12 @@ class Sidebar extends React.Component {
 
   getSubmenuItemsFor(pageName) {
     const routeName = routes[pageName.toLowerCase()]
-    const { onSelectStoreCategory, onSelectImageSetYear, onSelectPortfolioImageset } = this.props
+    const {
+      onSelectStoreCategory,
+      onSelectImageSetYear,
+      onSelectPortfolioImageset,
+      onSelectSubmenuItem
+    } = this.props
 
     if (pageName === PageNames.store) {
       const productCategories = Object.keys(ProductCategories)
@@ -32,13 +38,15 @@ class Sidebar extends React.Component {
         return () => {
           this.onRouteClick(pageName)
           onSelectStoreCategory(ProductCategories[category])
+          onSelectSubmenuItem(getSubmenuItemTag(pageName, category))
         }
       }
       const productItems = productCategories.map(category => {
         return SubmenuItem(
           ProductCategories[category],
           routeName,
-          getProductItemClickHandler(category))
+          getProductItemClickHandler(category),
+          getSubmenuItemTag(pageName, category))
       })
 
       return productItems
@@ -50,13 +58,15 @@ class Sidebar extends React.Component {
           this.onRouteClick(pageName)
           onSelectImageSetYear(year)
           onSelectPortfolioImageset(imageSetToSelect)
+          onSelectSubmenuItem(getSubmenuItemTag(pageName, year))
         }
       }
       const yearItems = years.map(year => {
         return SubmenuItem(
           year,
           routeName,
-          getYearItemClickHandler(year))
+          getYearItemClickHandler(year),
+          getSubmenuItemTag(pageName, year))
       })
       return yearItems
     }
@@ -107,19 +117,24 @@ class Sidebar extends React.Component {
 
   makeSubmenu(pageName) {
     if (!Submenus[pageName]) return
+    const { currentSelectedSubmenuItem } = this.props
     const submenuItems = this.getSubmenuItemsFor(pageName)
+    const submenuProps = { 
+      links : submenuItems,
+      currentSelectedSubmenuItem: currentSelectedSubmenuItem,
+     }
 
     return (
       <div>
-      { pageName === this.state.currentOpenSubmenu && (
-          <Spring
-            from={{ opacity: 0, marginTop: -20 }}
-            to={{ opacity: 1, marginTop: 0 }}
-            delay= '200'>
-            { props => <div style={props}> {Submenu(submenuItems)} </div> }
-          </Spring>
-        )
-      }
+        { pageName === this.state.currentOpenSubmenu && (
+            <Spring
+              from={{ opacity: 0, marginTop: -20 }}
+              to={{ opacity: 1, marginTop: 0 }}
+              delay= '200'>
+              { props => <div style={props}> <Submenu {...submenuProps}/> </div> }
+            </Spring>
+          )
+        }
       </div>
     )
   }
