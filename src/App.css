@@ -48,3 +48,12 @@
 .sidebarDivider {
   border-left: .1em black solid;
 }
+
+@media all and (max-width: 575px) {
+  .fullSidebar {
+    display: none;
+  }
+  .iconContainer {
+    display: none;
+  }
+}

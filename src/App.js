@@ -7,18 +7,18 @@ import Header from './Header/Header'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-library.add(fab, faAngleLeft, faAngleRight)
+library.add(fab, faAngleLeft, faAngleRight, faBars)
 
 const App = () => {
   return (
     <div className="App">
       <Row className="header no-gutter">
-        <Col lg={9} md={8} sm={8} xs={6}>
-          <Header />
+        <Col lg={9} md={8} sm={8} xs={6} className="titleContainer">
+            Jennifer Nguyen
         </Col>
-        <Col lg={3} md={4} sm={4} xs={6} className="iconContainer">
+        <Col lg={3} md={4} sm={4} xs={6}  className="iconContainer">
           <span className="socialIcon">
             <a href="https://www.instagram.com/jennifernguyenillustration/"
               target="_blank"
@@ -44,7 +44,7 @@ const App = () => {
         <div className="divider" />
       </Row>
       <Row>
-        <Col lg={3} md={4} sm={12} xs={12}>
+        <Col lg={3} md={4} sm={12} xs={12} className="fullSidebar">
           <ConnectedSidebar />
         </Col>
 
