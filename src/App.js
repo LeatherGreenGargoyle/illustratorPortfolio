@@ -9,11 +9,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faAngleLeft, faAngleRight, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Container } from 'semantic-ui-react';
 library.add(fab, faAngleLeft, faAngleRight, faBars)
 
 const App = () => {
   return (
-    <div className="App">
+    <Container className="App">
       <Row className="header no-gutter">
         <Col lg={9} md={8} sm={8} xs={6} className="titleContainer">
             Jennifer Nguyen
@@ -43,6 +44,10 @@ const App = () => {
         </Col>
         <div className="divider" />
       </Row>
+      <Row className="sidebarSmall">
+        <span className="sidebarSmallLabel"> Menu </span>
+        <span className="sidebarSmallIcon"> <FontAwesomeIcon icon="bars" size="1x" /></span>
+      </Row>
       <Row>
         <Col lg={3} md={4} sm={12} xs={12} className="fullSidebar">
           <ConnectedSidebar />
@@ -52,7 +57,7 @@ const App = () => {
           <Main />
         </Col>
       </Row>
-    </div>
+    </Container>
   )
 }
 

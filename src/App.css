@@ -49,11 +49,37 @@
   border-left: .1em black solid;
 }
 
-@media all and (max-width: 575px) {
+.sidebarSmall {
+  display: none;
+}
+
+.sidebarSmallLabel {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.sidebarSmallIcon {
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+@media all and (max-width: 779px) {
   .fullSidebar {
     display: none;
   }
+
   .iconContainer {
     display: none;
+  }
+
+  .sidebarDivider {
+    border-left: none;
+  }
+
+  .sidebarSmall {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 2em;
   }
 }
