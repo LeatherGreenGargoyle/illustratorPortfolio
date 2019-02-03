@@ -15,9 +15,11 @@ const EventSection = (eventObj) => {
   return (
     <div className={'eventContainer'}>
       <Row className={'imageRow'}>
-        {eventObj.imageURLs.map(imageUrl => {
-            return (EventImage(imageUrl, eventObj.imageURLs.length - 1) )
-          })}
+        {
+          eventObj.imageURLs.map(
+            imageUrl => (EventImage(imageUrl, eventObj.imageURLs.length - 1) )
+          )
+        }
       </Row>
       <Row>
         <p className={'imageCaption'}>{eventObj.title} | {eventObj.galleryName} | {eventObj.dateStr}</p>

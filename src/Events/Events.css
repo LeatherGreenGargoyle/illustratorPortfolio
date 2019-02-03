@@ -79,9 +79,15 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .eventContainer {
+    margin-left: 1em;
+  }
+}
+
 @media all and (max-width: 425px) {
   .eventImageLandscape {
-    max-width: 23.68em;
-    max-height: 16.08em;
+    max-width: 19.18em;
+    max-height: 13.02em;
   }
 }
