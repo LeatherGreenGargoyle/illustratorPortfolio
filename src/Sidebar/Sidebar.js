@@ -88,10 +88,16 @@ class Sidebar extends React.Component {
   }
 
   LinkElement(pageName, linkRoute) {
+    const onLinkClick = () => {
+      this.onRouteClick(pageName)
+      if (!Submenus[pageName]) {
+        this.props.onSelectSubmenuItem("")
+      }
+    }
     return (
       <Link
         to={linkRoute}
-        onClick={() => this.onRouteClick(pageName)}
+        onClick={() => onLinkClick()}
         className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
       >
         {pageName}

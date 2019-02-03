@@ -23,7 +23,6 @@ class App extends React.Component {
   }
 
   onMobileMenuClick() {
-    console.log(`shouldShowMobileMenu: ${this.state['showMobileMenu']}`)
     this.setState({
       showMobileMenu : !this.state['showMobileMenu']
     })
