@@ -4,9 +4,20 @@
 
 .productContainer {
   width: 31%;
-  margin: 1%;
+  margin: 0% 1% 0% 1%;
   display: inline-block;
   height: 20em;
+}
+
+.productContainerTall {
+  width: 31%;
+  margin: 0% 1% 0% 1%;
+  display: inline-block;
+  height: 26em;
+}
+
+.productsContainer > * {
+  vertical-align: top;
 }
 
 .productImageFooter {
@@ -24,4 +35,23 @@
 
 .productLink {
   width: 100%;
+}
+
+@media all and (max-width: 425px) {
+  .productContainer {
+    height: 12em;
+  }
+
+  .productContainerTall {
+    width: 31%;
+    margin: 0% 1% 0% 1%;
+    display: inline-block;
+    height: 18em;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .productContainer {
+    height: 12em;
+  }
 }

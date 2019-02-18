@@ -147,6 +147,30 @@ export const comicLinks = [
 ]
 export const illustrationLinks = [
   {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Space+Bun.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Sitting.jpg',
+    title: 'Sitting',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Ponder+II.jpg',
+    title: 'Ponder II',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Moon+II.jpg',
+    title: 'Moon II',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x10_ink_Stop+Staring.jpg',
     title: 'Stop Staring',
     medium: 'ink',
@@ -173,30 +197,6 @@ export const illustrationLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x10_ink_Boating.jpg',
     title: 'Boating',
-    medium: 'ink',
-    year: '2018',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Space+Bun.jpg',
-    title: 'Space Bun',
-    medium: 'ink',
-    year: '2018',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Sitting.jpg',
-    title: 'Sitting',
-    medium: 'ink',
-    year: '2018',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Ponder+II.jpg',
-    title: 'Ponder II',
-    medium: 'ink',
-    year: '2018',
-  },
-  {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Moon+II.jpg',
-    title: 'Moon II',
     medium: 'ink',
     year: '2018',
   },

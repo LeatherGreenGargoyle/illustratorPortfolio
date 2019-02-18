@@ -21,16 +21,14 @@ class ImageModal extends React.Component {
 
   render() {
 
-    const { url, title, price, type, link } = this.props
+    const { url, title, price, link, isTall } = this.props
     return (
-      <div className="productContainer">
+      <div className={ isTall ? "productContainerTall" : "productContainer" }>
           <a href={ link } target="_blank" className="productLink">
             <img src={url} alt="illustration" onClick={ this.open } className="productImage"/>
           </a>
           <span className="productImageFooter">
             <span>{title}</span>
-            <br />
-            <span>{type}</span>
             <br />
             <span>{price}</span>
           </span>

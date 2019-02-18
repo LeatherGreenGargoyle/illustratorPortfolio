@@ -17,6 +17,7 @@ class ProductStore extends React.Component {
     this.onLoad = this.onLoad.bind(this)
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
+    this.startLoadingImages = this.startLoadingImages.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,9 +41,11 @@ class ProductStore extends React.Component {
     }
   }
   
-  onLoad(productObject) {
-    this.setState(({ loadedProductObjects }) => {
-      return { loadedProductObjects: loadedProductObjects.concat(productObject) }
+  onLoad(productObject, originalIndex) {
+    let newLoadedObjects = this.state.loadedProductObjects
+    newLoadedObjects[originalIndex] = productObject
+    this.setState({
+      loadedProductObjects: newLoadedObjects
     })
   }
 
@@ -64,6 +67,14 @@ class ProductStore extends React.Component {
       currFirstImgIdx: newFirstUrlIdx,
       loadedProductObjects: []
     })
+  }
+
+  startLoadingImages(imgObjs, firstImgIdx) {
+    return imgObjs
+      .slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
+      .map((item, i) =>
+        (<img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} />)
+    )
   }
 
   render() {
@@ -91,6 +102,7 @@ class ProductStore extends React.Component {
 
         <div className="productsContainer">
           { this.state.loadedProductObjects.map(productObj => {
+            console.log(`are we on originals? ${this.props.productCategory == ProductCategories.originals}`)
             mapKey++
             return (
               <ProductModal
@@ -101,14 +113,15 @@ class ProductStore extends React.Component {
                 type={productObj.type}
                 key={mapKey}
                 link={productObj.link}
+                isTall={this.props.productCategory == ProductCategories.originals}
               />)
           }) }
         </div>
 
         <div className="hidden">
-          {productObjs.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage).map((item, i) =>
-            <img src={item.url} onLoad={this.onLoad.bind(this, item)} key={i} />
-          )}
+          {
+            this.startLoadingImages(productObjs, firstImgIdx)
+          }
         </div>
 
         <div className="navBtnContainer">

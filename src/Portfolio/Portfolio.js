@@ -19,6 +19,7 @@ class Portfolio extends React.Component {
     this.getImageModals = this.getImageModals.bind(this)
     this.onPageNext = this.onPageNext.bind(this)
     this.onPagePrev = this.onPagePrev.bind(this)
+    this.startLoadingImages = this.startLoadingImages.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -64,9 +65,11 @@ class Portfolio extends React.Component {
     })
   }
 
-  onLoad(imageObject) {
-    this.setState(({ loadedImageObjects }) => {
-      return { loadedImageObjects: loadedImageObjects.concat(imageObject) }
+  onLoad(imageObject, originalIndex) {
+    let newLoadedImageObjects = this.state.loadedImageObjects
+    newLoadedImageObjects[originalIndex] = imageObject
+    this.setState({
+      loadedImageObjects: newLoadedImageObjects
     })
   }
 
@@ -88,6 +91,13 @@ class Portfolio extends React.Component {
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
       loadedImageObjects: []
+    })
+  }
+
+  startLoadingImages(imgObjs, firstImgIdx) {
+    const imagesForCurrentPage = this.getImagesForCurrentPage(imgObjs, firstImgIdx)
+    return imagesForCurrentPage.map((item, i) => {
+      return <img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} />
     })
   }
 
@@ -118,9 +128,9 @@ class Portfolio extends React.Component {
         </div>
 
         <div className="hidden">
-          {this.getImagesForCurrentPage(imgObjs, firstImgIdx).map((item, i) =>
-            <img src={item.url} onLoad={this.onLoad.bind(this, item)} key={i} />
-          )}
+          { 
+            this.startLoadingImages(imgObjs, firstImgIdx)
+          }
         </div>
 
         <div className="navBtnContainer">
