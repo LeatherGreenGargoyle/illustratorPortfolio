@@ -368,6 +368,55 @@ export const ProductTypes = {
 }
 export const OriginalsProducts = [
   {
+    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/59919591/file_d0a4be84a0_original.jpg',
+    title: 'Skating Around',
+    type: ProductTypes.Original,
+    price: '$20.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834635-original-inkmas-2017-skating-around'
+  },
+  {
+    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919333/file_5a66ba326d_original.jpg',
+    title: 'Holly',
+    type: ProductTypes.Original,
+    price: '$20.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834557-original-inkmas-2017-holly'
+  },
+  {
+    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/59919627/file_5f28f89ba8_original.jpg',
+    title: 'Bird',
+    type: ProductTypes.Original,
+    price: '$30.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834662-original-inkmas-2017-bird'
+  },
+  {
+    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919372/file_6c1de9771a_original.jpg',
+    title: 'Tree Trunks Stuck in the Snow',
+    type: ProductTypes.Original,
+    price: '$30.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834569-original-inkmas-2017-tree-trunks-stuck-in-the-snow'
+  },
+  {
+    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/59919312/file_e41ab9c995_original.jpg',
+    title: 'Ornaments',
+    type: ProductTypes.Original,
+    price: '$30.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834548-original-inkmas-2017-ornaments'
+  },
+  {
+    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/59919552/file_efc9e316a8_original.jpg',
+    title: 'Pine',
+    type: ProductTypes.Original,
+    price: '$30.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834629-original-inkmas-2017-pine'
+  },
+  {
+    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/59919465/file_2ecd6f5932_original.jpg',
+    title: 'Trek Through a Blizzard',
+    type: ProductTypes.Original,
+    price: '$30.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834611-original-inkmas-2017-trek-through-a-blizzard'
+  },
+  {
     url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919828/file_1f9e1db000_original.jpg',
     title: 'Krampus Walking Through the Woods',
     type: ProductTypes.Original,
@@ -389,60 +438,11 @@ export const OriginalsProducts = [
     link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834680-original-inkmas-2017-someone-watching-over-you'
   },
   {
-    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/59919627/file_5f28f89ba8_original.jpg',
-    title: 'Bird',
-    type: ProductTypes.Original,
-    price: '$30.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834662-original-inkmas-2017-bird'
-  },
-  {
-    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/59919591/file_d0a4be84a0_original.jpg',
-    title: 'Skating Around',
-    type: ProductTypes.Original,
-    price: '$20.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834635-original-inkmas-2017-skating-around'
-  },
-  {
-    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/59919552/file_efc9e316a8_original.jpg',
-    title: 'Pine',
-    type: ProductTypes.Original,
-    price: '$30.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834629-original-inkmas-2017-pine'
-  },
-  {
-    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/59919465/file_2ecd6f5932_original.jpg',
-    title: 'Trek Through a Blizzard',
-    type: ProductTypes.Original,
-    price: '$30.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834611-original-inkmas-2017-trek-through-a-blizzard'
-  },
-  {
     url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/59919393/file_38e05e8470_original.jpg',
     title: 'Snoozing Moon',
     type: ProductTypes.Original,
     price: '$40.00',
     link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834587-original-inkmas-2017-snoozing-moon'
-  },
-  {
-    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919372/file_6c1de9771a_original.jpg',
-    title: 'Tree Trunks Stuck in the Snow',
-    type: ProductTypes.Original,
-    price: '$30.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834569-original-inkmas-2017-tree-trunks-stuck-in-the-snow'
-  },
-  {
-    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919333/file_5a66ba326d_original.jpg',
-    title: 'Holly',
-    type: ProductTypes.Original,
-    price: '$20.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834557-original-inkmas-2017-holly'
-  },
-  {
-    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/59919312/file_e41ab9c995_original.jpg',
-    title: 'Ornaments',
-    type: ProductTypes.Original,
-    price: '$30.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1413113-originals/products/22834548-original-inkmas-2017-ornaments'
   },
   {
     url: 'http://d111vui60acwyt.cloudfront.net/product_photos/59919279/file_c0f5c7d583_original.jpg',
@@ -526,6 +526,41 @@ export const PrintProducts = [
     link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356309-print-fart-witch'
   },
   {
+    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
+    title: 'Big Moon',
+    type: ProductTypes.Print,
+    price: '$10.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24113211-art-print-big-moon'
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/38897961/illustration_20020_original.jpg',
+    title: 'Butts',
+    type: ProductTypes.Print,
+    price: '$10.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/15956124-art-print-butts',
+  },
+  {
+    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/63735996/file_8246e7a192_original.jpg',
+    title: 'Sun II',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030339-art-print-sun-ii',
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/63735954/file_b0df511fd9_original.jpg',
+    title: 'Sitting',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030333-art-print-sitting'
+  },
+  {
+    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/63735858/file_da6d205191_original.jpg',
+    title: 'Moon II',
+    type: ProductTypes.Print,
+    price: '$12.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030312-art-print-moon-ii'
+  },
+  {
     url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/67949352/file_54970486e7_original.jpg',
     title: 'Conversations',
     type: ProductTypes.Print,
@@ -559,41 +594,6 @@ export const PrintProducts = [
     type: ProductTypes.Print,
     price: '$15.00',
     link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25355808-art-print-shy'
-  },
-  {
-    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
-    title: 'Big Moon',
-    type: ProductTypes.Print,
-    price: '$10.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24113211-art-print-big-moon'
-  },
-  {
-    url: 'http://dzasv7x7a867v.cloudfront.net/product_photos/63735996/file_8246e7a192_original.jpg',
-    title: 'Sun II',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030339-art-print-sun-ii',
-  },
-  {
-    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/63735954/file_b0df511fd9_original.jpg',
-    title: 'Sitting',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030333-art-print-sitting'
-  },
-  {
-    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/63735858/file_da6d205191_original.jpg',
-    title: 'Moon II',
-    type: ProductTypes.Print,
-    price: '$12.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/24030312-art-print-moon-ii'
-  },
-  {
-    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/38897961/illustration_20020_original.jpg',
-    title: 'Butts',
-    type: ProductTypes.Print,
-    price: '$10.00',
-    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/15956124-art-print-butts',
   }
 ]
 export const ProductCategories = {

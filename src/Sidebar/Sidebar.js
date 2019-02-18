@@ -92,6 +92,7 @@ class Sidebar extends React.Component {
       this.onRouteClick(pageName)
       if (!Submenus[pageName]) {
         this.props.onSelectSubmenuItem("")
+        this.props.onSelectOpenSubmenu("")
       }
     }
     return (
