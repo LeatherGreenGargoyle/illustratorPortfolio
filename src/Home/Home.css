@@ -5,6 +5,10 @@
 }
 
 @media all and (max-width: 425px) {
+  .homeBackground {
+    margin-left: 0em;
+  }
+
   .homeBackgroundImage {
     display: block;
     max-width: 24em;

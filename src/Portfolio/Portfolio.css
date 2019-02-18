@@ -4,7 +4,7 @@
 
 .navButtonActive {
   vertical-align: middle;
-  margin: 1em;
+  margin: 0.8em 1em 0.8em 1em;
 }
 
 .navButtonActive:hover {
@@ -15,7 +15,7 @@
 
 .navButtonDisabled {
   color: #e5e5e5;
-  margin: 1em;
+  margin: 0.8em 1em 0.8em 1em;
   vertical-align: middle;
 }
 
@@ -26,6 +26,7 @@
 
 @media all and (max-width: 768px) {
   .portfolioContentContainer {
-    margin-left: 6%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }

@@ -36,7 +36,7 @@ const Submenu = (props) => {
   }
 
   return (
-    <ul className={"submenu"} style={{ listStyleType: "none" }}>
+    <ul className={"submenu"} style={{ listStyleType: "none", marginBottom: "0em" }}>
       {getLinkList()}
     </ul>
   )

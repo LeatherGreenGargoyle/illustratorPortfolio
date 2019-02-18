@@ -213,12 +213,6 @@ export const illustrationLinks = [
     year: '2017',
   },
   {
-    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_Hide.jpg',
-    title: 'Hide II',
-    medium: 'ink',
-    year: '2017',
-  },
-  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_Kitty.jpg',
     title: 'Kitty',
     medium: 'ink',
@@ -474,6 +468,20 @@ export const OriginalsProducts = [
 ]
 export const PinProducts = [
   {
+    url: 'http://d3u67r7pp2lrq5.cloudfront.net/product_photos/67949577/file_762d163d5e_original.jpg',
+    title: 'Cat',
+    type: ProductTypes.Pin,
+    price: '$4.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/25356054-button-pin-cat'
+  },
+  {
+    url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/67949601/file_4cd2eb30f3_original.jpg',
+    title: 'Bat',
+    type: ProductTypes.Pin,
+    price: '$4.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1370120-pins/products/25356057-button-pin-bat'
+  },
+  {
     url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/63735735/file_62b96b7144_original.png',
     title: 'Reading',
     type: ProductTypes.Pin,
@@ -496,6 +504,62 @@ export const PinProducts = [
   }
 ]
 export const PrintProducts = [
+  {
+    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/67950360/file_d45c0bbbba_original.jpg',
+    title: 'Button Mushroom',
+    type: ProductTypes.Print,
+    price: '$8.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356267-print-button-mushroom'
+  },
+  {
+    url: 'http://d111vui60acwyt.cloudfront.net/product_photos/67950429/file_ec824a1edc_original.jpg',
+    title: 'Oyster Mushroom',
+    type: ProductTypes.Print,
+    price: '$8.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356300-print-oyster-mushroom'
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/67950540/file_c04d8160bb_original.jpg',
+    title: 'Fart Witch',
+    type: ProductTypes.Print,
+    price: '$8.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356309-print-fart-witch'
+  },
+  {
+    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/67949352/file_54970486e7_original.jpg',
+    title: 'Conversations',
+    type: ProductTypes.Print,
+    price: '$15.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356018-art-print-conversations'
+  },
+  {
+    url: 'http://d2a2wjuuf1c30f.cloudfront.net/product_photos/67949358/file_ad079e0492_original.jpg',
+    title: 'Night Walk',
+    type: ProductTypes.Print,
+    price: '$15.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25356009-art-print-night-walk'
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/67949229/file_5eb9f501bc_original.jpg',
+    title: 'Cat Buddy',
+    type: ProductTypes.Print,
+    price: '$15.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25355979-art-print-cat-buddy'
+  },
+  {
+    url: 'http://dlp2gfjvaz867.cloudfront.net/product_photos/67949019/file_86218a9093_original.jpg',
+    title: 'Tapestry',
+    type: ProductTypes.Print,
+    price: '$15.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25355895-art-print-tapestry'
+  },
+  {
+    url: 'http://d310a9hpolx59w.cloudfront.net/product_photos/67948779/file_c06d8ef4c7_original.jpg',
+    title: 'Shy',
+    type: ProductTypes.Print,
+    price: '$15.00',
+    link: 'http://jennifernguyen.storenvy.com/collections/1278831-prints/products/25355808-art-print-shy'
+  },
   {
     url: 'http://d1nr5wevwcuzuv.cloudfront.net/product_photos/63999912/file_00c22a4e6a_original.jpg',
     title: 'Big Moon',

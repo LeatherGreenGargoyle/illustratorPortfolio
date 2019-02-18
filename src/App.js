@@ -1,4 +1,5 @@
 import './App.css'
+import './index.css'
 import ConnectedSidebar from './Sidebar/container.Sidebar'
 import Main from './Main/Main'
 import React from 'react'
@@ -61,9 +62,9 @@ class App extends React.Component {
           <div className="divider" />
         </Row>
         <Row className="sidebarSmall">
-          <span className="sidebarSmallLabel"> Menu </span>
-          <span className="sidebarSmallIcon">
-            <FontAwesomeIcon icon="bars" size="1x" onClick={this.onMobileMenuClick}/>
+          <span className="sidebarSmallLabel" onClick={this.onMobileMenuClick}>
+            <FontAwesomeIcon className="iconMobileSidebar" icon="bars" size="1x" onClick={this.onMobileMenuClick}/>
+            <span>Menu</span>
           </span>
         </Row>
         <Row style={{ display : this.state['showMobileMenu'] ? 'block' : 'none' }}>
@@ -87,6 +88,29 @@ class App extends React.Component {
         </Row>
         <Row className="mobileMain">
           <Main />
+        </Row>
+        <Row className="iconContainerMobile">
+          <span className="socialIconMobile textAlignRight">
+            <a href="https://www.instagram.com/jennifernguyenillustration/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'instagram']} />
+            </a>
+          </span>
+          <span className="fontSizePlus socialIconMobile textAlignCenter">
+            <a href="http://jennifernguyenillustration.tumblr.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'tumblr']} />
+            </a>
+          </span>
+          <span className="fontSizePlus socialIconMobile">
+            <a href="https://www.facebook.com/jennifernguyenillustration/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+            </a>
+          </span>
         </Row>
       </Container>
     )
