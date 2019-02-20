@@ -1,0 +1,125 @@
+.App {
+  font-family: Courier New, Courier, monospace;
+}
+
+.containerMain {
+  min-height: 52em;
+  padding-left: 0em;
+}
+
+.divider {
+  align-self: center;
+  border-bottom: .1em black solid;
+  margin: 0em 1em 0em 1em;
+  height: .1em;
+  width: 100%
+}
+
+.fontSizePlus {
+  font-size: 1.13em;
+}
+
+.header {
+  margin-left: .4em;
+  margin-right: 3em;
+  align-items: center;
+}
+
+.iconContainer {
+  text-align: right;
+}
+
+.iconContainerMobile {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.iconMobileSidebar {
+  display: inline;
+  font-size: 0.8em;
+  margin-right: 0.25em;
+}
+
+.lastIcon {
+  margin-right: 1em
+}
+
+.mobileMain {
+  display: none;
+  margin-top: -0.8em;
+}
+
+.no-gutter {
+  margin-left: 0em;
+  margin-right: 0em;
+  padding-right: 0em;
+  padding-left: 0em;
+}
+
+.sidebarDivider {
+  border-left: .1em black solid;
+}
+
+.sidebarSmall {
+  display: none;
+  margin-bottom: 2em;
+}
+
+.sidebarSmallLabel {
+  font-size: 1.3em;
+  margin-left: 1.4em;
+  margin-top: 1em;
+}
+
+.sidebarSmallIcon {
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+.socialIcon {
+  margin-left: 2em;
+  font-size: 1em;
+}
+
+.socialIconMobile {
+  width: 33%;
+}
+
+.titleContainer {
+  font-size: 1.3em;
+}
+
+@media all and (min-width: 779px) {
+  .iconContainerMobile {
+    display: none;
+  }
+}
+
+@media all and (max-width: 779px) {
+  .containerMain {
+    display: none;
+  }
+
+  .fullSidebar {
+    display: none;
+  }
+
+  .iconContainer {
+    display: none;
+  }
+
+  .mobileMain {
+    display: block;
+  }
+
+  .sidebarDivider {
+    border-left: none;
+  }
+
+  .sidebarSmall {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 2em;
+  }
+}
