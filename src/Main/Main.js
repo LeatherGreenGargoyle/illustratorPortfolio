@@ -16,9 +16,11 @@ import { Spring } from 'react-spring'
 import './Main.css'
 
 class Main extends React.Component {
-  constructor() {
-    super()
-    this.state = {}
+  constructor(props) {
+    super(props)
+    this.state = {
+      shouldShowMobileMenu : props.shouldShowMobileMenu
+    }
   }
 
   render() {
@@ -54,13 +56,13 @@ class Main extends React.Component {
           <div className="divider" />
         </Row>
         <Row className="sidebarSmall">
-          <span className="sidebarSmallLabel" onClick={this.onMobileMenuClick}>
-            <FontAwesomeIcon className="iconMobileSidebar" icon="bars" size="1x" onClick={this.onMobileMenuClick}/>
+          <span className="sidebarSmallLabel" onClick={() => this.props.onToggleMobileMenuOpen(!this.state.shouldShowMobileMenu)}>
+            <FontAwesomeIcon className="iconMobileSidebar" icon="bars" size="1x" />
             <span>Menu</span>
           </span>
         </Row>
-        <Row style={{ display : this.state['showMobileMenu'] ? 'block' : 'none' }}>
-          { this.state['showMobileMenu'] &&
+        <Row style={{ display : this.state['shouldShowMobileMenu'] ? 'block' : 'none' }}>
+          { this.state['shouldShowMobileMenu'] &&
               (<Spring
                 from={{ opacity: 0, marginTop: -20 }}
                 to={{ opacity: 1, marginTop: 0 }}
@@ -79,7 +81,8 @@ class Main extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/store" component={ProductStore} />
-              <Route path="/portfolio" component={ConnectedPortfolio} />
+              <Route path="/illustrations" component={ConnectedPortfolio} />
+              <Route path="/comics" component={ConnectedPortfolio} />
               <Route path="/events" component={Events} />
             </Switch>
           </Col>
@@ -89,7 +92,8 @@ class Main extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/store" component={ProductStore} />
-            <Route path="/portfolio" component={ConnectedPortfolio} />
+            <Route path="/illustrations" component={ConnectedPortfolio} />
+            <Route path="/comics" component={ConnectedPortfolio} />
             <Route path="/events" component={Events} />
           </Switch>
         </Row>

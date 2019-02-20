@@ -334,8 +334,8 @@ export const aboutText = 'Jennifer Nguyen is a self-taught illustrator currently
 /* Navigation */
 export const routes = {
   home: '/',
-  illustrations: '/portfolio',
-  comics: '/portfolio',
+  illustrations: '/illustrations',
+  comics: '/comics',
   about: '/about',
   store: '/store',
   events: '/events'

@@ -7,10 +7,15 @@ import {
   CurrentSelectedSubmenuItem
 } from './Sidebar/duck.Sidebar'
 
+import {
+  ShouldShowMobileMenu
+} from './Main/duck.Main'
+
 export default combineReducers({
   CurrentImageSet,
   CurrentProductCategory,
   CurrentPortfolioYear,
   CurrentOpenSubmenu,
-  CurrentSelectedSubmenuItem
+  CurrentSelectedSubmenuItem,
+  ShouldShowMobileMenu
 })
