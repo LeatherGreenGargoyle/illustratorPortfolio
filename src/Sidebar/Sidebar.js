@@ -19,8 +19,8 @@ class Sidebar extends React.Component {
     this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ currentOpenSubmenu : nextProps.currentOpenSubmenu })
+  static getDerivedStateFromProps(nextProps, prevState){
+    return { currentOpenSubmenu : nextProps.currentOpenSubmenu }
   }
 
   getSubmenuItemsFor(pageName) {

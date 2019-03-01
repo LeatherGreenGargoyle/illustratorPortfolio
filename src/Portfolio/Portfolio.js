@@ -22,20 +22,21 @@ class Portfolio extends React.Component {
     this.startLoadingImages = this.startLoadingImages.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(`about to receive props: ${nextProps.currentImageSetYear}`)
-    const didReceiveNewImageSet = nextProps.currentImageSetName !== this.state.currentImageSetName
-    const didReceiveNewImageSetYear = nextProps.currentImageSetYear !== this.state.currentImageSetYear
+  static getDerivedStateFromProps(nextProps, prevState){
+    const didReceiveNewImageSet = nextProps.currentImageSetName !== prevState.currentImageSetName
+    const didReceiveNewImageSetYear = nextProps.currentImageSetYear !== prevState.currentImageSetYear
     
     if (didReceiveNewImageSet || didReceiveNewImageSetYear) {
-        this.setState(() => ({
+        return {
           currFirstImgIdx: 0,
           currentImageSetName: nextProps.currentImageSetName,
           currentImageSetYear: nextProps.currentImageSetYear,
           loadedImageObjects: []
-        }));
+        }
     }
-}
+
+    return null
+  }
 
   getImageObjects() {
     if (this.props.currentImageSetName === ImageSets.comics) {

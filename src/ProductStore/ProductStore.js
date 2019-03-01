@@ -11,23 +11,13 @@ class ProductStore extends React.Component {
     this.state = {
       currFirstImgIdx: 0,
       imgsPerPage: Values.IMAGES_PER_PAGE,
-      currentProductCategory: props.productCategory,
+      currentImageSetName: props.productCategory,
       loadedProductObjects: []
     }
     this.onLoad = this.onLoad.bind(this)
     this.nextImages = this.nextImages.bind(this)
     this.prevImages = this.prevImages.bind(this)
     this.startLoadingImages = this.startLoadingImages.bind(this)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.productCategory !== this.state.productCategory) {
-        this.setState(() => ({
-          currFirstImgIdx: 0,
-          currentImageSetName: nextProps.productCategory,
-          loadedProductObjects: []
-        }));
-    }
   }
 
   getProductObjects() {
@@ -102,7 +92,6 @@ class ProductStore extends React.Component {
 
         <div className="productsContainer">
           { this.state.loadedProductObjects.map(productObj => {
-            console.log(`are we on originals? ${this.props.productCategory == ProductCategories.originals}`)
             mapKey++
             return (
               <ProductModal

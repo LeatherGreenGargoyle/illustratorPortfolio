@@ -23,6 +23,15 @@ class Main extends React.Component {
     }
   }
 
+  // FIXME
+  static getDerivedStateFromProps(nextProps, prevState){
+    if (nextProps.shouldShowMobileMenu === !prevState.shouldShowMobileMenu) {
+      return { shouldShowMobileMenu : nextProps.shouldShowMobileMenu }
+    }
+   
+    return null;
+  }
+
   render() {
     return (
       <Container className="App">
@@ -61,8 +70,8 @@ class Main extends React.Component {
             <span>Menu</span>
           </span>
         </Row>
-        <Row style={{ display : this.state['shouldShowMobileMenu'] ? 'block' : 'none' }}>
-          { this.state['shouldShowMobileMenu'] &&
+        <Row style={{ display : this.state.shouldShowMobileMenu ? 'block' : 'none' }}>
+          { this.state.shouldShowMobileMenu &&
               (<Spring
                 from={{ opacity: 0, marginTop: -20 }}
                 to={{ opacity: 1, marginTop: 0 }}
@@ -121,15 +130,6 @@ class Main extends React.Component {
           </span>
         </Row>
       </Container>
-      // <div>
-      //   <Switch>
-      //     <Route exact path="/" component={Home} />
-      //     <Route path="/about" component={About} />
-      //     <Route path="/store" component={ProductStore} />
-      //     <Route path="/portfolio" component={ConnectedPortfolio} />
-      //     <Route path="/events" component={Events} />
-      //   </Switch>
-      // </div>
     )
   }
 }
