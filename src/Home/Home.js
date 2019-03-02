@@ -6,15 +6,15 @@ import { Row } from 'react-bootstrap'
 const Home = () => {
   return (
     <Spring
-    from={{ opacity: 0 }}
-    to={{ opacity: 1 }}
-    delay= '250'
+      from={{ opacity: 0 }}
+      to={{ opacity: 1 }}
+      delay= '250'
     >
-    {props => (
-      <Row className="homeBackground" style={props}>
-        <img className="homeBackgroundImage" alt="" src="https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Moon-minshrunksmallborder.jpg"/>
-      </Row>
-    )}
+      {props => (
+        <div className="homeBackground" style={props}>
+          <img className="homeBackgroundImage" alt="" src="https://s3-us-west-1.amazonaws.com/mogpoeportfolio/8x10_Moon-minshrunksmallborder.jpg"/>
+        </div>
+      )}
     </Spring>
   )
 }
