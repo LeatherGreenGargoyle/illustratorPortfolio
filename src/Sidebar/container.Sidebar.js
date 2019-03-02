@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { SidebarActions } from './duck.Sidebar'
+import { MainActions } from '../Main/duck.Main'
 import Sidebar from './Sidebar'
 
 const mapStateToProps = state => ({
@@ -22,7 +23,10 @@ const mapDispatchToProps = dispatch => ({
   },
   onSelectSubmenuItem: (submenuItemName) => {
     dispatch(SidebarActions.selectSubmenuItem(submenuItemName))
-  }
+  },
+  onToggleMobileMenuOpen: (shouldShowMobileMenu) => {
+    dispatch(MainActions.toggleMobileMenuOpen(shouldShowMobileMenu))
+  },
 })
 
 const ConnectedSidebar = connect(

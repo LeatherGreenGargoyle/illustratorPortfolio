@@ -18,20 +18,18 @@ const Submenu = (props) => {
             </Link>
           </li>
         )
-      } else {
-        return (
-          <li
-            style={{ color: props.currentSelectedSubmenuItem === linkObject.itemTag ? 'grey' : 'black' }}
+      }
+
+      return (
+        <li style={{ color: props.currentSelectedSubmenuItem === linkObject.itemTag ? 'grey' : 'black' }}
             key={index}
             onClick={ () => {
               this.onSubmenuItemClick(linkObject.title)
               linkObject.callback()
-            }}
-          >
-            {linkObject.title}
-          </li>
-        )
-      }
+        }}>
+          {linkObject.title}
+        </li>
+      )
     })
   }
 

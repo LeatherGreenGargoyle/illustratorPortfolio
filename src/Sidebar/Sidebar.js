@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
     this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
   }
 
-  static getDerivedStateFromProps(nextProps, prevState){
+  static getDerivedStateFromProps(nextProps, _){
     return { currentOpenSubmenu : nextProps.currentOpenSubmenu }
   }
 
@@ -39,6 +39,7 @@ class Sidebar extends React.Component {
           this.onRouteClick(pageName)
           onSelectStoreCategory(ProductCategories[category])
           onSelectSubmenuItem(getSubmenuItemTag(pageName, category))
+          this.props.onToggleMobileMenuOpen(false)
         }
       }
       const productItems = productCategories.map(category => {
@@ -59,6 +60,7 @@ class Sidebar extends React.Component {
           onSelectImageSetYear(year)
           onSelectPortfolioImageset(imageSetToSelect)
           onSelectSubmenuItem(getSubmenuItemTag(pageName, year))
+          this.props.onToggleMobileMenuOpen(false)
         }
       }
       const yearItems = years.map(year => {
@@ -93,6 +95,7 @@ class Sidebar extends React.Component {
       if (!Submenus[pageName]) {
         this.props.onSelectSubmenuItem("")
         this.props.onSelectOpenSubmenu("")
+        this.props.onToggleMobileMenuOpen(false)
       }
     }
     return (
