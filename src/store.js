@@ -7,7 +7,7 @@ export default () => {
   const plugins = []
 
   if (process.env.NODE_ENV !== 'production') {
-    plugins.push(createLogger({}))
+    // plugins.push(createLogger({}))
   }
 
   const middleware = applyMiddleware(...plugins)

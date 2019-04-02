@@ -19,6 +19,19 @@ class ProductStore extends React.Component {
     this.prevImages = this.prevImages.bind(this)
     this.startLoadingImages = this.startLoadingImages.bind(this)
   }
+  
+  static getDerivedStateFromProps(nextProps, prevState){
+    if (nextProps.productCategory !== prevState.currentImageSetName) {
+      return {
+        currFirstImgIdx: 0,
+        currentImageSetName: nextProps.productCategory,
+        loadedProductObjects: []
+       }
+    }
+   
+    return null;
+  }
+ 
 
   getProductObjects() {
     switch (this.props.productCategory) {

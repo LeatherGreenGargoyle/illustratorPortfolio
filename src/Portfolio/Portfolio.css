@@ -10,7 +10,7 @@
 .navButtonActive:hover {
   color:#e5e5e5;
   cursor: pointer;
-  margin: 1em;
+  margin: 0.8em 1em 0.8em 1em;
 }
 
 .navButtonDisabled {
