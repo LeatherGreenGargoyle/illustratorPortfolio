@@ -85,14 +85,4 @@ class Events extends React.Component {
   }
 }
 
-export const Event = (title, imageURLs, galleryName, dateStr, year) => {
-  return {
-    title,
-    imageURLs,
-    galleryName,
-    dateStr,
-    year,
-  }
-}
-
 export default Events

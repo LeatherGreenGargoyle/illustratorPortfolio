@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import Main from './Main'
-import { MainActions } from './duck.Main';
+import { MainActions } from './duck.Main'
 
 const mapStateToProps = state => ({
-  shouldShowMobileMenu : state.ShouldShowMobileMenu
+  shouldShowMobileMenu: state.ShouldShowMobileMenu,
 })
 
 const mapDispatchToProps = dispatch => ({
-  onToggleMobileMenuOpen: (shouldShowMobileMenu) => {
+  onToggleMobileMenuOpen: shouldShowMobileMenu => {
     dispatch(MainActions.toggleMobileMenuOpen(shouldShowMobileMenu))
-  }
+  },
 })
 
 const ConnectedMain = connect(
