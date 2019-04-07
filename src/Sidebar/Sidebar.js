@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './Sidebar.css'
-import { ImageSets, PageNames, routes, ProductCategories, Submenus } from '../Constants';
+import { Link } from 'react-router-dom'
+import { ImageSets, PageNames, routes, ProductCategories, Submenus, EventYears } from '../Constants';
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
 import { Spring } from 'react-spring'
 import { getSubmenuItemTag } from '../Utils'
@@ -29,7 +29,8 @@ class Sidebar extends React.Component {
       onSelectStoreCategory,
       onSelectImageSetYear,
       onSelectPortfolioImageset,
-      onSelectSubmenuItem
+      onSelectSubmenuItem,
+      onSelectEventYear
     } = this.props
 
     if (pageName === PageNames.store) {
@@ -64,6 +65,24 @@ class Sidebar extends React.Component {
         }
       }
       const yearItems = years.map(year => {
+        return SubmenuItem(
+          year,
+          routeName,
+          getYearItemClickHandler(year),
+          getSubmenuItemTag(pageName, year))
+      })
+      return yearItems
+    } else if (pageName == PageNames.events) {
+      const getYearItemClickHandler = (year) => {
+        return () => {
+          this.onRouteClick(pageName)
+          onSelectEventYear(year)
+          onSelectSubmenuItem(getSubmenuItemTag(pageName, year))
+          this.props.onToggleMobileMenuOpen(false)
+        }
+      }
+
+      const yearItems = EventYears.map(year => {
         return SubmenuItem(
           year,
           routeName,
@@ -136,6 +155,7 @@ class Sidebar extends React.Component {
 
   makeSubmenu(pageName) {
     if (!Submenus[pageName]) return
+
     const { currentSelectedSubmenuItem } = this.props
     const submenuItems = this.getSubmenuItemsFor(pageName)
     const submenuProps = { 

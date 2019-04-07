@@ -4,6 +4,7 @@ import { ImageSets, ProductCategories } from '../Constants'
 //            ACTIONS
 // ========================================
 export const SidebarTypes = {
+  SELECT_EVENT_YEAR: 'SELECT_EVENT_YEAR',
   SELECT_OPEN_SUBMENU: 'SELECT_OPEN_SUBMENU',
   SELECT_PORTFOLIO_IMAGESET: 'SELECT_PORTFOLIO_IMAGESET',
   SELECT_PORTFOLIO_YEAR: 'SELECT_PORTFOLIO_YEAR',
@@ -19,6 +20,16 @@ const defaultProductCategory = ProductCategories.originals
 const defaultPortfolioYear = 2018
 const defaultSubmenu = null
 const defaultSubmenuItem = ''
+const defaultEventYear = 2018
+
+export const CurrentEventYear = (state = defaultEventYear, action) => {
+  switch (action.type) {
+    case SidebarTypes.SELECT_EVENT_YEAR:
+      return action.payload
+    
+      default: return state
+  }
+}
 
 export const CurrentImageSet = (state = defaultImageSet, action) => {
   switch (action.type) {
@@ -74,6 +85,7 @@ export const CurrentSelectedSubmenuItem = (state = defaultSubmenuItem, action) =
 //            ACTION CREATORS
 // ========================================
 export const SidebarActions = {
+  selectEventYear: (eventYear) => ({ type: SidebarTypes.SELECT_EVENT_YEAR, payload: eventYear }),
   selectOpenSubmenu: (submenuName) => ({ type: SidebarTypes.SELECT_OPEN_SUBMENU, payload: submenuName }),
   selectPortfolioImageSet: (imageSetName) => ({ type: SidebarTypes.SELECT_PORTFOLIO_IMAGESET, payload: imageSetName }),
   selectPortfolioYear: (portfolioYear) => ({ type: SidebarTypes.SELECT_PORTFOLIO_YEAR, payload: portfolioYear }),

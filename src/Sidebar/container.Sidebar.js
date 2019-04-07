@@ -9,6 +9,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  onSelectEventYear: (year) => {
+    dispatch(SidebarActions.selectEventYear(year))
+  },
   onSelectImageSetYear: (year) => {
     dispatch(SidebarActions.selectPortfolioYear(year))
   },

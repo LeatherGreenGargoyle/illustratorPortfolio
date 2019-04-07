@@ -7,6 +7,72 @@ export const ImageSets = {
 }
 export const comicLinks = [
   {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_peek_face.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_mountain_patterns.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_moon_confrontation.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_looking.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_gnome_shapes.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_flower_drowning.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_eyes.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_cloud_trees.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_cloud_patterns.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_becoming.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_bean_greeting.jpg',
+    title: '',
+    medium: '',
+    year: '2017',
+  },
+  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+001-squashed+copy.jpg',
     title: 'Why, Hello There',
     medium: 'ink',
@@ -140,6 +206,24 @@ export const comicLinks = [
   },
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comic+015-squashed.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+016.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+017.jpg',
+    title: 'Pazowza',
+    medium: 'plink',
+    year: '2016'
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic+018.jpg',
     title: 'Pazowza',
     medium: 'plink',
     year: '2016'
@@ -352,6 +436,7 @@ export const Submenus = {
   Illustrations: PageNames.illustrations,
   Comics: PageNames.comics,
   Store: PageNames.store,
+  Events: PageNames.events
 }
 
 /* Misc */
@@ -610,35 +695,41 @@ export const EventObjs = [
     ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+front.jpg',
     'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+back-min.jpg'],
     "FOLD Gallery",
-    "September 20th - October 30th, 2017"
+    "September 20th - October 30th, 2017",
+    2017
   ),
   Event(
     "Hand and Mind",
     ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Hand+and+Mind+front.jpg',
     'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Hand+and+Mind+back-min.jpg'],
     "FOLD Gallery",
-    "April 12 - June 4th, 2018"
+    "April 12 - June 4th, 2018",
+    2018
   ),
   Event(
     "Line Attack 7",
     ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Line+Attack+7.jpg'],
     "Hive Gallery",
-    "May 5th - June 3rd, 2018"
+    "May 5th - June 3rd, 2018",
+    2018
   ),
   Event(
     "Zombie Coven",
     ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/jun18_ft_2_web.jpg'],
     "Hive Gallery",
-    "June 9th - July 1st, 2018"
+    "June 9th - July 1st, 2018",
+    2018
   ),
   Event(
     "What We Do In The Shadows",
     ['https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+front.jpg',
     'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+back.jpg'],
     "FOLD Gallery",
-    "September 26th - November 12th, 2018"
+    "September 26th - November 12th, 2018",
+    2018
   )
 ]
+export const EventYears = [2017, 2018]
 export const portraitURLs = [
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/Goodnight+Moon+front.jpg',
   'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Events/What+We+Do+in+the+Shadows+front.jpg',

@@ -1,4 +1,15 @@
-import { Events } from './Events'
-import { EventObjs } from '../Constants'
+import { connect } from 'react-redux'
+import Events from './Events'
 
-export default () => Events(EventObjs)
+const mapStateToProps = state => ({
+  currentEventYear: state.CurrentEventYear,
+})
+
+const mapDispatchToProps = () => ({})
+
+const ConnectedEvents = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Events)
+
+export default ConnectedEvents

@@ -51,7 +51,6 @@ module.exports = {
         "no-underscore-dangle": ["error", { "allowAfterThis": true }],
         "no-unneeded-ternary": "off",
         "no-plusplus": "off",
-        "react/jsx-no-bind": [0, {"allowBind": true}],
         "class-methods-use-this": ["error", { "exceptMethods": ["setToken", "getProfile", "getToken", "logout"] }],
         "prefer-destructuring": [  "warn",
             {
