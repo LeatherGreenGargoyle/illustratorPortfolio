@@ -2,10 +2,75 @@ import { Event } from '../Models'
 
 /* Portfolio */
 export const ImageSets = {
-  illustrations: 'Illustrations',
-  comics: 'Comics',
+  illustrations: 'Illustrations', comics: 'Comics',
 }
 export const comicLinks = [
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_sun_foliage.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_mountain_patterns.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_scribble_apart.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_peek_foliage.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_moon_resplendent.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_moon_large.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_moon.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_gnome_patterns.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_fart_oops.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_fart_fly.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Comics/comic_2018_budding_buddy.jpg',
+    title: '',
+    medium: '',
+    year: '2018',
+  },
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/comic_2017_peek_face.jpg',
     title: '',
@@ -231,6 +296,42 @@ export const comicLinks = [
 ]
 export const illustrationLinks = [
   {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_shh_2.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_rainclouds_fade.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_oyster_mushroom.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_lush_cap.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_button_mushroom.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_8_8_adventure_boat.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Space+Bun.jpg',
     title: 'Space Bun',
     medium: 'ink',
@@ -251,6 +352,30 @@ export const illustrationLinks = [
   {
     url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/8x8_ink_Moon+II.jpg',
     title: 'Moon II',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_5_7_trim_figure.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_5_7_peekaboo_wall.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_5_7_gardening_head.jpg',
+    title: 'Space Bun',
+    medium: 'ink',
+    year: '2018',
+  },
+  {
+    url: 'https://s3-us-west-1.amazonaws.com/mogpoeportfolio/Illustrations/2018/illustrations_2018_5_7_cat_wall.jpg',
+    title: 'Space Bun',
     medium: 'ink',
     year: '2018',
   },

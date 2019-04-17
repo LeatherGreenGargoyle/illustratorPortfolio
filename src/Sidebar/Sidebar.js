@@ -1,9 +1,9 @@
 import React from 'react'
 import './Sidebar.css'
 import { Link } from 'react-router-dom'
-import { ImageSets, PageNames, routes, ProductCategories, Submenus, EventYears } from '../Constants';
-import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu.js'
 import { Spring } from 'react-spring'
+import { ImageSets, PageNames, routes, ProductCategories, Submenus, EventYears } from '../Constants'
+import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu'
 import { getSubmenuItemTag } from '../Utils'
 
 class Sidebar extends React.Component {
@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
     super()
     this.state = {
       currentPage: PageNames.home,
-      currentOpenSubmenu: props.currentOpenSubmenu
+      currentOpenSubmenu: props.currentOpenSubmenu,
     }
 
     this.getSubmenuItemsFor = this.getSubmenuItemsFor.bind(this)
@@ -19,8 +19,8 @@ class Sidebar extends React.Component {
     this.onSidebarItemClick = this.onSidebarItemClick.bind(this)
   }
 
-  static getDerivedStateFromProps(nextProps, _){
-    return { currentOpenSubmenu : nextProps.currentOpenSubmenu }
+  static getDerivedStateFromProps(nextProps, _) {
+    return { currentOpenSubmenu: nextProps.currentOpenSubmenu }
   }
 
   getSubmenuItemsFor(pageName) {
@@ -53,7 +53,7 @@ class Sidebar extends React.Component {
 
       return productItems
     } else if (pageName === PageNames.illustrations || pageName === PageNames.comics) {
-      const years = pageName === PageNames.illustrations ? [2017, 2018] : [2016, 2017]
+      const years = pageName === PageNames.illustrations ? [2017, 2018] : [2016, 2017, 2018]
       const imageSetToSelect = pageName === PageNames.illustrations ? ImageSets.illustrations : ImageSets.comics
       const getYearItemClickHandler = (year) => {
         return () => {
