@@ -1,5 +1,8 @@
 import React from 'react'
-
+import { Switch, Route } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Spring } from 'react-spring'
 import About from '../About/About'
 import ConnectedPortfolio from '../Portfolio/container.Portfolio'
 import Events from '../Events/container.Events'
@@ -7,11 +10,6 @@ import Home from '../Home/Home'
 import ProductStore from '../ProductStore/container.ProductStore'
 import ConnectedSidebar from '../Sidebar/container.Sidebar'
 
-import { Switch, Route } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container } from 'semantic-ui-react';
-import { Spring } from 'react-spring'
 
 import './Main.css'
 
@@ -19,45 +17,51 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      shouldShowMobileMenu : props.shouldShowMobileMenu
+      shouldShowMobileMenu: props.shouldShowMobileMenu,
     }
   }
 
   // FIXME
-  static getDerivedStateFromProps(nextProps, prevState){
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.shouldShowMobileMenu === !prevState.shouldShowMobileMenu) {
-      return { shouldShowMobileMenu : nextProps.shouldShowMobileMenu }
+      return { shouldShowMobileMenu: nextProps.shouldShowMobileMenu }
     }
-   
-    return null;
+
+    return null
   }
 
   render() {
     return (
-      <Container className="App">
+      <div className="App">
         <Row className="header no-gutter">
           <Col lg={9} md={8} sm={8} xs={6} className="titleContainer">
               Jennifer Nguyen
           </Col>
-          <Col lg={3} md={4} sm={4} xs={6}  className="iconContainer">
+          <Col lg={3} md={4} sm={4} xs={6} className="iconContainer">
             <span className="socialIcon">
-              <a href="https://www.instagram.com/jennifernguyenillustration/"
+              <a
+                href="https://www.instagram.com/jennifernguyenillustration/"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
               </a>
             </span>
             <span className="socialIcon fontSizePlus">
-              <a href="http://jennifernguyenillustration.tumblr.com/"
+              <a
+                href="http://jennifernguyenillustration.tumblr.com/"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={['fab', 'tumblr']} />
               </a>
             </span>
             <span className="socialIcon lastIcon fontSizePlus">
-              <a href="https://www.facebook.com/jennifernguyenillustration/"
+              <a
+                href="https://www.facebook.com/jennifernguyenillustration/"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={['fab', 'facebook-f']} />
               </a>
             </span>
@@ -129,7 +133,7 @@ class Main extends React.Component {
             </a>
           </span>
         </Row>
-      </Container>
+      </div>
     )
   }
 }
