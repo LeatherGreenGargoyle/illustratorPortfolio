@@ -31,6 +31,10 @@ class Main extends React.Component {
   }
 
   render() {
+    const { onToggleMobileMenuOpen } = this.props
+    const { shouldShowMobileMenu } = this.state
+    const toggleMobileMenu = () => onToggleMobileMenuOpen(!shouldShowMobileMenu)
+
     return (
       <div className="App">
         <Row className="header no-gutter">
@@ -69,26 +73,42 @@ class Main extends React.Component {
           <div className="divider" />
         </Row>
         <Row className="sidebarSmall">
-          <span className="sidebarSmallLabel" onClick={() => this.props.onToggleMobileMenuOpen(!this.state.shouldShowMobileMenu)}>
+          <span
+            role="button"
+            className="sidebarSmallLabel"
+            onClick={toggleMobileMenu}
+            onKeyUp={toggleMobileMenu}
+            tabIndex={0}
+          >
             <FontAwesomeIcon className="iconMobileSidebar" icon="bars" size="1x" />
             <span>Menu</span>
           </span>
         </Row>
-        <Row style={{ display : this.state.shouldShowMobileMenu ? 'block' : 'none' }}>
-          { this.state.shouldShowMobileMenu &&
-              (<Spring
-                from={{ opacity: 0, marginTop: -20 }}
-                to={{ opacity: 1, marginTop: 0 }}
-                delay= '200'>
-                { props => <div style={props}> <ConnectedSidebar /> </div> }
-              </Spring>)
+        <Row style={{ display: shouldShowMobileMenu ? 'block' : 'none' }}>
+          { shouldShowMobileMenu
+              && (
+                <Spring
+                  from={{ opacity: 0, marginTop: -20 }}
+                  to={{ opacity: 1, marginTop: 0 }}
+                  delay="200"
+                >
+                  { props => (
+                    <div
+                      style={props}
+                    >
+                      <ConnectedSidebar />
+                    </div>
+                  )
+                  }
+                </Spring>
+              )
           }
         </Row>
         <Row>
           <Col lg={3} md={4} sm={12} xs={12} className="fullSidebar">
             <ConnectedSidebar />
           </Col>
-  
+
           <Col lg={9} md={8} sm={12} xs={12} className="sidebarDivider containerMain">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -112,23 +132,29 @@ class Main extends React.Component {
         </Row>
         <Row className="iconContainerMobile">
           <span className="socialIconMobile textAlignRight">
-            <a href="https://www.instagram.com/jennifernguyenillustration/"
+            <a
+              href="https://www.instagram.com/jennifernguyenillustration/"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
           </span>
           <span className="fontSizePlus socialIconMobile textAlignCenter">
-            <a href="http://jennifernguyenillustration.tumblr.com/"
+            <a
+              href="http://jennifernguyenillustration.tumblr.com/"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={['fab', 'tumblr']} />
             </a>
           </span>
           <span className="fontSizePlus socialIconMobile">
-            <a href="https://www.facebook.com/jennifernguyenillustration/"
+            <a
+              href="https://www.facebook.com/jennifernguyenillustration/"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={['fab', 'facebook-f']} />
             </a>
           </span>
