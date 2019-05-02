@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Portfolio.css'
 import ImageModal from '../UI/ImageModal/ImageModal'
-import { comicLinks, illustrationLinks, ImageSets, Values } from '../Constants'
+import {
+  comicLinks, illustrationLinks, ImageSets, Values,
+} from '../Constants'
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -40,9 +42,9 @@ class Portfolio extends React.Component {
 
   getImageObjects() {
     if (this.props.currentImageSetName === ImageSets.comics) {
-      return comicLinks.filter(comic => comic.year == this.state.currentImageSetYear)
+      return comicLinks.filter(comic => comic.year === this.state.currentImageSetYear)
     } else if (this.props.currentImageSetName === ImageSets.illustrations) {
-      return illustrationLinks.filter(illustration => illustration.year == this.state.currentImageSetYear)
+      return illustrationLinks.filter(illustration => illustration.year === this.state.currentImageSetYear)
     }
   }
 
@@ -97,8 +99,10 @@ class Portfolio extends React.Component {
 
   startLoadingImages(imgObjs, firstImgIdx) {
     const imagesForCurrentPage = this.getImagesForCurrentPage(imgObjs, firstImgIdx)
+    let listKey = 0
     return imagesForCurrentPage.map((item, i) => {
-      return <img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} />
+      listKey++
+      return <img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={listKey} alt="" />
     })
   }
 

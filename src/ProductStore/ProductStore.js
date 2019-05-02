@@ -76,7 +76,7 @@ class ProductStore extends React.Component {
     return imgObjs
       .slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
       .map((item, i) =>
-        (<img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} />)
+        (<img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} alt="" />)
     )
   }
 
@@ -115,7 +115,7 @@ class ProductStore extends React.Component {
                 type={productObj.type}
                 key={mapKey}
                 link={productObj.link}
-                isTall={this.props.productCategory == ProductCategories.originals}
+                isTall={this.props.productCategory === ProductCategories.originals}
               />)
           }) }
         </div>

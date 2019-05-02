@@ -72,7 +72,7 @@ class Sidebar extends React.Component {
           getSubmenuItemTag(pageName, year))
       })
       return yearItems
-    } else if (pageName == PageNames.events) {
+    } else if (pageName === PageNames.events) {
       const getYearItemClickHandler = (year) => {
         return () => {
           this.onRouteClick(pageName)
