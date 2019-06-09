@@ -19,22 +19,30 @@ class ProductStore extends React.Component {
     this.prevImages = this.prevImages.bind(this)
     this.startLoadingImages = this.startLoadingImages.bind(this)
   }
-  
-  static getDerivedStateFromProps(nextProps, prevState){
+
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.productCategory !== prevState.currentImageSetName) {
       return {
         currFirstImgIdx: 0,
         currentImageSetName: nextProps.productCategory,
-        loadedProductObjects: []
-       }
+        loadedProductObjects: [],
+      }
     }
-   
-    return null;
+
+    return null
   }
- 
+
+  onLoad(productObject, originalIndex) {
+    const { loadedProductObjects } = this.state
+    loadedProductObjects[originalIndex] = productObject
+    this.setState({
+      loadedProductObjects,
+    })
+  }
 
   getProductObjects() {
-    switch (this.props.productCategory) {
+    const { productCategory } = this.props
+    switch (productCategory) {
       case ProductCategories.pins:
         return PinProducts
       case ProductCategories.prints:
@@ -42,14 +50,6 @@ class ProductStore extends React.Component {
       default:
         return OriginalsProducts
     }
-  }
-  
-  onLoad(productObject, originalIndex) {
-    let newLoadedObjects = this.state.loadedProductObjects
-    newLoadedObjects[originalIndex] = productObject
-    this.setState({
-      loadedProductObjects: newLoadedObjects
-    })
   }
 
   nextImages(numberOfImages) {
@@ -116,7 +116,8 @@ class ProductStore extends React.Component {
                 key={mapKey}
                 link={productObj.link}
                 isTall={this.props.productCategory === ProductCategories.originals}
-              />)
+              />
+            )
           }) }
         </div>
 

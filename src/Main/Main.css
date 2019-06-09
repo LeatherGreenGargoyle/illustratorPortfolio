@@ -47,6 +47,8 @@
 .mobileMain {
   display: none;
   margin-top: -0.8em;
+  margin-left: 0.5em;
+  margin: -0.8em 0.2em 0em 0.2em;
 }
 
 .no-gutter {

@@ -24,77 +24,87 @@ class Portfolio extends React.Component {
     this.startLoadingImages = this.startLoadingImages.bind(this)
   }
 
-  static getDerivedStateFromProps(nextProps, prevState){
+  static getDerivedStateFromProps(nextProps, prevState) {
     const didReceiveNewImageSet = nextProps.currentImageSetName !== prevState.currentImageSetName
     const didReceiveNewImageSetYear = nextProps.currentImageSetYear !== prevState.currentImageSetYear
-    
+
     if (didReceiveNewImageSet || didReceiveNewImageSetYear) {
-        return {
-          currFirstImgIdx: 0,
-          currentImageSetName: nextProps.currentImageSetName,
-          currentImageSetYear: nextProps.currentImageSetYear,
-          loadedImageObjects: []
-        }
+      return {
+        currFirstImgIdx: 0,
+        currentImageSetName: nextProps.currentImageSetName,
+        currentImageSetYear: nextProps.currentImageSetYear,
+        loadedImageObjects: [],
+      }
     }
 
     return null
   }
 
-  getImageObjects() {
-    if (this.props.currentImageSetName === ImageSets.comics) {
-      return comicLinks.filter(comic => comic.year === this.state.currentImageSetYear)
-    } else if (this.props.currentImageSetName === ImageSets.illustrations) {
-      return illustrationLinks.filter(illustration => illustration.year === this.state.currentImageSetYear)
-    }
+  onLoad(imageObject, originalIndex) {
+    const { loadedImageObjects } = this.state
+    loadedImageObjects[originalIndex] = imageObject
+    this.setState({
+      loadedImageObjects,
+    })
+  }
+
+  onPageNext(numberOfImages) {
+    const { currFirstImgIdx, imgsPerPage } = this.state
+    if (currFirstImgIdx + imgsPerPage >= numberOfImages) return
+
+    const newFirstUrlIdx = currFirstImgIdx + imgsPerPage
+    this.setState({
+      currFirstImgIdx: newFirstUrlIdx,
+      loadedImageObjects: [],
+    })
+  }
+
+  onPagePrev() {
+    const { currFirstImgIdx, imgsPerPage } = this.state
+    if (currFirstImgIdx === 0) return
+
+    const newFirstUrlIdx = currFirstImgIdx - imgsPerPage
+
+    this.setState({
+      currFirstImgIdx: newFirstUrlIdx,
+      loadedImageObjects: [],
+    })
   }
 
   getImagesForCurrentPage(imageObjects, firstImgIdx) {
-    let imagesForCurrentPage = imageObjects.slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
+    const { imgsPerPage } = this.state
+    const imagesForCurrentPage = imageObjects.slice(firstImgIdx, firstImgIdx + imgsPerPage)
     return imagesForCurrentPage
   }
 
   getImageModals(imageObjects) {
+    const { currentImageSetName } = this.props
     let mapKey = 0
     return imageObjects.map(imageObject => {
       mapKey++
       return (
         <ImageModal
-              url={imageObject.url}
-              title={imageObject.title}
-              medium={imageObject.medium}
-              key={mapKey}
-              imageSet={this.props.currentImageSetName}/>
+          url={imageObject.url}
+          title={imageObject.title}
+          medium={imageObject.medium}
+          key={mapKey}
+          imageSet={currentImageSetName}
+        />
       )
     })
   }
 
-  onLoad(imageObject, originalIndex) {
-    let newLoadedImageObjects = this.state.loadedImageObjects
-    newLoadedImageObjects[originalIndex] = imageObject
-    this.setState({
-      loadedImageObjects: newLoadedImageObjects
-    })
-  }
+  getImageObjects() {
+    const { currentImageSetName } = this.props
+    const { currentImageSetYear } = this.state
+    if (currentImageSetName === ImageSets.comics) {
+      return comicLinks.filter(comic => parseInt(comic.year, 10) === currentImageSetYear)
+    }
+    if (currentImageSetName === ImageSets.illustrations) {
+      return illustrationLinks.filter(illustration => parseInt(illustration.year, 10) === currentImageSetYear)
+    }
 
-  onPageNext(numberOfImages) {
-    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
-
-    const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
-    this.setState({
-      currFirstImgIdx: newFirstUrlIdx,
-      loadedImageObjects: []
-    })
-  }
-
-  onPagePrev() {
-    if (this.state.currFirstImgIdx === 0) return
-
-    const newFirstUrlIdx = this.state.currFirstImgIdx - this.state.imgsPerPage
-
-    this.setState({
-      currFirstImgIdx: newFirstUrlIdx,
-      loadedImageObjects: []
-    })
+    return []
   }
 
   startLoadingImages(imgObjs, firstImgIdx) {
@@ -107,50 +117,48 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    const firstImgIdx = this.state.currFirstImgIdx
+    const { currFirstImgIdx, imgsPerPage, loadedImageObjects } = this.state
     const imgObjs = this.getImageObjects()
 
     return (
       <div>
         <div className="navBtnContainer">
           <FontAwesomeIcon
-            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            className={currFirstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
             size="1x"
             onClick={this.onPagePrev}
           />
           <span className="divider" />
           <FontAwesomeIcon
-            className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            className={currFirstImgIdx + imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.onPageNext.bind(this, imgObjs.length)}
+            onClick={() => this.onPageNext(imgObjs.length)}
           />
         </div>
 
         <div className="portfolioContentContainer">
-          { this.getImageModals(this.state.loadedImageObjects) }
+          { this.getImageModals(loadedImageObjects) }
         </div>
 
         <div className="hidden">
-          { 
-            this.startLoadingImages(imgObjs, firstImgIdx)
-          }
+          { this.startLoadingImages(imgObjs, currFirstImgIdx) }
         </div>
 
         <div className="navBtnContainer">
           <FontAwesomeIcon
-            className={firstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
+            className={currFirstImgIdx === 0 ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-left"
             size="1x"
             onClick={this.onPagePrev}
           />
           <span className="divider" />
           <FontAwesomeIcon
-            className={firstImgIdx + this.state.imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            className={currFirstImgIdx + imgsPerPage >= imgObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.onPageNext.bind(this, imgObjs.length)}
+            onClick={() => this.onPageNext(imgObjs.length)}
           />
         </div>
       </div>
