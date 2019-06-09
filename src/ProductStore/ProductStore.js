@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductStore.css'
-import ProductModal from './ProductModal'
-import { OriginalsProducts, PinProducts, PrintProducts, ProductCategories, Values } from '../Constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ProductModal from './ProductModal'
+import {
+  OriginalsProducts, PinProducts, PrintProducts, ProductCategories, Values,
+} from '../Constants'
 
 class ProductStore extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class ProductStore extends React.Component {
       currFirstImgIdx: 0,
       imgsPerPage: Values.IMAGES_PER_PAGE,
       currentImageSetName: props.productCategory,
-      loadedProductObjects: []
+      loadedProductObjects: [],
     }
     this.onLoad = this.onLoad.bind(this)
     this.nextImages = this.nextImages.bind(this)
@@ -53,36 +55,40 @@ class ProductStore extends React.Component {
   }
 
   nextImages(numberOfImages) {
-    if (this.state.currFirstImgIdx + this.state.imgsPerPage >= numberOfImages) return
-    const newFirstUrlIdx = this.state.currFirstImgIdx + this.state.imgsPerPage
+    const { currFirstImgIdx, imgsPerPage } = this.state
+    if (currFirstImgIdx + imgsPerPage >= numberOfImages) return
+    const newFirstUrlIdx = currFirstImgIdx + imgsPerPage
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
-      loadedProductObjects: []
+      loadedProductObjects: [],
     })
   }
 
   prevImages() {
-    if (this.state.currFirstImgIdx === 0) return
+    const { currFirstImgIdx, imgsPerPage } = this.state
+    if (currFirstImgIdx === 0) return
 
-    const newFirstUrlIdx = this.state.currFirstImgIdx - this.state.imgsPerPage
+    const newFirstUrlIdx = currFirstImgIdx - imgsPerPage
 
     this.setState({
       currFirstImgIdx: newFirstUrlIdx,
-      loadedProductObjects: []
+      loadedProductObjects: [],
     })
   }
 
   startLoadingImages(imgObjs, firstImgIdx) {
+    const { imgsPerPage } = this.state
+    let mapKey = 0
     return imgObjs
-      .slice(firstImgIdx, firstImgIdx + this.state.imgsPerPage)
-      .map((item, i) =>
-        (<img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={i} alt="" />)
-    )
+      .slice(firstImgIdx, firstImgIdx + imgsPerPage)
+      .map((item, i) => (<img src={item.url} onLoad={this.onLoad.bind(this, item, i)} key={mapKey++} alt="" />))
   }
 
   render() {
+    const { currFirstImgIdx, imgsPerPage, loadedProductObjects } = this.state
+    const { productCategory } = this.props
     let mapKey = 0
-    const firstImgIdx = this.state.currFirstImgIdx
+    const firstImgIdx = currFirstImgIdx
     const productObjs = this.getProductObjects()
 
     return (
@@ -96,15 +102,15 @@ class ProductStore extends React.Component {
           />
           <span className="divider" />
           <FontAwesomeIcon
-            className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            className={firstImgIdx + imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.nextImages.bind(this, productObjs.length)}
+            onClick={() => this.nextImages(productObjs.length)}
           />
         </div>
 
         <div className="productsContainer">
-          { this.state.loadedProductObjects.map(productObj => {
+          { loadedProductObjects.map(productObj => {
             mapKey++
             return (
               <ProductModal
@@ -115,7 +121,7 @@ class ProductStore extends React.Component {
                 type={productObj.type}
                 key={mapKey}
                 link={productObj.link}
-                isTall={this.props.productCategory === ProductCategories.originals}
+                isTall={productCategory === ProductCategories.originals}
               />
             )
           }) }
@@ -136,10 +142,10 @@ class ProductStore extends React.Component {
           />
           <span className="divider" />
           <FontAwesomeIcon
-            className={firstImgIdx + this.state.imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
+            className={firstImgIdx + imgsPerPage >= productObjs.length ? 'navButtonDisabled' : 'navButtonActive'}
             icon="angle-right"
             size="1x"
-            onClick={this.nextImages.bind(this, productObjs.length)}
+            onClick={() => this.nextImages(productObjs.length)}
           />
         </div>
       </div>
