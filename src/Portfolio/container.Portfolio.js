@@ -3,7 +3,7 @@ import Portfolio from './Portfolio'
 
 const mapStateToProps = state => ({
   currentImageSetName: state.CurrentImageSet,
-  currentImageSetYear: state.CurrentPortfolioYear
+  currentImageSetYear: state.CurrentPortfolioYear,
 })
 
 const mapDispatchToProps = () => ({})

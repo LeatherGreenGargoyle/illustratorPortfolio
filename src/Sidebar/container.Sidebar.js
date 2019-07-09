@@ -5,29 +5,29 @@ import Sidebar from './Sidebar'
 
 const mapStateToProps = state => ({
   currentOpenSubmenu: state.CurrentOpenSubmenu,
-  currentSelectedSubmenuItem: state.CurrentSelectedSubmenuItem
+  currentSelectedSubmenuItem: state.CurrentSelectedSubmenuItem,
 })
 
 const mapDispatchToProps = dispatch => ({
-  onSelectEventYear: (year) => {
+  onSelectEventYear: year => {
     dispatch(SidebarActions.selectEventYear(year))
   },
-  onSelectImageSetYear: (year) => {
+  onSelectImageSetYear: year => {
     dispatch(SidebarActions.selectPortfolioYear(year))
   },
-  onSelectPortfolioImageset: (imageSetName) => {
+  onSelectPortfolioImageset: imageSetName => {
     dispatch(SidebarActions.selectPortfolioImageSet(imageSetName))
   },
-  onSelectStoreCategory: (productCategoryName) => {
+  onSelectStoreCategory: productCategoryName => {
     dispatch(SidebarActions.selectProductCategory(productCategoryName))
   },
-  onSelectOpenSubmenu: (pageName) => {
+  onSelectOpenSubmenu: pageName => {
     dispatch(SidebarActions.selectOpenSubmenu(pageName))
   },
-  onSelectSubmenuItem: (submenuItemName) => {
+  onSelectSubmenuItem: submenuItemName => {
     dispatch(SidebarActions.selectSubmenuItem(submenuItemName))
   },
-  onToggleMobileMenuOpen: (shouldShowMobileMenu) => {
+  onToggleMobileMenuOpen: shouldShowMobileMenu => {
     dispatch(MainActions.toggleMobileMenuOpen(shouldShowMobileMenu))
   },
 })

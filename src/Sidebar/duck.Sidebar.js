@@ -26,8 +26,8 @@ export const CurrentEventYear = (state = defaultEventYear, action) => {
   switch (action.type) {
     case SidebarTypes.SELECT_EVENT_YEAR:
       return action.payload
-    
-      default: return state
+
+    default: return state
   }
 }
 
@@ -35,7 +35,7 @@ export const CurrentImageSet = (state = defaultImageSet, action) => {
   switch (action.type) {
     case SidebarTypes.SELECT_PORTFOLIO_IMAGESET:
       return action.payload
-  
+
     default:
       return state
   }
@@ -75,7 +75,7 @@ export const CurrentSelectedSubmenuItem = (state = defaultSubmenuItem, action) =
   switch (action.type) {
     case SidebarTypes.SELECT_SUBMENU_ITEM:
       return action.payload
-    
+
     default:
       return state
   }
@@ -85,10 +85,10 @@ export const CurrentSelectedSubmenuItem = (state = defaultSubmenuItem, action) =
 //            ACTION CREATORS
 // ========================================
 export const SidebarActions = {
-  selectEventYear: (eventYear) => ({ type: SidebarTypes.SELECT_EVENT_YEAR, payload: eventYear }),
-  selectOpenSubmenu: (submenuName) => ({ type: SidebarTypes.SELECT_OPEN_SUBMENU, payload: submenuName }),
-  selectPortfolioImageSet: (imageSetName) => ({ type: SidebarTypes.SELECT_PORTFOLIO_IMAGESET, payload: imageSetName }),
-  selectPortfolioYear: (portfolioYear) => ({ type: SidebarTypes.SELECT_PORTFOLIO_YEAR, payload: portfolioYear }),
-  selectProductCategory: (productCategoryName) => ({ type: SidebarTypes.SELECT_PRODUCT_CATEGORY, payload: productCategoryName }),
-  selectSubmenuItem: (submenuItemName) => ({ type: SidebarTypes.SELECT_SUBMENU_ITEM, payload: submenuItemName })
+  selectEventYear: eventYear => ({ type: SidebarTypes.SELECT_EVENT_YEAR, payload: eventYear }),
+  selectOpenSubmenu: submenuName => ({ type: SidebarTypes.SELECT_OPEN_SUBMENU, payload: submenuName }),
+  selectPortfolioImageSet: imageSetName => ({ type: SidebarTypes.SELECT_PORTFOLIO_IMAGESET, payload: imageSetName }),
+  selectPortfolioYear: portfolioYear => ({ type: SidebarTypes.SELECT_PORTFOLIO_YEAR, payload: portfolioYear }),
+  selectProductCategory: productCategoryName => ({ type: SidebarTypes.SELECT_PRODUCT_CATEGORY, payload: productCategoryName }),
+  selectSubmenuItem: submenuItemName => ({ type: SidebarTypes.SELECT_SUBMENU_ITEM, payload: submenuItemName }),
 }

@@ -2,7 +2,9 @@ import React from 'react'
 import './Sidebar.css'
 import { Link } from 'react-router-dom'
 import { Spring } from 'react-spring'
-import { ImageSets, PageNames, routes, ProductCategories, Submenus, EventYears } from '../Constants'
+import {
+  ImageSets, PageNames, routes, ProductCategories, Submenus, EventYears,
+} from '../Constants'
 import { Submenu, SubmenuItem } from '../UI/Submenu/Submenu'
 import { getSubmenuItemTag } from '../Utils'
 
@@ -30,12 +32,12 @@ class Sidebar extends React.Component {
       onSelectImageSetYear,
       onSelectPortfolioImageset,
       onSelectSubmenuItem,
-      onSelectEventYear
+      onSelectEventYear,
     } = this.props
 
     if (pageName === PageNames.store) {
       const productCategories = Object.keys(ProductCategories)
-      const getProductItemClickHandler = (category) => {
+      const getProductItemClickHandler = category => {
         return () => {
           this.onRouteClick(pageName)
           onSelectStoreCategory(ProductCategories[category])
@@ -48,14 +50,15 @@ class Sidebar extends React.Component {
           ProductCategories[category],
           routeName,
           getProductItemClickHandler(category),
-          getSubmenuItemTag(pageName, category))
+          getSubmenuItemTag(pageName, category),
+        )
       })
 
       return productItems
-    } else if (pageName === PageNames.illustrations || pageName === PageNames.comics) {
+    } if (pageName === PageNames.illustrations || pageName === PageNames.comics) {
       const years = pageName === PageNames.illustrations ? [2017, 2018] : [2016, 2017, 2018]
       const imageSetToSelect = pageName === PageNames.illustrations ? ImageSets.illustrations : ImageSets.comics
-      const getYearItemClickHandler = (year) => {
+      const getYearItemClickHandler = year => {
         return () => {
           this.onRouteClick(pageName)
           onSelectImageSetYear(year)
@@ -69,11 +72,12 @@ class Sidebar extends React.Component {
           year,
           routeName,
           getYearItemClickHandler(year),
-          getSubmenuItemTag(pageName, year))
+          getSubmenuItemTag(pageName, year),
+        )
       })
       return yearItems
-    } else if (pageName === PageNames.events) {
-      const getYearItemClickHandler = (year) => {
+    } if (pageName === PageNames.events) {
+      const getYearItemClickHandler = year => {
         return () => {
           this.onRouteClick(pageName)
           onSelectEventYear(year)
@@ -87,7 +91,8 @@ class Sidebar extends React.Component {
           year,
           routeName,
           getYearItemClickHandler(year),
-          getSubmenuItemTag(pageName, year))
+          getSubmenuItemTag(pageName, year),
+        )
       })
       return yearItems
     }
@@ -102,7 +107,7 @@ class Sidebar extends React.Component {
   onSidebarItemClick(pageName) {
     if (!Submenus[pageName]) { return }
     if (this.state.currentOpenSubmenu === pageName) {
-      this.props.onSelectOpenSubmenu("")
+      this.props.onSelectOpenSubmenu('')
     } else {
       this.props.onSelectOpenSubmenu(pageName)
     }
@@ -112,8 +117,8 @@ class Sidebar extends React.Component {
     const onLinkClick = () => {
       this.onRouteClick(pageName)
       if (!Submenus[pageName]) {
-        this.props.onSelectSubmenuItem("")
-        this.props.onSelectOpenSubmenu("")
+        this.props.onSelectSubmenuItem('')
+        this.props.onSelectOpenSubmenu('')
         this.props.onToggleMobileMenuOpen(false)
       }
     }
@@ -136,16 +141,16 @@ class Sidebar extends React.Component {
         className={this.state.currentPage === pageName ? 'sidebarSelectedLink' : 'sidebarLink'}
       >
         {pageName}
-     </span>
+      </span>
     )
 
     return (
       <div className="sidebarLink">
         <div>
-        {
-          Submenus[pageName] ?
-            sidebarItemWithSubmenu :
-            this.LinkElement(pageName, linkRoute, additionalOnClick)
+          {
+          Submenus[pageName]
+            ? sidebarItemWithSubmenu
+            : this.LinkElement(pageName, linkRoute, additionalOnClick)
         }
         </div>
         {this.makeSubmenu(pageName)}
@@ -158,21 +163,28 @@ class Sidebar extends React.Component {
 
     const { currentSelectedSubmenuItem } = this.props
     const submenuItems = this.getSubmenuItemsFor(pageName)
-    const submenuProps = { 
-      links : submenuItems,
-      currentSelectedSubmenuItem: currentSelectedSubmenuItem,
-     }
+    const submenuProps = {
+      links: submenuItems,
+      currentSelectedSubmenuItem,
+    }
 
     return (
       <div>
         { pageName === this.state.currentOpenSubmenu && (
-            <Spring
-              from={{ opacity: 0, marginTop: -20 }}
-              to={{ opacity: 1, marginTop: 0 }}
-              delay= '200'>
-              { props => <div style={props}> <Submenu {...submenuProps}/> </div> }
-            </Spring>
-          )
+        <Spring
+          from={{ opacity: 0, marginTop: -20 }}
+          to={{ opacity: 1, marginTop: 0 }}
+          delay="200"
+        >
+          { props => (
+            <div style={props}>
+              {' '}
+              <Submenu {...submenuProps} />
+              {' '}
+            </div>
+          ) }
+        </Spring>
+        )
         }
       </div>
     )
